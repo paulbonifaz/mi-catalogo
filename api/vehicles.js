@@ -43,12 +43,11 @@ function cleanHtml(raw) {
     .replace(/<!--\s*-->/g, '');
 }
 
-function extractFromListing(rawBody, dealer) {
+function extractFromPage(rawBody, dealer) {
   const vehicles = [];
   const seen = new Set();
   const html = cleanHtml(rawBody);
 
-  // Split by vehicle anchor tags
   const anchorRe = /href="(\/vehicle\/([^/]+)\/(\d+))"/g;
   const matches = [];
   let m;
@@ -64,7 +63,7 @@ function extractFromListing(rawBody, dealer) {
     const end = matches[i + 1] ? matches[i + 1].index : index + 4000;
     const block = html.slice(index, Math.min(end, index + 4000));
 
-    // Image - use the webp srcSet URL or jpg src
+    // Direct image URL (no proxy needed - images load fine directly)
     const imgM = block.match(/src="(https:\/\/images\.patiotuerca\.com\/[^"]+\.jpg)"/);
 
     // Title from h3
@@ -84,16 +83,13 @@ function extractFromListing(rawBody, dealer) {
     const priceM = block.match(/<span class="text-lg font-semibold[^"]*">\s*\$([\d,.']+)\s*<\/span>/);
     const price = priceM ? `$${priceM[1]}` : '';
 
-    // Proxy the image through our own API to avoid CORS issues on the frontend
-    const imgUrl = imgM ? `/api/img?url=${encodeURIComponent(imgM[1])}` : '';
-
     vehicles.push({
       id,
       title: title || path.split('/').slice(-2,-1)[0].replace(/-/g,' '),
       price,
       year,
       kms,
-      img: imgUrl,
+      img: imgM ? imgM[1] : '',
       dealer: dealer.name,
       dealerId: dealer.id,
     });
@@ -102,95 +98,90 @@ function extractFromListing(rawBody, dealer) {
   return vehicles;
 }
 
-function getTotalPages(html) {
-  // Look for "Página X de Y" pattern
-  const clean = cleanHtml(html);
-  const m = clean.match(/P[aá]gina\s+\d+\s+de\s+(\d+)/i);
-  if (m) return parseInt(m[1]);
-  // fallback: if "Siguiente" exists, there are more pages
-  return clean.includes('Siguiente') ? 99 : 1;
+function hasNextPage(rawBody) {
+  const html = cleanHtml(rawBody);
+  // Look for a pagination link/button for "Siguiente" that is NOT disabled
+  // Patiotuerca renders: <a ...>Siguiente</a> or <button ...>Siguiente</button>
+  // When on last page it may be absent or have a disabled attribute
+  const nextMatch = html.match(/Siguiente/i);
+  if (!nextMatch) return false;
+  // Check it's not inside a disabled element
+  const idx = html.indexOf('Siguiente');
+  const surrounding = html.slice(Math.max(0, idx - 200), idx + 50);
+  if (/disabled/i.test(surrounding)) return false;
+  if (/opacity-50|cursor-not-allowed|pointer-events-none/.test(surrounding)) return false;
+  return true;
 }
 
 async function loadDealer(dealer) {
   const allVehicles = [];
   const seenIds = new Set();
 
-  // First fetch page 1 to determine total pages
-  const firstUrl = `https://ecuador.patiotuerca.com/dealers-profile/${dealer.slug}/${dealer.id}?page=1`;
-  const firstRes = await getPage(firstUrl);
-  if (!firstRes.ok) return allVehicles;
+  for (let page = 1; page <= 25; page++) {
+    const url = `https://ecuador.patiotuerca.com/dealers-profile/${dealer.slug}/${dealer.id}?page=${page}`;
+    const res = await getPage(url);
 
-  const totalPages = getTotalPages(firstRes.body);
-  const pages = Math.min(totalPages, 20); // safety cap
+    if (!res.ok || !res.body) break;
 
-  // Process page 1
-  const firstFound = extractFromListing(firstRes.body, dealer);
-  for (const v of firstFound) {
-    if (v.id && !seenIds.has(v.id)) { seenIds.add(v.id); allVehicles.push(v); }
-  }
+    const found = extractFromPage(res.body, dealer);
+    if (found.length === 0) break;
 
-  // Fetch remaining pages in parallel batches of 3
-  for (let p = 2; p <= pages; p += 3) {
-    const batch = [];
-    for (let b = p; b < p + 3 && b <= pages; b++) {
-      batch.push(getPage(`https://ecuador.patiotuerca.com/dealers-profile/${dealer.slug}/${dealer.id}?page=${b}`));
-    }
-    const results = await Promise.all(batch);
-    let anyNew = false;
-    for (const res of results) {
-      if (!res.ok) continue;
-      const found = extractFromListing(res.body, dealer);
-      for (const v of found) {
-        if (v.id && !seenIds.has(v.id)) { seenIds.add(v.id); allVehicles.push(v); anyNew = true; }
+    let added = 0;
+    for (const v of found) {
+      if (v.id && !seenIds.has(v.id)) {
+        seenIds.add(v.id);
+        allVehicles.push(v);
+        added++;
       }
     }
-    if (!anyNew) break;
+
+    // Stop if no new vehicles or no next page
+    if (added === 0) break;
+    if (!hasNextPage(res.body)) break;
   }
 
   return allVehicles;
 }
 
-// Image proxy handler - avoids CORS issues loading Patiotuerca images from the browser
-async function proxyImage(req, res) {
-  const imgUrl = req.query.url;
-  if (!imgUrl || !imgUrl.includes('patiotuerca.com')) {
-    return res.status(400).end();
-  }
-  try {
-    await new Promise((resolve, reject) => {
-      https.get(imgUrl, {
-        headers: { 'Referer': 'https://ecuador.patiotuerca.com/' }
-      }, (imgRes) => {
-        res.setHeader('Content-Type', imgRes.headers['content-type'] || 'image/jpeg');
-        res.setHeader('Cache-Control', 'public, max-age=86400');
-        res.setHeader('Access-Control-Allow-Origin', '*');
-        imgRes.pipe(res);
-        imgRes.on('end', resolve);
-      }).on('error', reject);
-    });
-  } catch(e) {
-    res.status(502).end();
-  }
-}
-
 module.exports = async (req, res) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
-
-  // Route: /api/img?url=... for image proxying
-  if (req.url && req.url.includes('/img')) {
-    return proxyImage(req, res);
-  }
-
   res.setHeader('Cache-Control', 's-maxage=300, stale-while-revalidate=600');
 
   const dealerId = req.query.dealer;
+  const debug = req.query.debug === '1';
   const list = dealerId ? DEALERS.filter(d => d.id === dealerId) : DEALERS;
 
   try {
+    if (debug) {
+      const d = list[0];
+      // Test pages 1 and 2 to verify pagination detection
+      const r1 = await getPage(`https://ecuador.patiotuerca.com/dealers-profile/${d.slug}/${d.id}?page=1`);
+      const r2 = await getPage(`https://ecuador.patiotuerca.com/dealers-profile/${d.slug}/${d.id}?page=2`);
+      const html1 = cleanHtml(r1.body);
+      const html2 = cleanHtml(r2.body);
+
+      // Find "Siguiente" context in page 1
+      const idx = html1.indexOf('Siguiente');
+      const sigCtx = idx >= 0 ? html1.slice(Math.max(0, idx-300), idx+100) : 'NOT FOUND';
+
+      // Count vehicles on each page
+      const v1 = extractFromPage(r1.body, d);
+      const v2 = extractFromPage(r2.body, d);
+
+      return res.status(200).json({
+        page1_vehicles: v1.length,
+        page1_hasNext: hasNextPage(r1.body),
+        page2_vehicles: v2.length,
+        page2_hasNext: hasNextPage(r2.body),
+        page2_ids: v2.map(v => v.id),
+        siguienteContext: sigCtx,
+      });
+    }
+
     const results = await Promise.all(list.map(loadDealer));
     const vehicles = results.flat();
     res.status(200).json({ vehicles, total: vehicles.length, updated: new Date().toISOString() });
   } catch (e) {
-    res.status(500).json({ error: String(e.message) });
+    res.status(500).json({ error: String(e.message), stack: String(e.stack).slice(0, 400) });
   }
 };
