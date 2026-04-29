@@ -33,29 +33,26 @@ function getPage(url) {
   });
 }
 
-// Based on actual HTML structure:
-// <a target="_blank" rel="noopener noreferrer" href="/vehicle/SLUG/ID">
-//   <div class="group block cursor-pointer">
-//     <div class="relative aspect-[4/3]...">
-//       <picture><source srcSet="IMG_URL" .../><img alt="TITLE" ... src="IMG_URL"/></picture>
-//     </div>
-//     <div class="space-y-0.5">
-//       ... YEAR, KMS, TITLE, PRICE ...
-//     </div>
-//   </div>
-// </a>
-
-function extractFromListing(html, dealer) {
+function extractFromListing(rawBody, dealer) {
   const vehicles = [];
   const seen = new Set();
 
-  // Split on each vehicle anchor tag
-  // Pattern: <a target="_blank" rel="noopener noreferrer" href="/vehicle/...">
-  const cardSplitter = /<a\s[^>]*href="(\/vehicle\/[^"]+\/(\d+))"[^>]*>/g;
+  // The HTML snippet shows the body has escaped quotes like \"
+  // This means the body is double-encoded. Unescape it.
+  let html = rawBody;
+  if (html.includes('\\"')) {
+    try { html = JSON.parse('"' + html.replace(/^"|"$/g, '') + '"'); } catch(_) {}
+    // Second attempt: simple unescape
+    html = rawBody.replace(/\\"/g, '"').replace(/\\\//g, '/').replace(/\\n/g, '\n');
+  }
+
+  // Split on vehicle anchor tags
+  // Actual pattern from snippet: <a target="_blank" rel="noopener noreferrer" href="/vehicle/SLUG/ID">
+  const anchorRe = /href="(\/vehicle\/([^/]+)\/(\d+))"/g;
   const matches = [];
   let m;
-  while ((m = cardSplitter.exec(html)) !== null) {
-    matches.push({ path: m[1], id: m[2], index: m.index });
+  while ((m = anchorRe.exec(html)) !== null) {
+    matches.push({ path: m[1], slug: m[2], id: m[3], index: m.index });
   }
 
   for (let i = 0; i < matches.length; i++) {
@@ -63,34 +60,27 @@ function extractFromListing(html, dealer) {
     if (seen.has(id)) continue;
     seen.add(id);
 
-    // Get block from this anchor to next anchor (or +2000 chars)
     const end = matches[i + 1] ? matches[i + 1].index : index + 2000;
     const block = html.slice(index, Math.min(end, index + 2000));
 
-    // Image: src="https://images.patiotuerca.com/..."
-    const imgM = block.match(/src="(https:\/\/images\.patiotuerca\.com\/[^"]+)"/);
-
-    // Title: alt="..." on the img tag
-    const altM = block.match(/alt="([^"]+)"/);
-
-    // Price: $XX,XXX — appears as text node, look for $ followed by digits
-    const priceM = block.match(/\$([\d,]+)/);
-
-    // Year: 4-digit year 19xx or 20xx
-    const yearM = block.match(/\b(19[89]\d|20[012]\d)\b/);
-
-    // KMs: number followed by Kms
-    const kmM = block.match(/([\d,.]+)\s*Kms?/i);
-
-    if (!priceM && !altM) continue;
+    // From the snippet: src="https://images.patiotuerca.com/thumbs/..."
+    const imgM  = block.match(/src="(https:\/\/images\.patiotuerca\.com\/[^"]+)"/);
+    // alt="Kia Rio Stylus"
+    const altM  = block.match(/alt="([^"]+)"/);
+    // $10,990 or $10.990
+    const priceM = block.match(/\$\s*([\d,.]+)/);
+    // Year
+    const yearM  = block.match(/\b(19[89]\d|20[012]\d)\b/);
+    // KMs
+    const kmM    = block.match(/([\d,.]+)\s*Kms?/i);
 
     vehicles.push({
       id,
-      title: altM ? altM[1].trim() : path.split('/').slice(-2,-1)[0].replace(/-/g,' '),
+      title: altM ? altM[1].trim() : path.replace(/-/g,' '),
       price: priceM ? `$${priceM[1]}` : '',
-      year:  yearM  ? yearM[1]  : '',
+      year:  yearM  ? yearM[1] : '',
       kms:   kmM    ? `${kmM[1]} Kms` : '',
-      img:   imgM   ? imgM[1]   : '',
+      img:   imgM   ? imgM[1] : '',
       url:   `https://ecuador.patiotuerca.com${path}`,
       dealer: dealer.name,
       dealerId: dealer.id,
@@ -140,15 +130,23 @@ module.exports = async (req, res) => {
       const d = list[0];
       const url = `https://ecuador.patiotuerca.com/dealers-profile/${d.slug}/${d.id}?page=1`;
       const r = await getPage(url);
+
+      // Show raw bytes around first /vehicle/ to see exact encoding
+      const idx = r.body.indexOf('/vehicle/');
+      const rawSnippet = r.body.slice(Math.max(0, idx - 50), idx + 400);
+      const hasEscapedQuotes = r.body.includes('\\"');
+      const hasRealQuotes = r.body.includes('"');
+
       const found = extractFromListing(r.body, d);
-      // Show raw HTML of first card block for inspection
-      const firstCardIdx = r.body.indexOf('href="/vehicle/');
-      const cardSnippet = firstCardIdx >= 0 ? r.body.slice(firstCardIdx, firstCardIdx + 800) : 'not found';
+
       return res.status(200).json({
         status: r.status,
+        bodyLen: r.body.length,
+        hasEscapedQuotes,
+        hasRealQuotes,
         extractedCount: found.length,
-        sample: found.slice(0, 3),
-        cardSnippet,
+        sample: found.slice(0, 2),
+        rawSnippet,
       });
     }
 
