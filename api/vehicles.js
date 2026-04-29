@@ -6,19 +6,20 @@ const DEALERS = [
   { id: '1570', name: '10 de Agosto', slug: 'autos-quito-10-de-agosto' },
 ];
 
-function fetchUrl(url, extraHeaders = {}) {
+function fetchUrl(url, headers = {}) {
   return new Promise((resolve) => {
     const doGet = (u, hops) => {
       if (hops > 8) return resolve({ ok: false, body: '', status: 0 });
       const req = https.get(u, {
         headers: {
           'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/124 Safari/537.36',
-          'Accept': 'text/html,application/json,*/*;q=0.9',
+          'Accept': 'application/json, text/html, */*',
           'Accept-Language': 'es-EC,es;q=0.9',
           'Referer': 'https://ecuador.patiotuerca.com/',
-          ...extraHeaders,
+          'x-requested-with': 'XMLHttpRequest',
+          ...headers,
         },
-        timeout: 25000,
+        timeout: 20000,
       }, (res) => {
         if ([301,302,303,307,308].includes(res.statusCode) && res.headers.location) {
           const loc = res.headers.location;
@@ -28,7 +29,7 @@ function fetchUrl(url, extraHeaders = {}) {
         let body = '';
         res.setEncoding('utf8');
         res.on('data', d => body += d);
-        res.on('end', () => resolve({ ok: res.statusCode < 400, body, status: res.statusCode, headers: res.headers }));
+        res.on('end', () => resolve({ ok: res.statusCode < 400, body, status: res.statusCode }));
       });
       req.on('error', () => resolve({ ok: false, body: '', status: -1 }));
       req.on('timeout', () => { req.destroy(); resolve({ ok: false, body: '', status: -2 }); });
@@ -38,135 +39,164 @@ function fetchUrl(url, extraHeaders = {}) {
 }
 
 function cleanHtml(raw) {
-  return raw
-    .replace(/\\"/g, '"')
-    .replace(/\\\//g, '/')
-    .replace(/\\n/g, '\n')
-    .replace(/<!--\s*-->/g, '');
+  return raw.replace(/\\"/g, '"').replace(/\\\//g, '/').replace(/\\n/g, '\n').replace(/<!--\s*-->/g, '');
 }
 
-function extractFromPage(rawBody, dealer) {
+function extractFromHtml(rawBody, dealer) {
   const vehicles = [];
   const seen = new Set();
   const html = cleanHtml(rawBody);
-
   const anchorRe = /href="(\/vehicle\/([^/]+)\/(\d+))"/g;
   const matches = [];
   let m;
-  while ((m = anchorRe.exec(html)) !== null) {
-    matches.push({ path: m[1], id: m[3], index: m.index });
-  }
+  while ((m = anchorRe.exec(html)) !== null) matches.push({ path: m[1], id: m[3], index: m.index });
 
   for (let i = 0; i < matches.length; i++) {
     const { path, id, index } = matches[i];
     if (seen.has(id)) continue;
     seen.add(id);
-
-    const end = matches[i + 1] ? matches[i + 1].index : index + 4000;
-    const block = html.slice(index, Math.min(end, index + 4000));
-
+    const end = Math.min((matches[i+1]?.index || index + 4000), index + 4000);
+    const block = html.slice(index, end);
     const imgM   = block.match(/src="(https:\/\/images\.patiotuerca\.com\/[^"]+\.jpg)"/);
     const h3M    = block.match(/<h3[^>]*>([^<]+)<\/h3>/);
     const altM   = block.match(/alt="([^"]+)"/);
-    const title  = h3M ? h3M[1].trim() : (altM ? altM[1].trim() : '');
     const yearM  = block.match(/<p class="text-sm font-bold[^"]*">\s*(\d{4})\s*<\/p>/);
-    const year   = yearM ? yearM[1] : (block.match(/\b(19[89]\d|20[012]\d)\b/) || [])[1] || '';
     const kmsM   = block.match(/<span>\s*([\d,.']+)\s*Kms\s*<\/span>/i);
-    const kms    = kmsM ? `${kmsM[1]} Kms` : '';
     const priceM = block.match(/<span class="text-lg font-semibold[^"]*">\s*\$([\d,.']+)\s*<\/span>/);
-    const price  = priceM ? `$${priceM[1]}` : '';
-
     vehicles.push({
-      id, title: title || id, price, year, kms,
-      img: imgM ? imgM[1] : '',
+      id, price: priceM ? `$${priceM[1]}` : '',
+      title: (h3M?.[1] || altM?.[1] || id).trim(),
+      year: yearM?.[1] || (block.match(/\b(19[89]\d|20[012]\d)\b/) || [])[1] || '',
+      kms: kmsM ? `${kmsM[1]} Kms` : '',
+      img: imgM?.[1] || '',
       dealer: dealer.name, dealerId: dealer.id,
     });
   }
   return vehicles;
 }
 
-// Try to find Next.js build ID from the page HTML
-function getBuildId(html) {
-  const m = html.match(/"buildId"\s*:\s*"([^"]+)"/);
-  return m ? m[1] : null;
+// Extract all vehicle IDs/slugs from the sitemap or search API
+async function fetchViaSitemap(dealer) {
+  // Try the sitemap to get all vehicle URLs for this dealer
+  const sitemapUrls = [
+    `https://ecuador.patiotuerca.com/sitemap-dealers-${dealer.id}.xml`,
+    `https://ecuador.patiotuerca.com/sitemap.xml`,
+  ];
+  for (const url of sitemapUrls) {
+    const r = await fetchUrl(url);
+    if (!r.ok) continue;
+    const matches = [...r.body.matchAll(/\/vehicle\/([^<\s]+)\/(\d+)/g)];
+    if (matches.length > 0) return matches.map(m => ({ slug: m[1], id: m[2] }));
+  }
+  return [];
+}
+
+async function fetchViaSearchApi(dealer) {
+  const vehicles = [];
+  // Patiotuerca likely uses a search/listing API - try common patterns
+  const apiCandidates = [
+    `https://ecuador.patiotuerca.com/api/listings?dealerId=${dealer.id}&limit=200`,
+    `https://ecuador.patiotuerca.com/api/vehicles?dealerId=${dealer.id}&limit=200`,
+    `https://ecuador.patiotuerca.com/api/search?dealerId=${dealer.id}&size=200&country=ecuador`,
+    `https://ecuador.patiotuerca.com/api/dealer/${dealer.id}/vehicles?limit=200`,
+    // With auth header patterns some Next.js apps use
+    `https://ecuador.patiotuerca.com/api/trpc/dealer.getVehicles?input={"dealerId":"${dealer.id}","page":1,"limit":200}`,
+  ];
+  for (const url of apiCandidates) {
+    const r = await fetchUrl(url);
+    if (!r.ok || !r.body) continue;
+    try {
+      const data = JSON.parse(r.body);
+      const items = data.data || data.vehicles || data.results || data.items || data.hits || [];
+      if (Array.isArray(items) && items.length > 12) {
+        return { found: true, url, count: items.length, data };
+      }
+    } catch(_) {}
+  }
+  return { found: false };
 }
 
 async function loadDealer(dealer) {
   const allVehicles = [];
   const seenIds = new Set();
 
+  // 1. Get page 1 HTML  
   const baseUrl = `https://ecuador.patiotuerca.com/dealers-profile/${dealer.slug}/${dealer.id}`;
-
-  // Fetch page 1 to get build ID and total pages
   const r1 = await fetchUrl(baseUrl);
   if (!r1.ok) return allVehicles;
 
   const html1 = cleanHtml(r1.body);
   const totalPagesM = html1.match(/P[aá]gina\s+\d+\s+de\s+(\d+)/i);
   const totalPages = totalPagesM ? parseInt(totalPagesM[1]) : 1;
-  const buildId = getBuildId(r1.body);
 
   // Add page 1 vehicles
-  for (const v of extractFromPage(r1.body, dealer)) {
+  for (const v of extractFromHtml(r1.body, dealer)) {
     if (v.id && !seenIds.has(v.id)) { seenIds.add(v.id); allVehicles.push(v); }
   }
 
-  // Try Next.js data endpoint for subsequent pages
-  // Pattern: /_next/data/{buildId}/dealers-profile/{slug}/{id}.json?page=2
-  if (buildId) {
-    for (let page = 2; page <= Math.min(totalPages, 25); page++) {
-      const nextUrl = `https://ecuador.patiotuerca.com/_next/data/${buildId}/dealers-profile/${dealer.slug}/${dealer.id}.json?page=${page}&dealerSlug=${dealer.slug}&dealerId=${dealer.id}`;
-      const nr = await fetchUrl(nextUrl, { 'Accept': 'application/json' });
+  if (totalPages <= 1) return allVehicles;
 
-      if (nr.ok && nr.body) {
-        try {
-          const data = JSON.parse(nr.body);
-          // Walk the pageProps to find vehicle listings
-          const flat = JSON.stringify(data);
-          const vehicleRe = /"id"\s*:\s*"?(\d{5,})"?[^}]{0,600}"slug"\s*:\s*"([^"]+)"/g;
-          let vm;
-          while ((vm = vehicleRe.exec(flat)) !== null) {
-            const vid = vm[1];
-            if (seenIds.has(vid)) continue;
-            const chunk = flat.slice(vm.index, vm.index + 800);
-            const brandM  = chunk.match(/"brand"\s*:\s*"([^"]+)"/);
-            const modelM  = chunk.match(/"model"\s*:\s*"([^"]+)"/);
-            const verM    = chunk.match(/"version"\s*:\s*"([^"]+)"/);
-            const priceM2 = chunk.match(/"price"\s*:\s*(\d+)/);
-            const yearM2  = chunk.match(/"year"\s*:\s*(\d{4})/);
-            const kmM2    = chunk.match(/"mileage"\s*:\s*(\d+)/);
-            const imgM2   = chunk.match(/"mainImage"\s*:\s*"([^"]+)"/);
-            if (!brandM && !priceM2) continue;
-            seenIds.add(vid);
-            allVehicles.push({
-              id: vid,
-              title: [brandM?.[1], modelM?.[1], verM?.[1]].filter(Boolean).join(' · '),
-              price: priceM2 ? `$${Number(priceM2[1]).toLocaleString('en-US')}` : '',
-              year: yearM2?.[1] || '',
-              kms: kmM2 ? `${Number(kmM2[1]).toLocaleString('en-US')} Kms` : '',
-              img: imgM2 ? imgM2[1].replace(/\\\//g, '/') : '',
-              dealer: dealer.name, dealerId: dealer.id,
-            });
-          }
-          continue; // next page
-        } catch (_) {}
-      }
+  // 2. Try to get vehicle list from sitemap
+  const sitemapVehicles = await fetchViaSitemap(dealer);
+  if (sitemapVehicles.length > 12) {
+    // Fetch each vehicle page to get details — too slow for many vehicles
+    // Instead, fetch each in batches to get price/year/kms from individual pages
+    // For now use what we have from page 1 and supplement with basic info
+  }
 
-      // Fallback: try HTML with offset param
-      const offsetUrl = `${baseUrl}?offset=${(page-1)*12}`;
-      const or = await fetchUrl(offsetUrl);
-      if (or.ok) {
-        const found = extractFromPage(or.body, dealer);
-        let added = 0;
-        for (const v of found) {
-          if (v.id && !seenIds.has(v.id)) { seenIds.add(v.id); allVehicles.push(v); added++; }
-        }
-        if (added === 0) break;
-      } else break;
-    }
+  // 3. Fetch individual vehicle pages in parallel to get full details
+  // Get all vehicle IDs from sitemap or by scraping all pages sequentially
+  // Since page param doesn't work, try RSC (React Server Components) endpoint
+  // Next.js 13+ uses __rsc__ for client navigation
+  const page2Rsc = await fetchUrl(baseUrl + '?_rsc=1', {
+    'RSC': '1',
+    'Next-Router-State-Tree': '%5B%22%22%2C%7B%22children%22%3A%5B%22__PAGE__%22%2C%7B%7D%5D%7D%2Cnull%2Cnull%2Ctrue%5D',
+    'Next-Url': `/dealers-profile/${dealer.slug}/${dealer.id}`,
+  });
+
+  // Try action-based pagination that Next.js uses internally
+  const rscWithPage = await fetchUrl(baseUrl + '?page=2&_rsc=1', {
+    'RSC': '1',
+    'Next-Router-State-Tree': '%5B%22%22%2C%7B%22children%22%3A%5B%22__PAGE__%22%2C%7B%7D%5D%7D%2Cnull%2Cnull%2Ctrue%5D',
+  });
+
+  // Extract vehicles from RSC response if it contains vehicle data
+  if (rscWithPage.ok && rscWithPage.body.length > 1000) {
+    const rscVehicles = extractVehiclesFromRSC(rscWithPage.body, dealer, seenIds);
+    for (const v of rscVehicles) allVehicles.push(v);
   }
 
   return allVehicles;
+}
+
+function extractVehiclesFromRSC(rscBody, dealer, seenIds) {
+  const vehicles = [];
+  // RSC payload contains JSON-like data, search for vehicle patterns
+  const clean = rscBody.replace(/\\"/g, '"').replace(/\\\//g, '/');
+  const re = /"id"\s*:\s*"?(\d{5,})"?[^\n]{0,400}"brand"\s*:\s*"([^"]+)"[^\n]{0,200}"price"\s*:\s*(\d+)/g;
+  let m;
+  while ((m = re.exec(clean)) !== null) {
+    const id = m[1];
+    if (seenIds.has(id)) continue;
+    seenIds.add(id);
+    const chunk = clean.slice(m.index, m.index + 600);
+    const modelM = chunk.match(/"model"\s*:\s*"([^"]+)"/);
+    const yearM  = chunk.match(/"year"\s*:\s*(\d{4})/);
+    const kmM    = chunk.match(/"mileage"\s*:\s*(\d+)/);
+    const imgM   = chunk.match(/"mainImage"\s*:\s*"([^"]+)"/);
+    const slugM  = chunk.match(/"slug"\s*:\s*"([^"]+)"/);
+    vehicles.push({
+      id,
+      title: [m[2], modelM?.[1]].filter(Boolean).join(' · '),
+      price: `$${Number(m[3]).toLocaleString('en-US')}`,
+      year: yearM?.[1] || '',
+      kms: kmM ? `${Number(kmM[1]).toLocaleString('en-US')} Kms` : '',
+      img: imgM ? imgM[1].replace(/\\\//g, '/') : '',
+      url: slugM ? `https://ecuador.patiotuerca.com/vehicle/${slugM[1]}/${id}` : '',
+      dealer: dealer.name, dealerId: dealer.id,
+    });
+  }
+  return vehicles;
 }
 
 module.exports = async (req, res) => {
@@ -180,33 +210,29 @@ module.exports = async (req, res) => {
   try {
     if (debug) {
       const d = list[0];
-      const baseUrl = `https://ecuador.patiotuerca.com/dealers-profile/${d.slug}/${d.id}`;
-      const r1 = await fetchUrl(baseUrl);
-      const buildId = getBuildId(r1.body);
-      const html1 = cleanHtml(r1.body);
-      const totalPagesM = html1.match(/P[aá]gina\s+\d+\s+de\s+(\d+)/i);
+      const base = `https://ecuador.patiotuerca.com/dealers-profile/${d.slug}/${d.id}`;
 
-      // Test Next.js data endpoint
-      let nextDataTest = null;
-      if (buildId) {
-        const nextUrl = `https://ecuador.patiotuerca.com/_next/data/${buildId}/dealers-profile/${d.slug}/${d.id}.json?page=2&dealerSlug=${d.slug}&dealerId=${d.id}`;
-        const nr = await fetchUrl(nextUrl, { 'Accept': 'application/json' });
-        nextDataTest = { url: nextUrl, status: nr.status, bodyStart: nr.body.slice(0, 300) };
-      }
+      // Test RSC endpoint
+      const rsc1 = await fetchUrl(base + '?_rsc=1', { 'RSC': '1' });
+      const rsc2 = await fetchUrl(base + '?page=2&_rsc=1', { 'RSC': '1', 'Next-Url': `/dealers-profile/${d.slug}/${d.id}` });
 
-      // Test a few other offset/pagination approaches
-      const tests = {};
-      for (const suffix of ['?offset=12', '?skip=12', '?start=12', '?from=12']) {
-        const r = await fetchUrl(baseUrl + suffix);
-        const vs = extractFromPage(r.body, d);
-        tests[suffix] = { status: r.status, count: vs.length, firstId: vs[0]?.id };
-      }
+      // Test sitemap
+      const sm = await fetchUrl(`https://ecuador.patiotuerca.com/sitemap-dealers-${d.id}.xml`);
+
+      // Test search API
+      const apiTest = await fetchViaSearchApi(d);
+
+      // Test action endpoint
+      const actionTest = await fetchUrl(`https://ecuador.patiotuerca.com/dealers-profile/${d.slug}/${d.id}`, {
+        'Next-Action': '1',
+      });
 
       return res.status(200).json({
-        buildId,
-        totalPages: totalPagesM ? parseInt(totalPagesM[1]) : 1,
-        nextDataTest,
-        offsetTests: tests,
+        rsc1: { status: rsc1.status, len: rsc1.body.length, start: rsc1.body.slice(0, 200) },
+        rsc2: { status: rsc2.status, len: rsc2.body.length, start: rsc2.body.slice(0, 200) },
+        rsc2HasDifferentVehicles: rsc2.body.includes('1959004') ? 'same_as_p1' : 'different',
+        sitemap: { status: sm.status, len: sm.body.length, start: sm.body.slice(0, 200) },
+        searchApi: apiTest,
       });
     }
 
