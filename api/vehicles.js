@@ -3,7 +3,7 @@ const https = require('https');
 const DEALERS = [
   { id: '1167', name: 'Autos Quito', slug: 'autos-quito' },
   { id: '1378', name: 'Sucursal', slug: 'autos-quito-sucursal' },
-  { id: '1570', name: '10 de Agosto', slug: 'autos-quito-10-de-agosto' },
+  { id: '1570', name: '10 de Agosto', slug: 'autos-quito-10-de-agosto' }, 
 ];
 
 function fetchUrl(url, headers = {}) {
