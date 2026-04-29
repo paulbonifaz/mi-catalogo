@@ -34,7 +34,6 @@ function getPage(url) {
 }
 
 function unescapeHtml(raw) {
-  // The body has \" escaped quotes — unescape to get real HTML
   return raw
     .replace(/\\"/g, '"')
     .replace(/\\\//g, '/')
@@ -45,11 +44,8 @@ function unescapeHtml(raw) {
 function extractFromListing(rawBody, dealer) {
   const vehicles = [];
   const seen = new Set();
-
-  // Unescape first so our regex work on real HTML
   const html = unescapeHtml(rawBody);
 
-  // Find all vehicle anchor start positions
   const anchorRe = /href="(\/vehicle\/([^/]+)\/(\d+))"/g;
   const matches = [];
   let m;
@@ -62,28 +58,48 @@ function extractFromListing(rawBody, dealer) {
     if (seen.has(id)) continue;
     seen.add(id);
 
-    // Take a generous block — next anchor or +3000 chars
-    const end = matches[i + 1] ? matches[i + 1].index : index + 3000;
-    const block = html.slice(index, Math.min(end, index + 3000));
+    const end = matches[i + 1] ? matches[i + 1].index : index + 4000;
+    const block = html.slice(index, Math.min(end, index + 4000));
 
-    // Image src from CDN
-    const imgM  = block.match(/src="(https:\/\/images\.patiotuerca\.com\/[^"]+\.jpg)"/);
-    // Title from alt attribute
-    const altM  = block.match(/alt="([^"]+)"/);
-    // Price: $10,990 or $60.900 — appears as text, could be comma or period separated
-    const priceM = block.match(/\$\s*([\d][0-9,.']*[0-9])/);
-    // Year 4-digit
-    const yearM  = block.match(/\b(19[89]\d|20[012]\d)\b/);
-    // KMs: 380,000 Kms or 380.000 Kms
-    const kmM    = block.match(/([\d][0-9,.]*)\s*Kms?/i);
+    // Image
+    const imgM = block.match(/src="(https:\/\/images\.patiotuerca\.com\/[^"]+\.jpg)"/);
+    // Title from alt
+    const altM = block.match(/alt="([^"]+)"/);
+    // Year
+    const yearM = block.match(/\b(19[89]\d|20[012]\d)\b/);
+
+    // Price — Patiotuerca uses patterns like:
+    // <p class="...">$10,990</p>  or  text-price  or  font-bold ... $
+    // Try multiple patterns
+    const pricePatterns = [
+      /class="[^"]*font-bold[^"]*"[^>]*>\s*\$([\d,.']+)/,
+      /class="[^"]*price[^"]*"[^>]*>\s*\$([\d,.']+)/,
+      />\s*\$\s*([\d][0-9,.']{2,})\s*</,
+    ];
+    let price = '';
+    for (const pat of pricePatterns) {
+      const pm = block.match(pat);
+      if (pm) { price = `$${pm[1]}`; break; }
+    }
+
+    // KMs — patterns like "380,000 Kms" or "380.000 Kms"
+    const kmPatterns = [
+      />([\d][0-9,.]*)\s*Kms?</i,
+      /class="[^"]*mileage[^"]*"[^>]*>\s*([\d,.']+)/i,
+    ];
+    let kms = '';
+    for (const pat of kmPatterns) {
+      const km = block.match(pat);
+      if (km && km[1] !== yearM?.[1]) { kms = `${km[1]} Kms`; break; }
+    }
 
     vehicles.push({
       id,
       title: altM   ? altM[1].trim()  : path.split('/').slice(-2,-1)[0].replace(/-/g,' '),
-      price: priceM ? `$${priceM[1]}` : '',
-      year:  yearM  ? yearM[1]        : '',
-      kms:   kmM    ? `${kmM[1]} Kms` : '',
-      img:   imgM   ? imgM[1]         : '',
+      price,
+      year:  yearM  ? yearM[1] : '',
+      kms,
+      img:   imgM   ? imgM[1] : '',
       url:   `https://ecuador.patiotuerca.com${path}`,
       dealer: dealer.name,
       dealerId: dealer.id,
@@ -135,17 +151,20 @@ module.exports = async (req, res) => {
       const d = list[0];
       const url = `https://ecuador.patiotuerca.com/dealers-profile/${d.slug}/${d.id}?page=1`;
       const r = await getPage(url);
-      const found = extractFromListing(r.body, d);
-
-      // Show unescaped block of first card to verify price/kms presence
       const html = unescapeHtml(r.body);
-      const idx = html.indexOf('href="/vehicle/');
-      const cardBlock = idx >= 0 ? html.slice(idx, idx + 1200) : 'not found';
+
+      // Show full first card — from first /vehicle/ to second /vehicle/
+      const idx1 = html.indexOf('href="/vehicle/');
+      const idx2 = html.indexOf('href="/vehicle/', idx1 + 1);
+      const fullCard = idx1 >= 0 ? html.slice(idx1, idx2 > 0 ? idx2 : idx1 + 4000) : 'not found';
+
+      const found = extractFromListing(r.body, d);
 
       return res.status(200).json({
         extractedCount: found.length,
-        sample: found.slice(0, 3),
-        cardBlock,
+        sample: found.slice(0, 2),
+        // Full HTML of one card — this shows us exactly where price/kms are
+        fullCard,
       });
     }
 
