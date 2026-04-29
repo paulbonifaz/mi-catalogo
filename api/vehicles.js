@@ -62,12 +62,13 @@ function extractFromHtml(rawBody, dealer) {
     seen.add(id);
     const end = Math.min((matches[i+1]?.index || index+4000), index+4000);
     const block = html.slice(index, end);
-    const imgM   = block.match(/src="(https:\/\/images\.patiotuerca\.com\/[^"]+\.jpg)"/);
+    const imgM   = block.match(/src="(https:\/\/images\.patiotuerca\.com\/[^"]+\.jpe?g)"/);
     const h3M    = block.match(/<h3[^>]*>([^<]+)<\/h3>/);
     const altM   = block.match(/alt="([^"]+)"/);
     const yearM  = block.match(/<p class="text-sm font-bold[^"]*">\s*(\d{4})\s*<\/p>/);
-    const kmsM   = block.match(/<span>\s*([\d,.']+)\s*Kms\s*<\/span>/i);
-    const priceM = block.match(/<span class="text-lg font-semibold[^"]*">\s*\$([\d,.']+)\s*<\/span>/);
+    const kmsM   = block.match(/<span>\s*([\d,.']+)\s*Kms/i);
+    const priceM = block.match(/<span class="text-lg font-semibold[^"]*">\s*\$([\d,.']+)\s*<\/span>/) ||
+                   block.match(/>\s*\$\s*([\d,.']{3,})\s*</);
     vehicles.push({
       id,
       title: (h3M?.[1] || altM?.[1] || id).trim(),
