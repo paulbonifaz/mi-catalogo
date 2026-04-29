@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="img-src * data: blob:;">
 <title>Autos Quito — Catálogo de Vehículos</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
@@ -304,7 +305,7 @@ function renderGrid() {
     <div class="card" onclick='openModal(${JSON.stringify(v).replace(/'/g,"&#39;")})'>
       <div class="card-img-wrap">
         ${v.img
-          ? `<img class="card-img" src="${v.img}" alt="${v.title}" loading="lazy" onerror="this.onerror=null;this.style.display='none';this.nextElementSibling.style.display='flex'">`
+          ? `<img class="card-img" src="${v.img}" alt="${v.title}" onerror="this.onerror=null;this.style.display='none';this.nextElementSibling.style.display='flex'">`
           : ''}
         <div class="card-placeholder" style="display:${v.img?'none':'flex'}">🚗</div>
         <span class="card-dealer-tag">${v.dealer}</span>
