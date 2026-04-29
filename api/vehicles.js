@@ -8,94 +8,131 @@ const DEALERS = [
 
 function getPage(url) {
   return new Promise((resolve) => {
-    const opts = {
-      headers: {
-        'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/124 Safari/537.36',
-        'Accept': 'text/html,*/*;q=0.9',
-        'Accept-Language': 'es-EC,es;q=0.9',
-      },
-      timeout: 15000,
-    };
-
-    const doGet = (targetUrl, hops) => {
+    const doGet = (u, hops) => {
       if (hops > 8) return resolve({ ok: false, body: '', status: 0 });
-      https.get(targetUrl, opts, (res) => {
-        if ([301, 302, 303, 307, 308].includes(res.statusCode) && res.headers.location) {
+      https.get(u, {
+        headers: {
+          'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/124 Safari/537.36',
+          'Accept': 'text/html,*/*;q=0.9',
+          'Accept-Language': 'es-EC,es;q=0.9',
+        },
+        timeout: 20000,
+      }, (res) => {
+        if ([301,302,303,307,308].includes(res.statusCode) && res.headers.location) {
           const loc = res.headers.location;
-          const next = loc.startsWith('http') ? loc : `https://ecuador.patiotuerca.com${loc}`;
           res.resume();
-          return doGet(next, hops + 1);
+          return doGet(loc.startsWith('http') ? loc : `https://ecuador.patiotuerca.com${loc}`, hops + 1);
         }
         let body = '';
         res.setEncoding('utf8');
-        res.on('data', d => { body += d; });
+        res.on('data', d => body += d);
         res.on('end', () => resolve({ ok: res.statusCode === 200, body, status: res.statusCode }));
-      }).on('error', () => resolve({ ok: false, body: '', status: -1 }))
-        .on('timeout', () => resolve({ ok: false, body: '', status: -2 }));
+      }).on('error', () => resolve({ ok: false, body: '', status: -1 }));
     };
-
     doGet(url, 0);
   });
 }
 
-function extractVehicles(html, dealer) {
-  const vehicles = [];
+// Extract vehicle links from dealer listing page
+function extractLinks(html) {
+  const links = [];
   const seen = new Set();
+  const re = /href="(\/vehicle\/[^"?#]+)"/g;
+  let m;
+  while ((m = re.exec(html)) !== null) {
+    const path = m[1];
+    if (!seen.has(path)) {
+      seen.add(path);
+      links.push(path);
+    }
+  }
+  return links;
+}
 
-  // Try __NEXT_DATA__ first
+// Extract vehicle data from individual vehicle page
+function extractVehicleData(html, path, dealer) {
+  // Try to get __NEXT_DATA__ from individual vehicle page
   const ndMatch = html.match(/<script id="__NEXT_DATA__"[^>]*>(\{[\s\S]*?\})<\/script>/);
   if (ndMatch) {
     try {
       const nd = JSON.parse(ndMatch[1]);
       const flat = JSON.stringify(nd);
-      // Match vehicle objects: need id, brand, model, price
-      const re = /"id"\s*:\s*(\d{5,})[^}]{0,400}"brand"\s*:\s*"([^"]+)"[^}]{0,400}"model"\s*:\s*"([^"]+)"[^}]{0,400}"price"\s*:\s*(\d+)/g;
-      let m;
-      while ((m = re.exec(flat)) !== null) {
-        const id = m[1];
-        if (seen.has(id)) continue;
-        seen.add(id);
-        const chunk = flat.slice(m.index, m.index + 800);
-        const year    = (chunk.match(/"year"\s*:\s*(\d{4})/) || [])[1] || '';
-        const mileage = (chunk.match(/"mileage"\s*:\s*(\d+)/) || [])[1] || '';
-        const slug    = (chunk.match(/"slug"\s*:\s*"([^"]+)"/) || [])[1] || '';
-        const img     = (chunk.match(/"mainImage"\s*:\s*"([^"]+)"/) || [])[1] || '';
-        const ver     = (chunk.match(/"version"\s*:\s*"([^"]+)"/) || [])[1] || '';
-        vehicles.push({
+      const brand   = (flat.match(/"brand"\s*:\s*"([^"]+)"/) || [])[1] || '';
+      const model   = (flat.match(/"model"\s*:\s*"([^"]+)"/) || [])[1] || '';
+      const version = (flat.match(/"version"\s*:\s*"([^"]+)"/) || [])[1] || '';
+      const price   = (flat.match(/"price"\s*:\s*(\d+)/) || [])[1] || '';
+      const year    = (flat.match(/"year"\s*:\s*(\d{4})/) || [])[1] || '';
+      const mileage = (flat.match(/"mileage"\s*:\s*(\d+)/) || [])[1] || '';
+      const img     = (flat.match(/"mainImage"\s*:\s*"([^"]+)"/) || [])[1] || '';
+      const id      = path.split('/').pop();
+      if (brand && price) {
+        return {
           id,
-          title: [m[2], m[3], ver].filter(Boolean).join(' · '),
-          price: `$${Number(m[4]).toLocaleString('en-US')}`,
+          title: [brand, model, version].filter(Boolean).join(' · '),
+          price: `$${Number(price).toLocaleString('en-US')}`,
           year,
           kms: mileage ? `${Number(mileage).toLocaleString('en-US')} Kms` : '',
-          img: (img || '').replace(/\\\//g, '/').replace(/\\u002F/g, '/'),
-          url: slug
-            ? `https://ecuador.patiotuerca.com/vehicle/${slug.replace(/\\\//g,'/')}/${id}`
-            : `https://ecuador.patiotuerca.com/vehicle/${id}`,
+          img: img.replace(/\\\//g,'/').replace(/\\u002F/g,'/'),
+          url: `https://ecuador.patiotuerca.com${path}`,
           dealer: dealer.name,
           dealerId: dealer.id,
-        });
+        };
       }
-      if (vehicles.length > 0) return vehicles;
-    } catch (_) {}
+    } catch(_) {}
   }
 
-  // HTML fallback
-  const linkRe = /href="(\/vehicle\/[^"?#]+\/(\d+))"/g;
-  let m2;
-  while ((m2 = linkRe.exec(html)) !== null) {
-    const path = m2[1];
-    const id   = m2[2];
+  // Fallback: parse HTML meta tags and OG tags
+  const title  = (html.match(/<meta property="og:title" content="([^"]+)"/) || 
+                  html.match(/<title>([^<]+)<\/title>/) || [])[1] || '';
+  const img    = (html.match(/<meta property="og:image" content="([^"]+)"/) || [])[1] || '';
+  const desc   = (html.match(/<meta property="og:description" content="([^"]+)"/) || [])[1] || '';
+  const priceM = html.match(/\$\s*([\d,]+)/);
+  const yearM  = html.match(/\b(19[89]\d|20[012]\d)\b/);
+  const kmM    = html.match(/([\d.,]+)\s*[Kk]ms?/);
+  const id     = path.split('/').pop();
+
+  return {
+    id,
+    title: title.replace(/\s*\|.*$/, '').trim() || desc.slice(0,60) || id,
+    price: priceM ? `$${priceM[1]}` : '',
+    year:  yearM ? yearM[1] : '',
+    kms:   kmM ? `${kmM[1]} Kms` : '',
+    img,
+    url: `https://ecuador.patiotuerca.com${path}`,
+    dealer: dealer.name,
+    dealerId: dealer.id,
+  };
+}
+
+// Parse listing page for inline vehicle data (price/year/km shown in cards)
+function extractFromListing(html, dealer) {
+  const vehicles = [];
+  const seen = new Set();
+
+  // Patiotuerca renders cards - each card has image, title h3, year, kms, price
+  // Strategy: split HTML by vehicle link, then parse each block
+  const parts = html.split(/(?=<a[^>]+href="\/vehicle\/)/);
+
+  for (const part of parts) {
+    const linkM = part.match(/href="(\/vehicle\/([^"?#]+)\/(\d+))"/);
+    if (!linkM) continue;
+    const path = linkM[1];
+    const id   = linkM[3];
     if (seen.has(id)) continue;
     seen.add(id);
 
-    const s = Math.max(0, m2.index - 800);
-    const block = html.slice(s, m2.index + 200);
+    const block = part.slice(0, 1200);
 
-    const priceM = block.match(/\$\s*([\d,]+)/);
+    // Image from patiotuerca CDN
+    const imgM  = block.match(/https:\/\/images\.patiotuerca\.com\/[^"'\s)]+/);
+    // Title from h3
+    const h3M   = block.match(/<h3[^>]*>\s*([^<]+)\s*<\/h3>/i);
+    // Price $XX,XXX
+    const priceM = block.match(/\$([\d,]+)/);
+    // Year 4-digit
     const yearM  = block.match(/\b(19[89]\d|20[012]\d)\b/);
-    const kmM    = block.match(/([\d.,]+)\s*[Kk]ms?/);
-    const imgM   = block.match(/src="(https:\/\/images\.patiotuerca\.com[^"]+)"/);
-    const h3M    = block.match(/<h3[^>]*>([^<]+)<\/h3>/i);
+    // KMs
+    const kmM    = block.match(/([\d.,]+)\s*Kms?/i);
 
     if (!priceM && !h3M) continue;
 
@@ -103,45 +140,42 @@ function extractVehicles(html, dealer) {
       id,
       title: h3M ? h3M[1].trim() : path.split('/').slice(-2,-1)[0].replace(/-/g,' '),
       price: priceM ? `$${priceM[1]}` : '',
-      year:  yearM ? yearM[1] : '',
-      kms:   kmM   ? `${kmM[1]} Kms` : '',
-      img:   imgM  ? imgM[1] : '',
+      year:  yearM  ? yearM[1]  : '',
+      kms:   kmM    ? `${kmM[1]} Kms` : '',
+      img:   imgM   ? imgM[0]   : '',
       url:   `https://ecuador.patiotuerca.com${path}`,
       dealer: dealer.name,
       dealerId: dealer.id,
     });
   }
-
   return vehicles;
 }
 
 async function loadDealer(dealer) {
-  const all = [];
-  const seen = new Set();
+  const allVehicles = [];
+  const seenIds = new Set();
 
   for (let page = 1; page <= 20; page++) {
     const url = `https://ecuador.patiotuerca.com/dealers-profile/${dealer.slug}/${dealer.id}?page=${page}`;
     const res = await getPage(url);
+    if (!res.ok || !res.body) break;
 
-    if (!res.ok) break;
-
-    const found = extractVehicles(res.body, dealer);
+    const found = extractFromListing(res.body, dealer);
     if (found.length === 0) break;
 
     let added = 0;
     for (const v of found) {
-      if (!seen.has(v.id)) {
-        seen.add(v.id);
-        all.push(v);
+      if (v.id && !seenIds.has(v.id)) {
+        seenIds.add(v.id);
+        allVehicles.push(v);
         added++;
       }
     }
     if (added === 0) break;
-
     if (!res.body.includes('Siguiente')) break;
   }
 
-  return all;
+  return allVehicles;
 }
 
 module.exports = async (req, res) => {
@@ -157,13 +191,19 @@ module.exports = async (req, res) => {
       const d = list[0];
       const url = `https://ecuador.patiotuerca.com/dealers-profile/${d.slug}/${d.id}?page=1`;
       const r = await getPage(url);
+      const found = extractFromListing(r.body, d);
       return res.status(200).json({
         status: r.status,
         ok: r.ok,
         bodyLen: r.body.length,
-        hasNextData: r.body.includes('__NEXT_DATA__'),
         vehicleLinkCount: (r.body.match(/href="\/vehicle\//g) || []).length,
-        first500: r.body.slice(0, 500),
+        extractedCount: found.length,
+        sample: found.slice(0, 3),
+        // Show a snippet of HTML around first vehicle link for debugging
+        htmlSnippet: (() => {
+          const idx = r.body.indexOf('/vehicle/');
+          return idx > 0 ? r.body.slice(Math.max(0,idx-200), idx+600) : 'not found';
+        })(),
       });
     }
 
@@ -172,6 +212,6 @@ module.exports = async (req, res) => {
     res.status(200).json({ vehicles, total: vehicles.length, updated: new Date().toISOString() });
 
   } catch (e) {
-    res.status(500).json({ error: String(e.message), stack: String(e.stack).slice(0, 300) });
+    res.status(500).json({ error: String(e.message), stack: String(e.stack).slice(0,400) });
   }
 };
