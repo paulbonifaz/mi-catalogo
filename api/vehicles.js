@@ -1,135 +1,129 @@
 const https = require('https');
+const http = require('http');
 
 const DEALERS = [
-  { id: '1167', name: 'Autos Quito' },
-  { id: '1378', name: 'Sucursal' },
-  { id: '1570', name: '10 de Agosto' },
+  { id: '1167', name: 'Autos Quito', slug: 'autos-quito' },
+  { id: '1378', name: 'Sucursal', slug: 'autos-quito-sucursal' },
+  { id: '1570', name: '10 de Agosto', slug: 'autos-quito-10-de-agosto' },
 ];
 
-function fetchJSON(url) {
+function fetchUrl(url, redirectCount = 0) {
   return new Promise((resolve, reject) => {
+    if (redirectCount > 10) return reject(new Error('Too many redirects'));
+    const lib = url.startsWith('https') ? https : http;
     const options = {
       headers: {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
-        'Accept': 'application/json, text/plain, */*',
-        'Accept-Language': 'es-EC,es;q=0.9',
-        'Referer': 'https://ecuador.patiotuerca.com/',
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
+        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+        'Accept-Language': 'es-EC,es;q=0.9,en;q=0.8',
+        'Accept-Encoding': 'identity',
+        'Cache-Control': 'no-cache',
       }
     };
-    https.get(url, options, (res) => {
+    lib.get(url, options, (res) => {
+      // Follow redirects
+      if ([301,302,303,307,308].includes(res.statusCode) && res.headers.location) {
+        const next = res.headers.location.startsWith('http')
+          ? res.headers.location
+          : new URL(res.headers.location, url).href;
+        return fetchUrl(next, redirectCount + 1).then(resolve).catch(reject);
+      }
       let data = '';
       res.on('data', chunk => data += chunk);
-      res.on('end', () => {
-        try { resolve({ status: res.statusCode, body: JSON.parse(data) }); }
-        catch(e) { resolve({ status: res.statusCode, body: null, raw: data.slice(0, 300) }); }
-      });
-    }).on('error', e => resolve({ status: 0, body: null, error: e.message }));
+      res.on('end', () => resolve({ status: res.statusCode, body: data, headers: res.headers }));
+    }).on('error', reject);
   });
 }
 
-module.exports = async (req, res) => {
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'GET');
-
-  const dealerId = req.query.dealer || '1167';
-  const debug = req.query.debug === '1';
-
-  // Probe multiple possible API endpoints
-  const endpointsToTry = [
-    `https://ecuador.patiotuerca.com/api/search?dealer=${dealerId}&page=1&pageSize=12&country=ecuador`,
-    `https://ecuador.patiotuerca.com/api/dealers/${dealerId}/vehicles?page=1&limit=12`,
-    `https://ecuador.patiotuerca.com/api/v2/search?dealerId=${dealerId}&from=0&size=12`,
-    `https://ecuador.patiotuerca.com/api/v1/dealers/${dealerId}/listings?page=1`,
-    `https://ecuador.patiotuerca.com/_next/data/index.json?dealerSlug=autos-quito&dealerId=${dealerId}`,
-  ];
-
-  if (debug) {
-    const results = {};
-    for (const url of endpointsToTry) {
-      results[url] = await fetchJSON(url);
-    }
-    return res.status(200).json(results);
-  }
-
-  // Try each endpoint until one works
-  let vehicles = [];
-  for (const url of endpointsToTry) {
-    const result = await fetchJSON(url);
-    if (!result.body) continue;
-    const body = result.body;
-    const items = body.results || body.vehicles || body.data || body.hits || body.items || [];
-    if (Array.isArray(items) && items.length > 0) {
-      // Found working endpoint - now fetch all pages
-      vehicles = await fetchAllPages(url, dealerId, items, body);
-      break;
-    }
-  }
-
-  res.status(200).json({ vehicles, total: vehicles.length, updated: new Date().toISOString() });
-};
-
-async function fetchAllPages(workingUrl, dealerId, firstItems, firstBody) {
+function parseVehiclesFromHTML(html, dealer) {
   const vehicles = [];
-  const pageSize = 24;
+  const seen = new Set();
 
-  function mapItem(raw, dealerName) {
-    const item = raw._source || raw;
-    const brand = item.brand || item.marca || '';
-    const model = item.model || item.modelo || '';
-    const version = item.version || item.version_name || item.trim || '';
-    const price = item.price || item.precio || 0;
-    const mileage = item.mileage || item.kilometraje || item.km || 0;
-    const year = item.year || item.anio || item.año || '';
-    const id = item.id || item._id || item.vehicleId || '';
-    const slug = item.slug || item.url_slug || '';
-    const img = item.mainImage || item.main_image || item.thumbnail ||
-                (Array.isArray(item.images) ? item.images[0] : '') || '';
-    const urlPath = item.url || (slug ? `/vehicle/${slug}/${id}` : `/vehicle/${id}`);
-    return {
-      id: String(id),
-      title: [brand, model, version].filter(Boolean).join(' · ') || item.title || item.name || String(id),
-      price: price ? `$${Number(price).toLocaleString('en-US')}` : '',
-      year: String(year),
-      kms: mileage ? `${Number(mileage).toLocaleString('en-US')} Kms` : '',
-      img: img.startsWith('http') ? img : (img ? 'https://ecuador.patiotuerca.com' + img : ''),
-      url: urlPath.startsWith('http') ? urlPath : 'https://ecuador.patiotuerca.com' + urlPath,
-      dealer: 'Autos Quito',
-      dealerId,
-    };
+  // Extract Next.js __NEXT_DATA__ JSON embedded in the page
+  const nextDataMatch = html.match(/<script id="__NEXT_DATA__" type="application\/json">([\s\S]*?)<\/script>/);
+  if (nextDataMatch) {
+    try {
+      const nextData = JSON.parse(nextDataMatch[1]);
+      // Walk the props tree to find vehicle listings
+      const str = JSON.stringify(nextData);
+      // Find vehicle arrays by looking for objects with brand+price+mileage
+      const vehiclePattern = /"id":(\d+).*?"brand":"([^"]+)".*?"model":"([^"]+)".*?"price":(\d+)/g;
+      let m;
+      while ((m = vehiclePattern.exec(str)) !== null) {
+        const id = m[1];
+        if (seen.has(id)) continue;
+        seen.add(id);
+        // Extract more details around this match
+        const start = Math.max(0, m.index - 100);
+        const end = Math.min(str.length, m.index + 600);
+        const chunk = str.slice(start, end);
+        const yearM = chunk.match(/"year":(\d{4})/);
+        const mileageM = chunk.match(/"mileage":(\d+)/);
+        const slugM = chunk.match(/"slug":"([^"]+)"/);
+        const imgM = chunk.match(/"mainImage":"([^"]+)"/);
+        const versionM = chunk.match(/"version":"([^"]+)"/);
+        vehicles.push({
+          id,
+          title: [m[2], m[3], versionM?.[1]].filter(Boolean).join(' · '),
+          price: `$${Number(m[4]).toLocaleString('en-US')}`,
+          year: yearM?.[1] || '',
+          kms: mileageM ? `${Number(mileageM[1]).toLocaleString('en-US')} Kms` : '',
+          img: imgM ? imgM[1].replace(/\\u002F/g, '/').replace(/\\\//g, '/') : '',
+          url: slugM
+            ? `https://ecuador.patiotuerca.com/vehicle/${slugM[1].replace(/\\u002F/g,'/')}/${id}`
+            : `https://ecuador.patiotuerca.com/vehicle/${id}`,
+          dealer: dealer.name,
+          dealerId: dealer.id,
+        });
+      }
+      if (vehicles.length > 0) return vehicles;
+    } catch(e) {}
   }
 
-  // Add first page
-  for (const item of firstItems) {
-    const v = mapItem(item);
-    if (v.title) vehicles.push(v);
-  }
+  // Fallback: parse HTML anchor tags with vehicle URLs
+  const linkRe = /href="(\/vehicle\/[^"?#]+)"/g;
+  let m2;
+  while ((m2 = linkRe.exec(html)) !== null) {
+    const path = m2[1];
+    const id = path.split('/').pop();
+    if (!id || seen.has(id)) continue;
+    seen.add(id);
 
-  const total = firstBody.total || firstBody.totalCount || firstBody.count || 0;
-  if (!total || vehicles.length >= total) return vehicles;
+    const idx = m2.index;
+    const block = html.slice(Math.max(0, idx - 1000), idx + 300);
 
-  // Fetch remaining pages
-  let page = 2;
-  while (vehicles.length < total && page <= 20) {
-    let nextUrl;
-    if (workingUrl.includes('page=')) {
-      nextUrl = workingUrl.replace(/page=\d+/, `page=${page}`);
-    } else if (workingUrl.includes('from=')) {
-      nextUrl = workingUrl.replace(/from=\d+/, `from=${(page-1)*pageSize}`);
-    } else {
-      break;
-    }
+    const priceM = block.match(/\$\s*([\d,]+)/);
+    const yearM  = block.match(/\b(19[89]\d|20[012]\d)\b/);
+    const kmM    = block.match(/([\d.,]+)\s*[Kk]ms?/);
+    const imgM   = block.match(/src="(https:\/\/images\.patiotuerca\.com[^"]+)"/);
+    const titleM = block.match(/<h3[^>]*>([^<]+)<\/h3>/i);
 
-    const result = await fetchJSON(nextUrl);
-    if (!result.body) break;
-    const items = result.body.results || result.body.vehicles || result.body.data || result.body.hits || result.body.items || [];
-    if (!items.length) break;
+    const price = priceM ? `$${priceM[1]}` : '';
+    const title = titleM ? titleM[1].trim() : '';
+    if (!price && !title) continue;
 
-    for (const item of items) {
-      const v = mapItem(item);
-      if (v.title) vehicles.push(v);
-    }
-    page++;
+    vehicles.push({
+      id,
+      title: title || path.split('/').slice(-2, -1)[0]?.replace(/-/g,' ') || id,
+      price,
+      year: yearM?.[1] || '',
+      kms: kmM ? `${kmM[1]} Kms` : '',
+      img: imgM?.[1] || '',
+      url: 'https://ecuador.patiotuerca.com' + path,
+      dealer: dealer.name,
+      dealerId: dealer.id,
+    });
   }
 
   return vehicles;
 }
+
+async function fetchDealerAllPages(dealer) {
+  const allVehicles = [];
+  const seenIds = new Set();
+
+  for (let page = 1; page <= 20; page++) {
+    const url = `https://ecuador.patiotuerca.com/dealers-profile/${dealer.slug}/${dealer.id}?page=${page}`;
+    try {
+      const res = await fetchUrl(url);
+      i
