@@ -9,7 +9,7 @@ const DEALERS = [
 function getPage(url) {
   return new Promise((resolve) => {
     const doGet = (u, hops) => {
-      if (hops > 8) return resolve({ ok: false, body: '', status: 0 });
+      if (hops > 8) return resolve({ ok: false, body: '' });
       https.get(u, {
         headers: {
           'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/124 Safari/537.36',
@@ -33,121 +33,70 @@ function getPage(url) {
   });
 }
 
-// Extract vehicle links from dealer listing page
-function extractLinks(html) {
-  const links = [];
-  const seen = new Set();
-  const re = /href="(\/vehicle\/[^"?#]+)"/g;
-  let m;
-  while ((m = re.exec(html)) !== null) {
-    const path = m[1];
-    if (!seen.has(path)) {
-      seen.add(path);
-      links.push(path);
-    }
-  }
-  return links;
-}
+// Based on actual HTML structure:
+// <a target="_blank" rel="noopener noreferrer" href="/vehicle/SLUG/ID">
+//   <div class="group block cursor-pointer">
+//     <div class="relative aspect-[4/3]...">
+//       <picture><source srcSet="IMG_URL" .../><img alt="TITLE" ... src="IMG_URL"/></picture>
+//     </div>
+//     <div class="space-y-0.5">
+//       ... YEAR, KMS, TITLE, PRICE ...
+//     </div>
+//   </div>
+// </a>
 
-// Extract vehicle data from individual vehicle page
-function extractVehicleData(html, path, dealer) {
-  // Try to get __NEXT_DATA__ from individual vehicle page
-  const ndMatch = html.match(/<script id="__NEXT_DATA__"[^>]*>(\{[\s\S]*?\})<\/script>/);
-  if (ndMatch) {
-    try {
-      const nd = JSON.parse(ndMatch[1]);
-      const flat = JSON.stringify(nd);
-      const brand   = (flat.match(/"brand"\s*:\s*"([^"]+)"/) || [])[1] || '';
-      const model   = (flat.match(/"model"\s*:\s*"([^"]+)"/) || [])[1] || '';
-      const version = (flat.match(/"version"\s*:\s*"([^"]+)"/) || [])[1] || '';
-      const price   = (flat.match(/"price"\s*:\s*(\d+)/) || [])[1] || '';
-      const year    = (flat.match(/"year"\s*:\s*(\d{4})/) || [])[1] || '';
-      const mileage = (flat.match(/"mileage"\s*:\s*(\d+)/) || [])[1] || '';
-      const img     = (flat.match(/"mainImage"\s*:\s*"([^"]+)"/) || [])[1] || '';
-      const id      = path.split('/').pop();
-      if (brand && price) {
-        return {
-          id,
-          title: [brand, model, version].filter(Boolean).join(' · '),
-          price: `$${Number(price).toLocaleString('en-US')}`,
-          year,
-          kms: mileage ? `${Number(mileage).toLocaleString('en-US')} Kms` : '',
-          img: img.replace(/\\\//g,'/').replace(/\\u002F/g,'/'),
-          url: `https://ecuador.patiotuerca.com${path}`,
-          dealer: dealer.name,
-          dealerId: dealer.id,
-        };
-      }
-    } catch(_) {}
-  }
-
-  // Fallback: parse HTML meta tags and OG tags
-  const title  = (html.match(/<meta property="og:title" content="([^"]+)"/) || 
-                  html.match(/<title>([^<]+)<\/title>/) || [])[1] || '';
-  const img    = (html.match(/<meta property="og:image" content="([^"]+)"/) || [])[1] || '';
-  const desc   = (html.match(/<meta property="og:description" content="([^"]+)"/) || [])[1] || '';
-  const priceM = html.match(/\$\s*([\d,]+)/);
-  const yearM  = html.match(/\b(19[89]\d|20[012]\d)\b/);
-  const kmM    = html.match(/([\d.,]+)\s*[Kk]ms?/);
-  const id     = path.split('/').pop();
-
-  return {
-    id,
-    title: title.replace(/\s*\|.*$/, '').trim() || desc.slice(0,60) || id,
-    price: priceM ? `$${priceM[1]}` : '',
-    year:  yearM ? yearM[1] : '',
-    kms:   kmM ? `${kmM[1]} Kms` : '',
-    img,
-    url: `https://ecuador.patiotuerca.com${path}`,
-    dealer: dealer.name,
-    dealerId: dealer.id,
-  };
-}
-
-// Parse listing page for inline vehicle data (price/year/km shown in cards)
 function extractFromListing(html, dealer) {
   const vehicles = [];
   const seen = new Set();
 
-  // Patiotuerca renders cards - each card has image, title h3, year, kms, price
-  // Strategy: split HTML by vehicle link, then parse each block
-  const parts = html.split(/(?=<a[^>]+href="\/vehicle\/)/);
+  // Split on each vehicle anchor tag
+  // Pattern: <a target="_blank" rel="noopener noreferrer" href="/vehicle/...">
+  const cardSplitter = /<a\s[^>]*href="(\/vehicle\/[^"]+\/(\d+))"[^>]*>/g;
+  const matches = [];
+  let m;
+  while ((m = cardSplitter.exec(html)) !== null) {
+    matches.push({ path: m[1], id: m[2], index: m.index });
+  }
 
-  for (const part of parts) {
-    const linkM = part.match(/href="(\/vehicle\/([^"?#]+)\/(\d+))"/);
-    if (!linkM) continue;
-    const path = linkM[1];
-    const id   = linkM[3];
+  for (let i = 0; i < matches.length; i++) {
+    const { path, id, index } = matches[i];
     if (seen.has(id)) continue;
     seen.add(id);
 
-    const block = part.slice(0, 1200);
+    // Get block from this anchor to next anchor (or +2000 chars)
+    const end = matches[i + 1] ? matches[i + 1].index : index + 2000;
+    const block = html.slice(index, Math.min(end, index + 2000));
 
-    // Image from patiotuerca CDN
-    const imgM  = block.match(/https:\/\/images\.patiotuerca\.com\/[^"'\s)]+/);
-    // Title from h3
-    const h3M   = block.match(/<h3[^>]*>\s*([^<]+)\s*<\/h3>/i);
-    // Price $XX,XXX
+    // Image: src="https://images.patiotuerca.com/..."
+    const imgM = block.match(/src="(https:\/\/images\.patiotuerca\.com\/[^"]+)"/);
+
+    // Title: alt="..." on the img tag
+    const altM = block.match(/alt="([^"]+)"/);
+
+    // Price: $XX,XXX — appears as text node, look for $ followed by digits
     const priceM = block.match(/\$([\d,]+)/);
-    // Year 4-digit
-    const yearM  = block.match(/\b(19[89]\d|20[012]\d)\b/);
-    // KMs
-    const kmM    = block.match(/([\d.,]+)\s*Kms?/i);
 
-    if (!priceM && !h3M) continue;
+    // Year: 4-digit year 19xx or 20xx
+    const yearM = block.match(/\b(19[89]\d|20[012]\d)\b/);
+
+    // KMs: number followed by Kms
+    const kmM = block.match(/([\d,.]+)\s*Kms?/i);
+
+    if (!priceM && !altM) continue;
 
     vehicles.push({
       id,
-      title: h3M ? h3M[1].trim() : path.split('/').slice(-2,-1)[0].replace(/-/g,' '),
+      title: altM ? altM[1].trim() : path.split('/').slice(-2,-1)[0].replace(/-/g,' '),
       price: priceM ? `$${priceM[1]}` : '',
       year:  yearM  ? yearM[1]  : '',
       kms:   kmM    ? `${kmM[1]} Kms` : '',
-      img:   imgM   ? imgM[0]   : '',
+      img:   imgM   ? imgM[1]   : '',
       url:   `https://ecuador.patiotuerca.com${path}`,
       dealer: dealer.name,
       dealerId: dealer.id,
     });
   }
+
   return vehicles;
 }
 
@@ -192,18 +141,14 @@ module.exports = async (req, res) => {
       const url = `https://ecuador.patiotuerca.com/dealers-profile/${d.slug}/${d.id}?page=1`;
       const r = await getPage(url);
       const found = extractFromListing(r.body, d);
+      // Show raw HTML of first card block for inspection
+      const firstCardIdx = r.body.indexOf('href="/vehicle/');
+      const cardSnippet = firstCardIdx >= 0 ? r.body.slice(firstCardIdx, firstCardIdx + 800) : 'not found';
       return res.status(200).json({
         status: r.status,
-        ok: r.ok,
-        bodyLen: r.body.length,
-        vehicleLinkCount: (r.body.match(/href="\/vehicle\//g) || []).length,
         extractedCount: found.length,
         sample: found.slice(0, 3),
-        // Show a snippet of HTML around first vehicle link for debugging
-        htmlSnippet: (() => {
-          const idx = r.body.indexOf('/vehicle/');
-          return idx > 0 ? r.body.slice(Math.max(0,idx-200), idx+600) : 'not found';
-        })(),
+        cardSnippet,
       });
     }
 
@@ -212,6 +157,6 @@ module.exports = async (req, res) => {
     res.status(200).json({ vehicles, total: vehicles.length, updated: new Date().toISOString() });
 
   } catch (e) {
-    res.status(500).json({ error: String(e.message), stack: String(e.stack).slice(0,400) });
+    res.status(500).json({ error: String(e.message), stack: String(e.stack).slice(0, 400) });
   }
 };
