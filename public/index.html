@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Autos Quito — Catálogo de Vehículos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #f5f4f0;
+    --surface: #ffffff;
+    --border: rgba(0,0,0,0.08);
+    --border-strong: rgba(0,0,0,0.15);
+    --text: #0f1923;
+    --text-muted: #6b7280;
+    --text-faint: #9ca3af;
+    --accent: #e53935;
+    --accent-soft: #fff0f0;
+    --dark: #0f1923;
+    --green: #2e7d32;
+  }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+  }
+
+  /* HERO */
+  .hero {
+    background: var(--dark);
+    padding: 3rem 1.5rem 2.5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(-55deg,transparent,transparent 50px,rgba(255,255,255,.02) 50px,rgba(255,255,255,.02) 100px);
+  }
+  .logo-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 1.5rem;
+    position: relative;
+  }
+  .logo-icon {
+    width: 44px; height: 44px;
+    background: var(--accent);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px;
+  }
+  .logo-text { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: white; }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 5vw, 3rem);
+    color: white;
+    line-height: 1.15;
+    margin-bottom: .75rem;
+    position: relative;
+  }
+  .hero h1 span { color: var(--accent); }
+  .hero p { color: rgba(255,255,255,.5); font-size: 15px; position: relative; }
+  .hero-stats {
+    display: flex; justify-content: center; gap: 2.5rem;
+    margin-top: 2rem; position: relative;
+  }
+  .stat-num { font-size: 2rem; font-weight: 600; color: white; line-height: 1; }
+  .stat-label { font-size: 11px; color: rgba(255,255,255,.35); text-transform: uppercase; letter-spacing:.08em; margin-top:4px; }
+  .live-badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: rgba(229,57,53,.15); border: 1px solid rgba(229,57,53,.3);
+    color: #f08080; font-size: 12px; font-weight: 500;
+    padding: 4px 14px; border-radius: 20px; margin-bottom: 1.25rem;
+    position: relative;
+  }
+  .live-dot {
+    width: 7px; height: 7px; background: var(--accent);
+    border-radius: 50%; animation: blink 1.4s infinite;
+  }
+  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.25} }
+
+  /* TABS */
+  .tab-bar {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    display: flex; overflow-x: auto; gap: 0;
+    scrollbar-width: none;
+  }
+  .tab-bar::-webkit-scrollbar { display: none; }
+  .tab {
+    padding: 13px 20px; font-size: 13px; font-weight: 500;
+    color: var(--text-muted); cursor: pointer; white-space: nowrap;
+    border: none; background: none; border-bottom: 2px solid transparent;
+    font-family: 'DM Sans', sans-serif; transition: color .15s, border-color .15s;
+  }
+  .tab.active { color: var(--dark); border-bottom-color: var(--accent); }
+  .tab:hover:not(.active) { color: var(--text); }
+  .tab-count {
+    display: inline-block; margin-left: 6px;
+    background: var(--bg); border-radius: 10px;
+    padding: 1px 7px; font-size: 11px; color: var(--text-muted);
+  }
+
+  /* CONTROLS */
+  .controls {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 12px 1.5rem;
+    display: flex; gap: 10px; flex-wrap: wrap; align-items: center;
+    position: sticky; top: 0; z-index: 20;
+    box-shadow: 0 2px 8px rgba(0,0,0,.04);
+  }
+  .controls input, .controls select {
+    height: 38px; border: 1px solid var(--border-strong);
+    border-radius: 8px; padding: 0 12px; font-size: 13px;
+    font-family: 'DM Sans', sans-serif; background: var(--bg);
+    color: var(--text); outline: none; transition: border-color .15s;
+  }
+  .controls input { flex: 1; min-width: 180px; }
+  .controls input:focus, .controls select:focus { border-color: var(--accent); }
+  .controls select { min-width: 150px; cursor: pointer; }
+  .btn-refresh {
+    height: 38px; padding: 0 18px;
+    background: var(--dark); color: white; border: none;
+    border-radius: 8px; font-size: 13px; font-weight: 500;
+    cursor: pointer; white-space: nowrap; font-family: 'DM Sans', sans-serif;
+    transition: background .15s; display: flex; align-items: center; gap: 6px;
+  }
+  .btn-refresh:hover { background: #1e2d3d; }
+  .btn-refresh svg { width: 14px; height: 14px; fill: white; }
+  .btn-refresh.loading svg { animation: spin .7s linear infinite; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* RESULT COUNT */
+  .result-info {
+    padding: .75rem 1.5rem .25rem;
+    font-size: 12px; color: var(--text-faint);
+    max-width: 1280px; margin: 0 auto;
+  }
+
+  /* GRID */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    gap: 1.25rem; padding: 1rem 1.5rem 3rem;
+    max-width: 1280px; margin: 0 auto;
+  }
+
+  /* CARD */
+  .card {
+    background: var(--surface);
+    border-radius: 14px; border: 1px solid var(--border);
+    overflow: hidden; text-decoration: none; color: inherit;
+    display: flex; flex-direction: column;
+    transition: transform .18s, box-shadow .18s, border-color .18s;
+  }
+  .card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0,0,0,.09);
+    border-color: var(--border-strong);
+  }
+  .card-img-wrap { position: relative; overflow: hidden; height: 185px; background: var(--bg); }
+  .card-img { width: 100%; height: 185px; object-fit: cover; display: block; transition: transform .3s; }
+  .card:hover .card-img { transform: scale(1.04); }
+  .card-placeholder {
+    width: 100%; height: 185px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 3rem; color: var(--text-faint);
+  }
+  .card-dealer-tag {
+    position: absolute; top: 10px; left: 10px;
+    background: rgba(15,25,35,.75); backdrop-filter: blur(6px);
+    color: white; font-size: 10px; font-weight: 500;
+    padding: 3px 9px; border-radius: 20px;
+  }
+  .card-body { padding: 14px 16px 14px; flex: 1; display: flex; flex-direction: column; gap: 6px; }
+  .card-meta { display: flex; justify-content: space-between; align-items: center; }
+  .card-year { font-size: 12px; font-weight: 600; color: var(--text-muted); }
+  .card-kms {
+    font-size: 11px; color: var(--text-muted);
+    background: var(--bg); padding: 2px 9px; border-radius: 10px;
+  }
+  .card-title { font-size: 15px; font-weight: 500; line-height: 1.35; color: var(--text); }
+  .card-footer {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-top: auto; padding-top: 12px; border-top: 1px solid var(--border);
+  }
+  .card-price { font-size: 19px; font-weight: 600; color: var(--accent); }
+  .card-cta {
+    font-size: 12px; font-weight: 500; color: var(--dark);
+    border: 1px solid var(--border-strong); padding: 4px 12px;
+    border-radius: 6px; transition: background .15s;
+  }
+  .card:hover .card-cta { background: var(--bg); }
+
+  /* STATES */
+  .loading-state {
+    grid-column: 1/-1; text-align: center; padding: 5rem 2rem;
+    color: var(--text-muted);
+  }
+  .spinner-big {
+    width: 40px; height: 40px;
+    border: 3px solid var(--border); border-top-color: var(--dark);
+    border-radius: 50%; animation: spin .7s linear infinite;
+    margin: 0 auto 1rem;
+  }
+  .empty-state { grid-column: 1/-1; text-align: center; padding: 4rem 2rem; color: var(--text-muted); }
+
+  /* FB BANNER */
+  .fb-banner {
+    margin: 1rem 1.5rem 0;
+    max-width: 1280px; margin-left: auto; margin-right: auto;
+    background: #e8f0fe; border: 1px solid #c5d5f5;
+    border-radius: 10px; padding: 14px 18px;
+    display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+  }
+  .fb-banner p { font-size: 13px; color: #1a3a6e; }
+  .fb-link {
+    font-size: 13px; font-weight: 600; color: #1a3a6e;
+    background: white; border: 1px solid #c5d5f5;
+    padding: 6px 16px; border-radius: 8px; text-decoration: none;
+    white-space: nowrap; transition: background .15s;
+  }
+  .fb-link:hover { background: #f0f4ff; }
+
+  /* FOOTER */
+  footer {
+    text-align: center; padding: 2rem;
+    font-size: 12px; color: var(--text-faint);
+    border-top: 1px solid var(--border);
+    background: var(--surface);
+  }
+  footer a { color: var(--text-muted); text-decoration: none; }
+  footer a:hover { color: var(--accent); }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="logo-row">
+    <div class="logo-icon">🚗</div>
+    <span class="logo-text">Autos Quito</span>
+  </div>
+  <div class="live-badge"><span class="live-dot"></span> Catálogo en vivo</div>
+  <h1>Encuentra tu<br><span>próximo vehículo</span></h1>
+  <p>Catálogo actualizado directamente desde Patiotuerca</p>
+  <div class="hero-stats">
+    <div class="stat">
+      <div class="stat-num" id="total-count">—</div>
+      <div class="stat-label">Vehículos</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">3</div>
+      <div class="stat-label">Sucursales</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num" id="last-update">—</div>
+      <div class="stat-label">Actualizado</div>
+    </div>
+  </div>
+</div>
+
+<div class="tab-bar" id="tab-bar">
+  <button class="tab active" data-tab="all" onclick="switchTab(this)">Todos <span class="tab-count" id="cnt-all">—</span></button>
+  <button class="tab" data-tab="1167" onclick="switchTab(this)">Autos Quito <span class="tab-count" id="cnt-1167">—</span></button>
+  <button class="tab" data-tab="1378" onclick="switchTab(this)">Sucursal <span class="tab-count" id="cnt-1378">—</span></button>
+  <button class="tab" data-tab="1570" onclick="switchTab(this)">10 de Agosto <span class="tab-count" id="cnt-1570">—</span></button>
+  <button class="tab" data-tab="fb" onclick="switchTab(this)">Facebook</button>
+</div>
+
+<div class="controls">
+  <input type="text" id="search" placeholder="🔍  Buscar marca, modelo..." oninput="renderGrid()">
+  <select id="sort" onchange="renderGrid()">
+    <option value="">Ordenar por</option>
+    <option value="price-asc">Precio: menor a mayor</option>
+    <option value="price-desc">Precio: mayor a menor</option>
+    <option value="year-desc">Año: más nuevo primero</option>
+    <option value="km-asc">Menor kilometraje</option>
+  </select>
+  <select id="brand" onchange="renderGrid()">
+    <option value="">Todas las marcas</option>
+  </select>
+  <button class="btn-refresh" id="refresh-btn" onclick="loadVehicles()">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.65 6.35A7.96 7.96 0 0012 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08A5.99 5.99 0 0112 18c-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"/></svg>
+    Actualizar
+  </button>
+</div>
+
+<div id="fb-banner" style="display:none" class="fb-banner">
+  <p>Los vehículos de Facebook Marketplace se gestionan directamente en tu perfil.</p>
+  <a href="https://www.facebook.com/marketplace/profile/61579291691451/?ref=permalink&mibextid=dXMIcH" target="_blank" class="fb-link">Ver en Facebook →</a>
+</div>
+
+<p class="result-info" id="result-info"></p>
+
+<div class="grid" id="grid">
+  <div class="loading-state">
+    <div class="spinner-big"></div>
+    <p>Cargando vehículos...</p>
+  </div>
+</div>
+
+<footer>
+  <p>Catálogo oficial de <strong>Autos Quito</strong> &nbsp;·&nbsp;
+    <a href="https://ecuador.patiotuerca.com/dealers-profile/autos-quito/1167" target="_blank">Patiotuerca</a> &nbsp;·&nbsp;
+    <a href="https://www.facebook.com/marketplace/profile/61579291691451/" target="_blank">Facebook Marketplace</a>
+  </p>
+</footer>
+
+<script>
+let allVehicles = [];
+let activeTab = 'all';
+
+// ── This points to your Vercel API ──────────────────────────────────
+const API_URL = '/api/vehicles';
+
+function priceNum(v) { return parseFloat((v.price||'0').replace(/[^0-9.]/g,''))||0; }
+function kmNum(v)    { return parseInt((v.kms||'0').replace(/[^0-9]/g,''))||0; }
+function yearNum(v)  { return parseInt(v.year||0)||0; }
+
+async function loadVehicles() {
+  const btn = document.getElementById('refresh-btn');
+  btn.classList.add('loading');
+  btn.disabled = true;
+  document.getElementById('grid').innerHTML = '<div class="loading-state"><div class="spinner-big"></div><p>Cargando todos los vehículos...</p></div>';
+  document.getElementById('fb-banner').style.display = 'none';
+
+  try {
+    const res = await fetch(API_URL);
+    const data = await res.json();
+    allVehicles = data.vehicles || [];
+
+    // Update stats
+    document.getElementById('total-count').textContent = allVehicles.length;
+    const now = new Date();
+    document.getElementById('last-update').textContent =
+      now.getHours().toString().padStart(2,'0') + ':' + now.getMinutes().toString().padStart(2,'0');
+
+    // Tab counts
+    document.getElementById('cnt-all').textContent = allVehicles.length;
+    ['1167','1378','1570'].forEach(id => {
+      const cnt = allVehicles.filter(v => v.dealerId === id).length;
+      const el = document.getElementById('cnt-' + id);
+      if (el) el.textContent = cnt;
+    });
+
+    // Populate brand filter
+    const brands = [...new Set(allVehicles.map(v => {
+      const parts = v.title.split(/[·\-]/);
+      return parts[0]?.trim() || '';
+    }).filter(Boolean))].sort();
+    const brandSel = document.getElementById('brand');
+    brandSel.innerHTML = '<option value="">Todas las marcas</option>';
+    brands.forEach(b => {
+      const o = document.createElement('option');
+      o.value = b; o.textContent = b;
+      brandSel.appendChild(o);
+    });
+
+    renderGrid();
+  } catch(e) {
+    document.getElementById('grid').innerHTML =
+      `<div class="empty-state"><p>❌ Error al cargar: ${e.message}</p></div>`;
+  } finally {
+    btn.classList.remove('loading');
+    btn.disabled = false;
+  }
+}
+
+function switchTab(el) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+  activeTab = el.dataset.tab;
+
+  const fbBanner = document.getElementById('fb-banner');
+  fbBanner.style.display = activeTab === 'fb' ? 'flex' : 'none';
+
+  renderGrid();
+}
+
+function renderGrid() {
+  const search = document.getElementById('search').value.toLowerCase();
+  const sort   = document.getElementById('sort').value;
+  const brand  = document.getElementById('brand').value.toLowerCase();
+  const grid   = document.getElementById('grid');
+
+  if (activeTab === 'fb') {
+    grid.innerHTML = '<div class="empty-state"><p>Haz clic en el enlace de arriba para ver tus vehículos en Facebook Marketplace.</p></div>';
+    document.getElementById('result-info').textContent = '';
+    return;
+  }
+
+  let list = allVehicles.filter(v => {
+    if (activeTab !== 'all' && v.dealerId !== activeTab) return false;
+    if (brand && !v.title.toLowerCase().includes(brand)) return false;
+    if (search && !v.title.toLowerCase().includes(search)) return false;
+    return true;
+  });
+
+  if (sort === 'price-asc')  list.sort((a,b) => priceNum(a) - priceNum(b));
+  if (sort === 'price-desc') list.sort((a,b) => priceNum(b) - priceNum(a));
+  if (sort === 'year-desc')  list.sort((a,b) => yearNum(b)  - yearNum(a));
+  if (sort === 'km-asc')     list.sort((a,b) => kmNum(a)    - kmNum(b));
+
+  document.getElementById('result-info').textContent =
+    list.length + ' vehículo' + (list.length !== 1 ? 's' : '') + ' encontrado' + (list.length !== 1 ? 's' : '');
+
+  if (list.length === 0) {
+    grid.innerHTML = '<div class="empty-state"><p>No se encontraron vehículos con esos filtros.</p></div>';
+    return;
+  }
+
+  grid.innerHTML = list.map(v => `
+    <a class="card" href="${v.url}" target="_blank" rel="noopener">
+      <div class="card-img-wrap">
+        ${v.img
+          ? `<img class="card-img" src="${v.img}" alt="${v.title}" loading="lazy"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">`
+          : ''}
+        <div class="card-placeholder" style="display:${v.img?'none':'flex'}">🚗</div>
+        <span class="card-dealer-tag">${v.dealer}</span>
+      </div>
+      <div class="card-body">
+        <div class="card-meta">
+          <span class="card-year">${v.year || '—'}</span>
+          <span class="card-kms">${v.kms || '—'}</span>
+        </div>
+        <div class="card-title">${v.title}</div>
+        <div class="card-footer">
+          <span class="card-price">${v.price}</span>
+          <span class="card-cta">Ver más →</span>
+        </div>
+      </div>
+    </a>
+  `).join('');
+}
+
+loadVehicles();
+</script>
+</body>
+</html>
