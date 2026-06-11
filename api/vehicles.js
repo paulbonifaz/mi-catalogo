@@ -3,7 +3,7 @@ const https = require('https');
 const DEALERS = [
   { id: '1167', name: 'Autos Quito', slug: 'autos-quito' },
   { id: '1378', name: 'Sucursal', slug: 'autos-quito-sucursal' },
-  { id: '1570', name: '10 de Agosto', slug: 'autos-quito-10-de-agosto' }, 
+  { id: '1570', name: '10 de Agosto', slug: 'autos-quito-10-de-agosto' },
 ];
 
 function fetchUrl(url, headers = {}) {
@@ -46,40 +46,76 @@ function cleanHtml(raw) {
     .replace(/<!--\s*-->/g, '');
 }
 
+// Robust extraction: doesn't depend on exact Tailwind class names.
+// Each vehicle card is delimited by an <a href="/vehicle/SLUG/ID"> anchor.
+// Within the card block (until the next anchor) we look for:
+//  - image: first images.patiotuerca.com src/srcSet
+//  - title: <h3>...</h3> content (brand · model), fallback to alt or img alt
+//  - year: a standalone 4-digit number 19xx/20xx
+//  - kms: number followed by "Kms" (case-insensitive)
+//  - price: $ followed by digits/commas/dots
 function extractFromHtml(rawBody, dealer) {
   const vehicles = [];
   const seen = new Set();
   const html = cleanHtml(rawBody);
 
-  const anchorRe = /href="(\/vehicle\/([^/]+)\/(\d+))"/g;
+  const anchorRe = /href="(\/vehicle\/([^/"]+)\/(\d+))"/g;
   const matches = [];
   let m;
-  while ((m = anchorRe.exec(html)) !== null) matches.push({ path: m[1], id: m[3], index: m.index });
+  while ((m = anchorRe.exec(html)) !== null) {
+    matches.push({ path: m[1], id: m[3], index: m.index });
+  }
 
   for (let i = 0; i < matches.length; i++) {
     const { path, id, index } = matches[i];
     if (seen.has(id)) continue;
     seen.add(id);
-    const end = Math.min((matches[i+1]?.index || index+4000), index+4000);
-    const block = html.slice(index, end);
-    const imgM   = block.match(/src="(https:\/\/images\.patiotuerca\.com\/[^"]+\.jpe?g)"/);
-    const h3M    = block.match(/<h3[^>]*>([^<]+)<\/h3>/);
-    const altM   = block.match(/alt="([^"]+)"/);
-    const yearM  = block.match(/<p class="text-sm font-bold[^"]*">\s*(\d{4})\s*<\/p>/);
-    const kmsM   = block.match(/<span>\s*([\d,.']+)\s*Kms/i);
-    const priceM = block.match(/<span class="text-lg font-semibold[^"]*">\s*\$([\d,.']+)\s*<\/span>/) ||
-                   block.match(/>\s*\$\s*([\d,.']{3,})\s*</);
+
+    const end = matches[i + 1] ? matches[i + 1].index : index + 3000;
+    const block = html.slice(index, Math.min(end, index + 3000));
+
+    // Image: any patiotuerca CDN image, prefer .jpg/.jpeg/.png/.webp
+    const imgM = block.match(/(https:\/\/images\.patiotuerca\.com\/[^"'\s)]+\.(?:jpe?g|png|webp))/i);
+
+    // Title: prefer <h3>...</h3> text content
+    const h3M = block.match(/<h3[^>]*>([^<]*(?:<[^/][^>]*>[^<]*<\/[^>]+>[^<]*)*)<\/h3>/);
+    let title = '';
+    if (h3M) {
+      title = h3M[1].replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+    }
+    if (!title) {
+      const altM = block.match(/alt="([^"]+)"/);
+      if (altM) title = altM[1].trim();
+    }
+    if (!title) {
+      // fallback: derive from slug
+      title = path.split('/').slice(-2, -1)[0].replace(/-/g, ' ');
+    }
+
+    // Year: standalone 4-digit year
+    const yearM = block.match(/\b(19[5-9]\d|20[0-3]\d)\b/);
+    const year = yearM ? yearM[1] : '';
+
+    // KMs: number followed by Kms
+    const kmsM = block.match(/([\d][\d,.]*)\s*[Kk]ms\b/);
+    const kms = kmsM ? `${kmsM[1]} Kms` : '';
+
+    // Price: $ followed by a number with thousands separators
+    const priceM = block.match(/\$\s*([\d][\d,.]{2,})/);
+    const price = priceM ? `$${priceM[1].replace(/\.(?=\d{3}\b)/g, ',')}` : '';
+
     vehicles.push({
       id,
-      title: (h3M?.[1] || altM?.[1] || id).trim(),
-      price: priceM ? `$${priceM[1]}` : '',
-      year:  yearM?.[1] || (block.match(/\b(19[89]\d|20[012]\d)\b/)||[])[1] || '',
-      kms:   kmsM   ? `${kmsM[1]} Kms` : '',
-      img:   imgM?.[1] || '',
+      title,
+      price,
+      year,
+      kms,
+      img: imgM ? imgM[1] : '',
       dealer: dealer.name,
       dealerId: dealer.id,
     });
   }
+
   return vehicles;
 }
 
@@ -89,7 +125,7 @@ async function loadDealer(dealer) {
 
   const base = `https://ecuador.patiotuerca.com/dealers-profile/${dealer.slug}/${dealer.id}`;
 
-  // Page 1 — no param needed
+  // Page 1
   const r1 = await fetchUrl(base);
   if (!r1.ok) return allVehicles;
 
@@ -101,7 +137,7 @@ async function loadDealer(dealer) {
     if (v.id && !seenIds.has(v.id)) { seenIds.add(v.id); allVehicles.push(v); }
   }
 
-  // Pages 2+ using vehiclePage param — fetch in parallel batches of 3
+  // Pages 2+ using vehiclePage param, in parallel batches of 3
   const pageNums = [];
   for (let p = 2; p <= Math.min(totalPages, 25); p++) pageNums.push(p);
 
@@ -129,9 +165,33 @@ module.exports = async (req, res) => {
   res.setHeader('Cache-Control', 's-maxage=300, stale-while-revalidate=600');
 
   const dealerId = req.query.dealer;
+  const debug = req.query.debug === '1';
   const list = dealerId ? DEALERS.filter(d => d.id === dealerId) : DEALERS;
 
   try {
+    if (debug) {
+      const d = list[0];
+      const base = `https://ecuador.patiotuerca.com/dealers-profile/${d.slug}/${d.id}`;
+      const r1 = await fetchUrl(base);
+      const html1 = cleanHtml(r1.body);
+      const totalPagesM = html1.match(/P[aá]gina\s+\d+\s+de\s+(\d+)/i);
+      const found1 = extractFromHtml(r1.body, d);
+
+      // Show raw block of first card for inspection
+      const idx = html1.indexOf('href="/vehicle/');
+      const idx2 = html1.indexOf('href="/vehicle/', idx + 1);
+      const cardBlock = idx >= 0 ? html1.slice(idx, idx2 > 0 ? idx2 : idx + 1500) : 'not found';
+
+      return res.status(200).json({
+        status: r1.status,
+        bodyLen: r1.body.length,
+        totalPages: totalPagesM ? parseInt(totalPagesM[1]) : 1,
+        extractedCount: found1.length,
+        sample: found1.slice(0, 3),
+        cardBlock,
+      });
+    }
+
     const results = await Promise.all(list.map(loadDealer));
     const vehicles = results.flat();
     res.status(200).json({
@@ -140,6 +200,6 @@ module.exports = async (req, res) => {
       updated: new Date().toISOString(),
     });
   } catch (e) {
-    res.status(500).json({ error: String(e.message) });
+    res.status(500).json({ error: String(e.message), stack: String(e.stack).slice(0, 400) });
   }
 };
