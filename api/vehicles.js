@@ -12,10 +12,19 @@ function fetchUrl(url, headers = {}) {
       if (hops > 8) return resolve({ ok: false, body: '', status: 0 });
       const req = https.get(u, {
         headers: {
-          'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/124 Safari/537.36',
-          'Accept': 'text/html,application/xhtml+xml,*/*;q=0.9',
-          'Accept-Language': 'es-EC,es;q=0.9',
+          'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36',
+          'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
+          'Accept-Language': 'es-EC,es;q=0.9,en;q=0.8',
+          'Accept-Encoding': 'identity',
           'Referer': 'https://ecuador.patiotuerca.com/',
+          'Sec-Fetch-Dest': 'document',
+          'Sec-Fetch-Mode': 'navigate',
+          'Sec-Fetch-Site': 'same-origin',
+          'Sec-Fetch-User': '?1',
+          'Upgrade-Insecure-Requests': '1',
+          'sec-ch-ua': '"Chromium";v="126", "Not.A/Brand";v="24"',
+          'sec-ch-ua-mobile': '?0',
+          'sec-ch-ua-platform': '"Windows"',
           'Cache-Control': 'no-cache',
           ...headers,
         },
@@ -29,9 +38,9 @@ function fetchUrl(url, headers = {}) {
         let body = '';
         res.setEncoding('utf8');
         res.on('data', d => body += d);
-        res.on('end', () => resolve({ ok: res.statusCode < 400, body, status: res.statusCode }));
+        res.on('end', () => resolve({ ok: res.statusCode < 400, body, status: res.statusCode, headers: res.headers }));
       });
-      req.on('error', () => resolve({ ok: false, body: '', status: -1 }));
+      req.on('error', (e) => resolve({ ok: false, body: '', status: -1, error: e.message }));
       req.on('timeout', () => { req.destroy(); resolve({ ok: false, body: '', status: -2 }); });
     };
     doGet(url, 0);
@@ -185,6 +194,8 @@ module.exports = async (req, res) => {
       return res.status(200).json({
         status: r1.status,
         bodyLen: r1.body.length,
+        responseHeaders: r1.headers,
+        bodySnippet: r1.body.slice(0, 800),
         totalPages: totalPagesM ? parseInt(totalPagesM[1]) : 1,
         extractedCount: found1.length,
         sample: found1.slice(0, 3),
