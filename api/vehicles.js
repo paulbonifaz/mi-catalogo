@@ -10,7 +10,7 @@ const SCRAPER_API_KEY = process.env.SCRAPERAPI_KEY || '';
 
 function fetchUrl(targetUrl) {
   return new Promise((resolve) => {
-    const proxyUrl = `https://api.scraperapi.com/?api_key=${SCRAPER_API_KEY}&url=${encodeURIComponent(targetUrl)}&render=true&country_code=ec`;
+    const proxyUrl = `https://api.scraperapi.com/?api_key=${SCRAPER_API_KEY}&url=${encodeURIComponent(targetUrl)}&render=true&premium=true&country_code=ec`;
 
     const req = https.get(proxyUrl, { timeout: 60000 }, (res) => {
       let body = '';
