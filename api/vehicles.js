@@ -152,7 +152,10 @@ module.exports = async (req, res) => {
       });
     }
 
-    const results = await Promise.all(list.map(loadDealer));
+    const results = [];
+    for (const d of list) {
+      results.push(await loadDealer(d));
+    }
     const vehicles = results.flat();
     res.status(200).json({
       vehicles,
