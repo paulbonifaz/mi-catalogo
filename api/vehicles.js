@@ -10,13 +10,18 @@ const SCRAPER_API_KEY = process.env.SCRAPERAPI_KEY || '';
 
 function fetchUrl(targetUrl) {
   return new Promise((resolve) => {
-    const proxyUrl = `https://api.scraperapi.com/?api_key=${SCRAPER_API_KEY}&url=${encodeURIComponent(targetUrl)}&render=true&premium=true&country_code=ec`;
+    const proxyUrl = `https://api.scraperapi.com/?api_key=${SCRAPER_API_KEY}&url=${encodeURIComponent(targetUrl)}&render=true&ultra_premium=true&country_code=ec`;
 
-    const req = https.get(proxyUrl, { timeout: 60000 }, (res) => {
+    const req = https.get(proxyUrl, { timeout: 70000 }, (res) => {
       let body = '';
       res.setEncoding('utf8');
       res.on('data', d => body += d);
-      res.on('end', () => resolve({ ok: res.statusCode < 400, body, status: res.statusCode }));
+      res.on('end', () => resolve({
+        ok: res.statusCode < 400,
+        body,
+        status: res.statusCode,
+        creditCost: res.headers['sa-credit-cost'] || res.headers['x-scraperapi-credit-cost'] || null,
+      }));
     });
     req.on('error', (e) => resolve({ ok: false, body: '', status: -1, error: e.message }));
     req.on('timeout', () => { req.destroy(); resolve({ ok: false, body: '', status: -2 }); });
@@ -31,7 +36,6 @@ function cleanHtml(raw) {
     .replace(/<!--\s*-->/g, '');
 }
 
-// Robust extraction independent of CSS class names.
 function extractFromHtml(rawBody, dealer) {
   const vehicles = [];
   const seen = new Set();
@@ -100,7 +104,6 @@ async function loadDealer(dealer) {
     if (v.id && !seenIds.has(v.id)) { seenIds.add(v.id); allVehicles.push(v); }
   }
 
-  // Pages 2+ sequential (ScraperAPI render is heavy; avoid too much concurrency)
   for (let page = 2; page <= Math.min(totalPages, 25); page++) {
     const r = await fetchUrl(`${base}?vehiclePage=${page}`);
     if (!r.ok || !r.body) break;
@@ -143,6 +146,7 @@ module.exports = async (req, res) => {
 
       return res.status(200).json({
         status: r1.status,
+        creditCost: r1.creditCost,
         bodyLen: r1.body.length,
         bodySnippet: r1.body.slice(0, 500),
         totalPages: totalPagesM ? parseInt(totalPagesM[1]) : 1,
