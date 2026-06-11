@@ -218,7 +218,7 @@ async function loadVehicles() {
   document.getElementById('grid').innerHTML = '<div class="loading-state"><div class="spinner-big"></div><p>Cargando todos los vehículos...</p></div>';
   document.getElementById('pagination').innerHTML = '';
   try {
-    const res = await fetch('/api/vehicles');
+    const res = await fetch('/vehicles.json');
     const data = await res.json();
     allVehicles = data.vehicles || [];
     document.getElementById('total-count').textContent = allVehicles.length;
