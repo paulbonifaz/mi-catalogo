@@ -1,6 +1,116 @@
 {
   "vehicles": [
     {
+      "id": "1969353",
+      "title": "Peugeot · 207",
+      "price": "$7,990",
+      "year": "2010",
+      "kms": "230,000 Kms",
+      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/1262026/1969353/o_o/1969353_1781310122954_232.jpg",
+      "dealer": "Autos Quito",
+      "dealerId": "1167"
+    },
+    {
+      "id": "1969352",
+      "title": "Jetour · X70",
+      "price": "$15,990",
+      "year": "2022",
+      "kms": "67,000 Kms",
+      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/1262026/1969352/o_o/1969352_1781309908319_878.jpg",
+      "dealer": "Autos Quito",
+      "dealerId": "1167"
+    },
+    {
+      "id": "1969351",
+      "title": "Chevrolet · D-MAX 4X2 CS",
+      "price": "$14,900",
+      "year": "2016",
+      "kms": "170,000 Kms",
+      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/1262026/1969351/o_o/1969351_1781309846850_737.jpg",
+      "dealer": "Autos Quito",
+      "dealerId": "1167"
+    },
+    {
+      "id": "1969350",
+      "title": "Kia · Stonic",
+      "price": "$13,990",
+      "year": "2021",
+      "kms": "100,000 Kms",
+      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/1262026/1969350/o_o/1969350_1781309751033_823.jpg",
+      "dealer": "Autos Quito",
+      "dealerId": "1167"
+    },
+    {
+      "id": "1969349",
+      "title": "Hyundai · i10",
+      "price": "$13,990",
+      "year": "2022",
+      "kms": "31,000 Kms",
+      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/1262026/1969349/o_o/1969349_1781309707887_941.jpg",
+      "dealer": "Autos Quito",
+      "dealerId": "1167"
+    },
+    {
+      "id": "1969348",
+      "title": "JAC · T6 LUXURY",
+      "price": "$14,990",
+      "year": "2022",
+      "kms": "80,000 Kms",
+      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/1262026/1969348/o_o/1969348_1781309661864_906.jpg",
+      "dealer": "Autos Quito",
+      "dealerId": "1167"
+    },
+    {
+      "id": "1969347",
+      "title": "Volkswagen · Virtus",
+      "price": "$16,900",
+      "year": "2022",
+      "kms": "95,000 Kms",
+      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/1262026/1969347/o_o/1969347_1781309584713_439.jpg",
+      "dealer": "Autos Quito",
+      "dealerId": "1167"
+    },
+    {
+      "id": "1969346",
+      "title": "Kia · Rio LX AC",
+      "price": "$17,900",
+      "year": "2024",
+      "kms": "57,000 Kms",
+      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/1262026/1969346/o_o/1969346_1781309478708_731.jpg",
+      "dealer": "Autos Quito",
+      "dealerId": "1167"
+    },
+    {
+      "id": "1969311",
+      "title": "Hyundai · H1",
+      "price": "$20,900",
+      "year": "2015",
+      "kms": "203,000 Kms",
+      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/1262026/1969311/o_o/1969311_1781301131914_990.jpg",
+      "dealer": "Autos Quito",
+      "dealerId": "1167"
+    },
+    {
+      "id": "1969307",
+      "title": "Kia · Sportage",
+      "price": "$18,900",
+      "year": "2018",
+      "kms": "100,000 Kms",
+      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/1262026/1969307/o_o/1969307_1781300333828_489.jpg",
+      "dealer": "Autos Quito",
+      "dealerId": "1167"
+    },
+    {
+      "id": "1969306",
+      "title": "Renault · Duster",
+      "price": "$12,900",
+      "year": "2014",
+      "kms": "180,000 Kms",
+      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/1262026/1969306/o_o/1969306_1781299728708_358.jpg",
+      "dealer": "Autos Quito",
+      "dealerId": "1167"
+    },
+    {
       "id": "1968752",
       "title": "KYC · F3",
       "price": "$12,990",
@@ -37,16 +147,6 @@
       "year": "2023",
       "kms": "80,000 Kms",
       "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/1062026/1968749/o_o/1968749_1781110927502_338.jpg",
-      "dealer": "Autos Quito",
-      "dealerId": "1167"
-    },
-    {
-      "id": "1968748",
-      "title": "Volkswagen · Polo",
-      "price": "$8,990",
-      "year": "2017",
-      "kms": "180,000 Kms",
-      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/1062026/1968748/o_o/1968748_1781110866668_443.jpg",
       "dealer": "Autos Quito",
       "dealerId": "1167"
     },
@@ -167,16 +267,6 @@
       "year": "2013",
       "kms": "140,000 Kms",
       "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/262026/1967189/o_o/1967189_1780410311932_988.jpg",
-      "dealer": "Autos Quito",
-      "dealerId": "1167"
-    },
-    {
-      "id": "1967188",
-      "title": "Chevrolet · D-MAX CRDI HI RIDE",
-      "price": "$29,600",
-      "year": "2024",
-      "kms": "6,000 Kms",
-      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/262026/1967188/o_o/1967188_1780410262840_663.jpg",
       "dealer": "Autos Quito",
       "dealerId": "1167"
     },
@@ -313,7 +403,7 @@
     {
       "id": "1966960",
       "title": "Nissan · QASHQAI ADVANCE",
-      "price": "$21,990",
+      "price": "$20,990",
       "year": "2021",
       "kms": "100,000 Kms",
       "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/162026/1966960/o_o/1966960_1780327435527_502.jpg",
@@ -813,7 +903,7 @@
     {
       "id": "1964247",
       "title": "Chevrolet · Grand Vitara SZ",
-      "price": "$9,990",
+      "price": "$8,990",
       "year": "2013",
       "kms": "240,000 Kms",
       "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/1552026/1964247/o_o/1964247_1778886876965_386.jpg",
@@ -877,16 +967,6 @@
       "year": "2012",
       "kms": "300,000 Kms",
       "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/1552026/1964208/o_o/1964208_1778881546934_426.jpg",
-      "dealer": "Autos Quito",
-      "dealerId": "1167"
-    },
-    {
-      "id": "1964207",
-      "title": "Jeep · Cherokee Laredo",
-      "price": "$30,990",
-      "year": "2017",
-      "kms": "157,000 Kms",
-      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/1552026/1964207/o_o/1964207_1778881464558_300.jpg",
       "dealer": "Autos Quito",
       "dealerId": "1167"
     },
@@ -1147,16 +1227,6 @@
       "year": "2023",
       "kms": "34,000 Kms",
       "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/1252026/1963411/o_o/1963411_1778599710470_785.jpg",
-      "dealer": "Autos Quito",
-      "dealerId": "1167"
-    },
-    {
-      "id": "1963126",
-      "title": "Chevrolet · N300 MAX CARGO 1.2L TM AC",
-      "price": "$7,990",
-      "year": "2019",
-      "kms": "115,000 Kms",
-      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/1052026/1963126/o_o/1963126_1778453230364_737.jpg",
       "dealer": "Autos Quito",
       "dealerId": "1167"
     },
@@ -1429,6 +1499,26 @@
       "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/202592/1919122/o_o/pt_1919122_3160313.jpg",
       "dealer": "Autos Quito",
       "dealerId": "1167"
+    },
+    {
+      "id": "1969333",
+      "title": "Toyota · Yaris",
+      "price": "$15,990",
+      "year": "2020",
+      "kms": "106,000 Kms",
+      "img": "",
+      "dealer": "Sucursal",
+      "dealerId": "1378"
+    },
+    {
+      "id": "1969208",
+      "title": "Chevrolet · Tracker LS Turbo",
+      "price": "$15,990",
+      "year": "2023",
+      "kms": "60,000 Kms",
+      "img": "",
+      "dealer": "Sucursal",
+      "dealerId": "1378"
     },
     {
       "id": "1968709",
@@ -1823,7 +1913,7 @@
     {
       "id": "1962384",
       "title": "Mazda · New BT-50",
-      "price": "$35,990",
+      "price": "$34,990",
       "year": "2023",
       "kms": "65,000 Kms",
       "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/202656/1962384/o_o/pt_1962384_5423259.jpeg",
@@ -2151,6 +2241,36 @@
       "dealerId": "1378"
     },
     {
+      "id": "1969323",
+      "title": "Nissan · X-Trail Classic",
+      "price": "$10,900",
+      "year": "2013",
+      "kms": "250,000 Kms",
+      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/2026612/1969323/o_o/pt_1969323_2131283.jpeg",
+      "dealer": "10 de Agosto",
+      "dealerId": "1570"
+    },
+    {
+      "id": "1969309",
+      "title": "Renault · DUSTER INTENS",
+      "price": "$22,900",
+      "year": "2023",
+      "kms": "80,000 Kms",
+      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/2026612/1969309/o_o/pt_1969309_907389.jpeg",
+      "dealer": "10 de Agosto",
+      "dealerId": "1570"
+    },
+    {
+      "id": "1969308",
+      "title": "Suzuki · Grand Vitara SZ Next",
+      "price": "$14,900",
+      "year": "2016",
+      "kms": "150,000 Kms",
+      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/2026612/1969308/o_o/pt_1969308_609725.jpeg",
+      "dealer": "10 de Agosto",
+      "dealerId": "1570"
+    },
+    {
       "id": "1969075",
       "title": "Chevrolet · Tahoe",
       "price": "$49,900",
@@ -2201,22 +2321,12 @@
       "dealerId": "1570"
     },
     {
-      "id": "1969052",
-      "title": "Chevrolet · Tahoe",
-      "price": "$39,900",
-      "year": "2019",
-      "kms": "70,000 Kms",
-      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/2026611/1969052/o_o/pt_1969052_7726564.jpeg",
-      "dealer": "10 de Agosto",
-      "dealerId": "1570"
-    },
-    {
-      "id": "1969026",
-      "title": "Chevrolet · Captiva Sport",
-      "price": "$10,900",
-      "year": "2017",
-      "kms": "100,000 Kms",
-      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/2026611/1969026/o_o/pt_1969026_1333577.jpeg",
+      "id": "1969023",
+      "title": "Mazda · CX-3 Full",
+      "price": "$30,900",
+      "year": "2023",
+      "kms": "17,000 Kms",
+      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/2026611/1969023/o_o/pt_1969023_1064647.jpeg",
       "dealer": "10 de Agosto",
       "dealerId": "1570"
     },
@@ -2297,16 +2407,6 @@
       "year": "2023",
       "kms": "80,000 Kms",
       "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/2026610/1968714/o_o/pt_1968714_6795612.jpeg",
-      "dealer": "10 de Agosto",
-      "dealerId": "1570"
-    },
-    {
-      "id": "1968680",
-      "title": "Soueast · DX3",
-      "price": "$12,990",
-      "year": "2022",
-      "kms": "80,000 Kms",
-      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/2026610/1968680/o_o/pt_1968680_3791054.jpeg",
       "dealer": "10 de Agosto",
       "dealerId": "1570"
     },
@@ -2477,16 +2577,6 @@
       "year": "2013",
       "kms": "150,000 Kms",
       "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/202664/1967743/o_o/pt_1967743_3993180.jpeg",
-      "dealer": "10 de Agosto",
-      "dealerId": "1570"
-    },
-    {
-      "id": "1967580",
-      "title": "Baic · X35 LUXURI",
-      "price": "$14,900",
-      "year": "2022",
-      "kms": "60,000 Kms",
-      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/202663/1967580/o_o/pt_1967580_6112903.jpeg",
       "dealer": "10 de Agosto",
       "dealerId": "1570"
     },
@@ -3341,6 +3431,6 @@
       "dealerId": "1570"
     }
   ],
-  "total": 334,
-  "updated": "2026-06-12T00:14:16.647035+00:00"
+  "total": 343,
+  "updated": "2026-06-13T01:59:29.557128+00:00"
 }
