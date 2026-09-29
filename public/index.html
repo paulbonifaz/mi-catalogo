@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -212,6 +212,15 @@ function priceNum(v) { return parseFloat((v.price||'0').replace(/[^0-9.]/g,''))|
 function kmNum(v)    { return parseInt((v.kms||'0').replace(/[^0-9]/g,''))||0; }
 function yearNum(v)  { return parseInt(v.year||0)||0; }
 
+const MULTI_WORD_BRANDS = ['great wall','land rover','mercedes benz','alfa romeo','rolls royce','range rover','zx auto','aston martin'];
+function extractBrand(title) {
+  const t = (title || '').toLowerCase().trim();
+  if (t.includes('\u00b7')) return t.split('\u00b7')[0].trim();
+  const body = t.startsWith('autos ') ? t.slice(6) : t;
+  for (const m of MULTI_WORD_BRANDS) { if (body.startsWith(m)) return m; }
+  return body.split(/\s+/)[0] || '';
+}
+
 async function loadVehicles() {
   const btn = document.getElementById('refresh-btn');
   btn.classList.add('loading'); btn.disabled = true;
@@ -229,7 +238,7 @@ async function loadVehicles() {
       const el = document.getElementById('cnt-' + id);
       if (el) el.textContent = allVehicles.filter(v => v.dealerId === id).length;
     });
-    const brands = [...new Set(allVehicles.map(v => v.title.split(/[·\-]/)[0]?.trim()).filter(Boolean))].sort();
+    const brands = [...new Set(allVehicles.map(v => extractBrand(v.title)).filter(Boolean))].sort();
     const sel = document.getElementById('brand');
     sel.innerHTML = '<option value="">Todas las marcas</option>';
     brands.forEach(b => { const o = document.createElement('option'); o.value = b; o.textContent = b; sel.appendChild(o); });
@@ -261,7 +270,7 @@ function getFiltered() {
   let list = allVehicles.filter(v => {
     if (activeTab === 'fb') return false;
     if (activeTab !== 'all' && v.dealerId !== activeTab) return false;
-    if (brand && v.title.split('�')[0]?.trim().toLowerCase() !== brand) return false;
+    if (brand && v.title.split('�')[0]?.trim().toLowerCase() !== brand) return false;
     if (search && !v.title.toLowerCase().includes(search)) return false;
     return true;
   });
@@ -367,3 +376,4 @@ loadVehicles();
 </script>
 </body>
 </html>
+
