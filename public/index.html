@@ -261,7 +261,7 @@ function getFiltered() {
   let list = allVehicles.filter(v => {
     if (activeTab === 'fb') return false;
     if (activeTab !== 'all' && v.dealerId !== activeTab) return false;
-    if (brand && !v.title.toLowerCase().includes(brand)) return false;
+    if (brand && v.title.split('·')[0]?.trim().toLowerCase() !== brand) return false;
     if (search && !v.title.toLowerCase().includes(search)) return false;
     return true;
   });
