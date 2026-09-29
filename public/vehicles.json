@@ -2231,22 +2231,22 @@
       "dealerId": "1167"
     },
     {
-      "id": "1980562",
-      "title": "autos ford explorer eddie bauer quito 2008",
-      "price": "$9,990",
-      "year": "2008",
-      "kms": "195.000 Kms",
-      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/1482026/1980562/o_o/pt_1980562_1786742725160_429.jpg",
-      "dealer": "Autos Quito",
-      "dealerId": "1167"
-    },
-    {
       "id": "1978903",
       "title": "autos nissan xtrail sense quito 2019",
       "price": "$18,900",
       "year": "2019",
       "kms": "130.000 Kms",
       "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/582026/1978903/o_o/pt_1978903_1785965604275_374.jpg",
+      "dealer": "Autos Quito",
+      "dealerId": "1167"
+    },
+    {
+      "id": "1980562",
+      "title": "autos ford explorer eddie bauer quito 2008",
+      "price": "$9,990",
+      "year": "2008",
+      "kms": "195.000 Kms",
+      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/1482026/1980562/o_o/pt_1980562_1786742725160_429.jpg",
       "dealer": "Autos Quito",
       "dealerId": "1167"
     },
@@ -4661,16 +4661,6 @@
       "dealerId": "1570"
     },
     {
-      "id": "1982247",
-      "title": "autos ford escape quito 2015",
-      "price": "$13,900",
-      "year": "2015",
-      "kms": "130.000 Kms",
-      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/2482026/1982247/o_o/pt_1982247_1787611052190_556.jpg",
-      "dealer": "10 de Agosto",
-      "dealerId": "1570"
-    },
-    {
       "id": "1978292",
       "title": "autos peugeot 3008 quito 2020",
       "price": "$18,900",
@@ -4679,8 +4669,18 @@
       "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/382026/1978292/o_o/pt_1978292_1785785335298_734.jpg",
       "dealer": "10 de Agosto",
       "dealerId": "1570"
+    },
+    {
+      "id": "1982247",
+      "title": "autos ford escape quito 2015",
+      "price": "$13,900",
+      "year": "2015",
+      "kms": "130.000 Kms",
+      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/2482026/1982247/o_o/pt_1982247_1787611052190_556.jpg",
+      "dealer": "10 de Agosto",
+      "dealerId": "1570"
     }
   ],
   "total": 468,
-  "updated": "2026-09-29T02:43:20.533776+00:00"
+  "updated": "2026-09-29T03:41:01.590377+00:00"
 }
