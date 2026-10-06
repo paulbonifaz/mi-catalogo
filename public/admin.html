@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Admin — Autos Quito</title>
+<style>
+  :root { --bg:#f5f4f0; --card:#fff; --text:#1d1d1f; --muted:#6b6b70; --line:#e2e0da; --danger:#c62828; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --bg:#121214; --card:#1c1c20; --text:#f2f2f4; --muted:#9a9aa3; --line:#2c2c33; --danger:#ef5350; }
+  }
+  :root[data-theme="dark"] { --bg:#121214; --card:#1c1c20; --text:#f2f2f4; --muted:#9a9aa3; --line:#2c2c33; --danger:#ef5350; }
+  body { margin:0; background:var(--bg); color:var(--text); font-family:system-ui,-apple-system,"Segoe UI",sans-serif; }
+  header { padding:16px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:12px; align-items:center; justify-content:space-between; }
+  h1 { font-size:18px; margin:0; }
+  input { font:inherit; padding:10px 12px; border:1px solid var(--line); border-radius:8px; background:var(--card); color:var(--text); }
+  input[type=search] { flex:1; min-width:180px; }
+  main { padding:16px; max-width:900px; margin:0 auto; }
+  .row { display:flex; gap:12px; align-items:center; padding:12px; border:1px solid var(--line); border-radius:10px; background:var(--card); margin-bottom:8px; }
+  .row img { width:72px; height:54px; object-fit:cover; border-radius:6px; background:var(--line); flex-shrink:0; }
+  .info { flex:1; min-width:0; }
+  .title { font-weight:600; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+  .meta { color:var(--muted); font-size:13px; margin-top:2px; }
+  button { font:inherit; padding:8px 12px; border-radius:8px; border:1px solid var(--danger); background:transparent; color:var(--danger); cursor:pointer; }
+  button:disabled { opacity:.5; cursor:default; }
+  .status { margin:12px 0; font-size:14px; color:var(--muted); min-height:20px; }
+  .status.err { color:var(--danger); }
+  @media (max-width:520px) { header { flex-direction:column; align-items:stretch; } }
+</style>
+</head>
+<body>
+<header>
+  <h1>Admin — eliminar vehículos</h1>
+  <input type="password" id="pwd" placeholder="Contraseña de admin" autocomplete="current-password">
+</header>
+<main>
+  <input type="search" id="q" placeholder="Buscar en la lista..." style="width:100%;box-sizing:border-box;margin-bottom:12px">
+  <div class="status" id="status">Cargando vehículos...</div>
+  <div id="list"></div>
+</main>
+<script>
+  let vehicles = [];
+  const statusEl = document.getElementById('status');
+  const listEl = document.getElementById('list');
+  const qEl = document.getElementById('q');
+  const pwdEl = document.getElementById('pwd');
+
+  function setStatus(msg, isErr) {
+    statusEl.textContent = msg;
+    statusEl.className = 'status' + (isErr ? ' err' : '');
+  }
+
+  function render() {
+    const term = qEl.value.trim().toLowerCase();
+    const shown = vehicles.filter(v => !term || (v.title || '').toLowerCase().includes(term));
+    listEl.textContent = '';
+    for (const v of shown) {
+      const row = document.createElement('div');
+      row.className = 'row';
+
+      const img = document.createElement('img');
+      img.src = v.img || '';
+      img.alt = '';
+      img.loading = 'lazy';
+      row.appendChild(img);
+
+      const info = document.createElement('div');
+      info.className = 'info';
+      const t = document.createElement('div');
+      t.className = 'title';
+      t.textContent = v.title || '(sin titulo)';
+      const m = document.createElement('div');
+      m.className = 'meta';
+      m.textContent = [v.dealer, v.year, v.price, v.kms].filter(Boolean).join(' · ');
+      info.append(t, m);
+      row.appendChild(info);
+
+      const btn = document.createElement('button');
+      btn.textContent = 'Eliminar';
+      btn.addEventListener('click', () => removeVehicle(v, btn));
+      row.appendChild(btn);
+
+      listEl.appendChild(row);
+    }
+    setStatus(`${shown.length} de ${vehicles.length} vehículos`);
+  }
+
+  async function removeVehicle(v, btn) {
+    const password = pwdEl.value;
+    if (!password) { setStatus('Escribe la contraseña de admin primero.', true); pwdEl.focus(); return; }
+    if (!confirm(`¿Eliminar "${v.title}" del catálogo? No volverá a aparecer en futuras corridas.`)) return;
+
+    btn.disabled = true;
+    btn.textContent = 'Eliminando...';
+    try {
+      const res = await fetch('/api/admin/delete', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ id: v.id, password }),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) throw new Error(data.error || `Error ${res.status}`);
+      vehicles = vehicles.filter(x => x.id !== v.id);
+      render();
+      setStatus(`Eliminado: ${v.title}. El cambio se publicará en unos segundos.`);
+    } catch (e) {
+      btn.disabled = false;
+      btn.textContent = 'Eliminar';
+      setStatus(e.message, true);
+    }
+  }
+
+  qEl.addEventListener('input', render);
+
+  (async () => {
+    try {
+      const res = await fetch('/vehicles.json', { cache: 'no-store' });
+      const data = await res.json();
+      vehicles = data.vehicles || [];
+      render();
+    } catch (e) {
+      setStatus('No se pudo cargar el catálogo.', true);
+    }
+  })();
+</script>
+</body>
+</html>
