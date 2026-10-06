@@ -3741,16 +3741,6 @@
       "dealerId": "1570"
     },
     {
-      "id": "1978481",
-      "title": "autos bmw 330e quito 2023",
-      "price": "$48,900",
-      "year": "2023",
-      "kms": "12.000 Kms",
-      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/482026/1978481/o_o/pt_1978481_1785863192103_612.jpg",
-      "dealer": "10 de Agosto",
-      "dealerId": "1570"
-    },
-    {
       "id": "1974312",
       "title": "autos chery tiggo 8 luxury quito 2023",
       "price": "$17,900",
@@ -4341,6 +4331,6 @@
       "dealerId": "1570"
     }
   ],
-  "total": 434,
+  "total": 433,
   "updated": "2026-10-06T02:31:50.605326+00:00"
 }
