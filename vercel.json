@@ -5,7 +5,7 @@
     { "src": "api/**/*.js", "use": "@vercel/node" }
   ],
   "routes": [
-    { "src": "/api/(.*)", "dest": "/api/$1" },
+    { "handle": "filesystem" },
     { "src": "/vehicles.json", "dest": "/public/vehicles.json" },
     { "src": "/admin", "dest": "/public/admin.html" },
     { "src": "/", "dest": "/public/index.html" },
