@@ -1671,16 +1671,6 @@
       "dealerId": "1167"
     },
     {
-      "id": "1985239",
-      "title": "autos bmw 418i quito 2019",
-      "price": "$43,990",
-      "year": "2019",
-      "kms": "34.000 Kms",
-      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/892026/1985239/o_o/pt_1985239_1788891954405_762.jpg",
-      "dealer": "Autos Quito",
-      "dealerId": "1167"
-    },
-    {
       "id": "1985188",
       "title": "autos chevrolet onix premier quito 2021",
       "price": "$10,900",
@@ -4351,6 +4341,6 @@
       "dealerId": "1570"
     }
   ],
-  "total": 435,
+  "total": 434,
   "updated": "2026-10-06T02:31:50.605326+00:00"
 }
