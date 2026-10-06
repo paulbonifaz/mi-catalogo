@@ -1841,16 +1841,6 @@
       "dealerId": "1167"
     },
     {
-      "id": "1984570",
-      "title": "autos chevrolet captiva sport quito 2013",
-      "price": "$10,900",
-      "year": "2013",
-      "kms": "160.000 Kms",
-      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/492026/1984570/o_o/pt_1984570_1788559852038_722.jpg",
-      "dealer": "Autos Quito",
-      "dealerId": "1167"
-    },
-    {
       "id": "1984551",
       "title": "autos chevrolet tracker ltz quito 2023",
       "price": "$15,990",
@@ -4331,6 +4321,6 @@
       "dealerId": "1570"
     }
   ],
-  "total": 433,
+  "total": 432,
   "updated": "2026-10-06T02:31:50.605326+00:00"
 }
