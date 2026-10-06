@@ -721,16 +721,6 @@
       "dealerId": "1167"
     },
     {
-      "id": "1988713",
-      "title": "autos chevrolet onix rs quito 2021",
-      "price": "$12,200",
-      "year": "2021",
-      "kms": "50.000 Kms",
-      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/2592026/1988713/o_o/pt_1988713_1790360884987_83.jpg",
-      "dealer": "Autos Quito",
-      "dealerId": "1167"
-    },
-    {
       "id": "1988710",
       "title": "autos mitsubishi nativa quito 2009",
       "price": "$13,900",
@@ -4311,6 +4301,6 @@
       "dealerId": "1570"
     }
   ],
-  "total": 431,
+  "total": 430,
   "updated": "2026-10-06T02:31:50.605326+00:00"
 }
