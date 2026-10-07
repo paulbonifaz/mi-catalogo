@@ -1,222 +1,242 @@
 {
   "vehicles": [
     {
-      "id": "1990139",
-      "title": "autos suzuki gran vitara sz next quito 2016",
-      "price": "$14,990",
-      "year": "2016",
-      "kms": "163.000 Kms",
-      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/5102026/1990139/o_o/pt_1990139_1791172768198_723.jpg",
+      "id": "1990587",
+      "title": "autos kia optima hybrid quito 2017",
+      "price": "$14,900",
+      "year": "2017",
+      "kms": "150.000 Kms",
+      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/7102026/1990587/o_o/pt_1990587_1791342089725_983.jpg",
       "dealer": "Autos Quito",
       "dealerId": "1167"
     },
     {
-      "id": "1990122",
-      "title": "autos mazda 3 quito 2008",
+      "id": "1990586",
+      "title": "autos kia carnival quito 2010",
       "price": "$8,990",
-      "year": "2008",
-      "kms": "266.000 Kms",
-      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/4102026/1990122/o_o/pt_1990122_1791147597199_395.jpg",
+      "year": "2010",
+      "kms": "250.000 Kms",
+      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/7102026/1990586/o_o/pt_1990586_1791341973381_593.jpg",
       "dealer": "Autos Quito",
       "dealerId": "1167"
     },
     {
-      "id": "1989999",
-      "title": "autos jmc vigus quito 2025",
-      "price": "$18,990",
-      "year": "2025",
-      "kms": "16.000 Kms",
-      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/3102026/1989999/o_o/pt_1989999_1791026554560_332.jpg",
+      "id": "1990585",
+      "title": "autos mazda cx30 core quito 2021",
+      "price": "$23,990",
+      "year": "2021",
+      "kms": "160.000 Kms",
+      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/7102026/1990585/o_o/pt_1990585_1791341855668_694.jpg",
       "dealer": "Autos Quito",
       "dealerId": "1167"
     },
     {
-      "id": "1989998",
-      "title": "autos zotye nomada quito 2008",
-      "price": "$4,990",
-      "year": "2008",
-      "kms": "300.000 Kms",
-      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/3102026/1989998/o_o/pt_1989998_1791026441233_627.jpg",
+      "id": "1990584",
+      "title": "autos mazda cx30 core quito 2024",
+      "price": "$25,900",
+      "year": "2024",
+      "kms": "60.000 Kms",
+      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/7102026/1990584/o_o/pt_1990584_1791341673476_424.jpg",
       "dealer": "Autos Quito",
       "dealerId": "1167"
     },
     {
-      "id": "1989997",
-      "title": "autos jac t6 quito 2023",
+      "id": "1990583",
+      "title": "autos audi a4 quito 2009",
+      "price": "$12,990",
+      "year": "2009",
+      "kms": "92.000 Kms",
+      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/7102026/1990583/o_o/pt_1990583_1791341558491_204.jpg",
+      "dealer": "Autos Quito",
+      "dealerId": "1167"
+    },
+    {
+      "id": "1990582",
+      "title": "autos audi q5 quito 2011",
+      "price": "$15,990",
+      "year": "2011",
+      "kms": "167.000 Kms",
+      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/7102026/1990582/o_o/pt_1990582_1791341452059_906.jpg",
+      "dealer": "Autos Quito",
+      "dealerId": "1167"
+    },
+    {
+      "id": "1990581",
+      "title": "autos chery a1 nice quito 2011",
+      "price": "$6,900",
+      "year": "2011",
+      "kms": "170.000 Kms",
+      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/7102026/1990581/o_o/pt_1990581_1791341332487_959.jpg",
+      "dealer": "Autos Quito",
+      "dealerId": "1167"
+    },
+    {
+      "id": "1990580",
+      "title": "autos nissan versa quito 2015",
+      "price": "$10,990",
+      "year": "2015",
+      "kms": "125.000 Kms",
+      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/7102026/1990580/o_o/pt_1990580_1791341229869_480.jpg",
+      "dealer": "Autos Quito",
+      "dealerId": "1167"
+    },
+    {
+      "id": "1990579",
+      "title": "autos toyota fortuner 2 7 quito 2020",
+      "price": "$40,900",
+      "year": "2020",
+      "kms": "100.000 Kms",
+      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/7102026/1990579/o_o/pt_1990579_1791341121660_510.jpg",
+      "dealer": "Autos Quito",
+      "dealerId": "1167"
+    },
+    {
+      "id": "1990578",
+      "title": "autos nissan sentra sport quito 2012",
+      "price": "$10,990",
+      "year": "2012",
+      "kms": "164.000 Kms",
+      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/7102026/1990578/o_o/pt_1990578_1791340881807_677.jpg",
+      "dealer": "Autos Quito",
+      "dealerId": "1167"
+    },
+    {
+      "id": "1990576",
+      "title": "autos suzuki grand vitara sz quito 2011",
+      "price": "$11,990",
+      "year": "2011",
+      "kms": "280.000 Kms",
+      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/7102026/1990576/o_o/pt_1990576_1791338837991_418.jpg",
+      "dealer": "Autos Quito",
+      "dealerId": "1167"
+    },
+    {
+      "id": "1990575",
+      "title": "autos chery qq3 quito 2013",
+      "price": "$5,990",
+      "year": "2013",
+      "kms": "277.000 Kms",
+      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/7102026/1990575/o_o/pt_1990575_1791338076972_941.jpg",
+      "dealer": "Autos Quito",
+      "dealerId": "1167"
+    },
+    {
+      "id": "1990573",
+      "title": "autos chevrolet spar life quito 2019",
+      "price": "$9,990",
+      "year": "2019",
+      "kms": "70.000 Kms",
+      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/7102026/1990573/o_o/pt_1990573_1791337968966_236.jpg",
+      "dealer": "Autos Quito",
+      "dealerId": "1167"
+    },
+    {
+      "id": "1990353",
+      "title": "autos ford escape quito 2012",
+      "price": "$11,990",
+      "year": "2012",
+      "kms": "209.000 Kms",
+      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/6102026/1990353/o_o/pt_1990353_1791286865665_335.jpg",
+      "dealer": "Autos Quito",
+      "dealerId": "1167"
+    },
+    {
+      "id": "1990352",
+      "title": "autos mercedes benz e350 quito 2019",
+      "price": "$45,900",
+      "year": "2019",
+      "kms": "78.000 Kms",
+      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/6102026/1990352/o_o/pt_1990352_1791286748356_894.jpg",
+      "dealer": "Autos Quito",
+      "dealerId": "1167"
+    },
+    {
+      "id": "1990351",
+      "title": "autos chevrolet onix rs quito 2023",
+      "price": "$13,200",
+      "year": "2023",
+      "kms": "40.000 Kms",
+      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/6102026/1990351/o_o/pt_1990351_1791286617558_665.jpg",
+      "dealer": "Autos Quito",
+      "dealerId": "1167"
+    },
+    {
+      "id": "1990350",
+      "title": "autos ford fiesta quito 1994",
+      "price": "$3,200",
+      "year": "1994",
+      "kms": "400.000 Kms",
+      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/6102026/1990350/o_o/pt_1990350_1791286492711_71.jpg",
+      "dealer": "Autos Quito",
+      "dealerId": "1167"
+    },
+    {
+      "id": "1990349",
+      "title": "autos chery arrizo 5 quito 2027",
+      "price": "$14,900",
+      "year": "2027",
+      "kms": "9.000 Kms",
+      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/6102026/1990349/o_o/pt_1990349_1791286400332_312.jpg",
+      "dealer": "Autos Quito",
+      "dealerId": "1167"
+    },
+    {
+      "id": "1990348",
+      "title": "autos jetour x70 ii quito 2023",
+      "price": "$14,800",
+      "year": "2023",
+      "kms": "80.000 Kms",
+      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/6102026/1990348/o_o/pt_1990348_1791286289911_545.jpg",
+      "dealer": "Autos Quito",
+      "dealerId": "1167"
+    },
+    {
+      "id": "1990347",
+      "title": "autos jeep compass quito 2013",
+      "price": "$12,200",
+      "year": "2013",
+      "kms": "140.000 Kms",
+      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/6102026/1990347/o_o/pt_1990347_1791286157142_623.jpg",
+      "dealer": "Autos Quito",
+      "dealerId": "1167"
+    },
+    {
+      "id": "1990346",
+      "title": "autos toyota fortuner 2 7 quito 2018",
+      "price": "$30,900",
+      "year": "2018",
+      "kms": "130.000 Kms",
+      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/6102026/1990346/o_o/pt_1990346_1791286043868_516.jpg",
+      "dealer": "Autos Quito",
+      "dealerId": "1167"
+    },
+    {
+      "id": "1990345",
+      "title": "autos kia carnival quito 2016",
+      "price": "$15,900",
+      "year": "2016",
+      "kms": "180.000 Kms",
+      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/6102026/1990345/o_o/pt_1990345_1791285895630_154.jpg",
+      "dealer": "Autos Quito",
+      "dealerId": "1167"
+    },
+    {
+      "id": "1990344",
+      "title": "autos chevrolet groove premier quito 2023",
       "price": "$15,990",
       "year": "2023",
-      "kms": "75.000 Kms",
-      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/3102026/1989997/o_o/pt_1989997_1791026246394_157.jpg",
+      "kms": "108.000 Kms",
+      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/6102026/1990344/o_o/pt_1990344_1791285789230_440.jpg",
       "dealer": "Autos Quito",
       "dealerId": "1167"
     },
     {
-      "id": "1989996",
-      "title": "autos nissan sentra quito 2005",
-      "price": "$3,990",
-      "year": "2005",
-      "kms": "500.000 Kms",
-      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/3102026/1989996/o_o/pt_1989996_1791026125253_10.jpg",
-      "dealer": "Autos Quito",
-      "dealerId": "1167"
-    },
-    {
-      "id": "1989995",
-      "title": "autos jetour x70 quito 2020",
-      "price": "$14,990",
-      "year": "2020",
-      "kms": "75.000 Kms",
-      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/3102026/1989995/o_o/pt_1989995_1791025936027_313.jpg",
-      "dealer": "Autos Quito",
-      "dealerId": "1167"
-    },
-    {
-      "id": "1989994",
-      "title": "autos hyundai santa fe quito 2015",
-      "price": "$17,900",
-      "year": "2015",
-      "kms": "200.000 Kms",
-      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/3102026/1989994/o_o/pt_1989994_1791025843990_55.jpg",
-      "dealer": "Autos Quito",
-      "dealerId": "1167"
-    },
-    {
-      "id": "1989993",
-      "title": "autos nissan tida quito 2012",
-      "price": "$7,990",
-      "year": "2012",
-      "kms": "435.000 Kms",
-      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/3102026/1989993/o_o/pt_1989993_1791025743602_996.jpg",
-      "dealer": "Autos Quito",
-      "dealerId": "1167"
-    },
-    {
-      "id": "1989953",
-      "title": "autos kia soluto quito 2024",
-      "price": "$14,990",
-      "year": "2024",
-      "kms": "46.000 Kms",
-      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/3102026/1989953/o_o/pt_1989953_1790987152469_775.jpg",
-      "dealer": "Autos Quito",
-      "dealerId": "1167"
-    },
-    {
-      "id": "1989950",
-      "title": "autos great wall h6 quito 2017",
-      "price": "$12,990",
-      "year": "2017",
-      "kms": "137.000 Kms",
-      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/3102026/1989950/o_o/pt_1989950_1790986682164_221.jpg",
-      "dealer": "Autos Quito",
-      "dealerId": "1167"
-    },
-    {
-      "id": "1989948",
-      "title": "autos renault logan quito 2012",
-      "price": "$8,990",
-      "year": "2012",
-      "kms": "190.000 Kms",
-      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/3102026/1989948/o_o/pt_1989948_1790986510811_350.jpg",
-      "dealer": "Autos Quito",
-      "dealerId": "1167"
-    },
-    {
-      "id": "1989797",
-      "title": "autos hyundai new santa fe quito 2020",
-      "price": "$28,900",
-      "year": "2020",
-      "kms": "68.000 Kms",
-      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/2102026/1989797/o_o/pt_1989797_1790986396333_96.jpg",
-      "dealer": "Autos Quito",
-      "dealerId": "1167"
-    },
-    {
-      "id": "1989792",
-      "title": "autos volkswagen jetta quito 2004",
-      "price": "$5,990",
-      "year": "2004",
-      "kms": "281.000 Kms",
-      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/2102026/1989792/o_o/pt_1989792_1790951788937_580.jpg",
-      "dealer": "Autos Quito",
-      "dealerId": "1167"
-    },
-    {
-      "id": "1989791",
-      "title": "autos ford f150 quito 2014",
-      "price": "$14,900",
-      "year": "2014",
-      "kms": "227.000 Kms",
-      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/2102026/1989791/o_o/pt_1989791_1790951309598_802.jpg",
-      "dealer": "Autos Quito",
-      "dealerId": "1167"
-    },
-    {
-      "id": "1989790",
-      "title": "autos chevrolet aveo family quito 2010",
-      "price": "$7,990",
-      "year": "2010",
-      "kms": "200.000 Kms",
-      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/2102026/1989790/o_o/pt_1989790_1790950853339_790.jpg",
-      "dealer": "Autos Quito",
-      "dealerId": "1167"
-    },
-    {
-      "id": "1989786",
-      "title": "autos chevrolet esteem quito 2003",
-      "price": "$4,990",
-      "year": "2003",
-      "kms": "210.000 Kms",
-      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/2102026/1989786/o_o/pt_1989786_1790950186170_500.jpg",
-      "dealer": "Autos Quito",
-      "dealerId": "1167"
-    },
-    {
-      "id": "1989785",
-      "title": "autos soueast dx7 quito 2019",
-      "price": "$12,900",
-      "year": "2019",
-      "kms": "150.000 Kms",
-      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/2102026/1989785/o_o/pt_1989785_1790950062946_527.jpg",
-      "dealer": "Autos Quito",
-      "dealerId": "1167"
-    },
-    {
-      "id": "1989779",
-      "title": "autos hyundai terracan 2 5 quito 2005",
-      "price": "$9,900",
-      "year": "2005",
-      "kms": "229.000 Kms",
-      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/2102026/1989779/o_o/pt_1989779_1790941157455_787.jpg",
-      "dealer": "Autos Quito",
-      "dealerId": "1167"
-    },
-    {
-      "id": "1989778",
-      "title": "autos renault kwid quito 2023",
-      "price": "$11,990",
-      "year": "2023",
-      "kms": "83.000 Kms",
-      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/2102026/1989778/o_o/pt_1989778_1790941060172_278.jpg",
-      "dealer": "Autos Quito",
-      "dealerId": "1167"
-    },
-    {
-      "id": "1989777",
-      "title": "autos chevrolet aveo emotion quito 2016",
-      "price": "$10,900",
-      "year": "2016",
-      "kms": "170.000 Kms",
-      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/2102026/1989777/o_o/pt_1989777_1790940834264_559.jpg",
-      "dealer": "Autos Quito",
-      "dealerId": "1167"
-    },
-    {
-      "id": "1989776",
-      "title": "autos renault logan quito 2012",
-      "price": "$5,990",
-      "year": "2012",
-      "kms": "400.000 Kms",
-      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/2102026/1989776/o_o/pt_1989776_1790940740147_779.jpg",
+      "id": "1990343",
+      "title": "autos suzuki swift quito 2025",
+      "price": "$15,990",
+      "year": "2025",
+      "kms": "14.000 Kms",
+      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/6102026/1990343/o_o/pt_1990343_1791285691762_614.jpg",
       "dealer": "Autos Quito",
       "dealerId": "1167"
     },
@@ -243,7 +263,7 @@
     {
       "id": "1989764",
       "title": "autos peugeot 207 quito 2009",
-      "price": "$7,300",
+      "price": "$6,990",
       "year": "2009",
       "kms": "260.000 Kms",
       "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/2102026/1989764/o_o/pt_1989764_1790906930670_543.jpg",
@@ -507,16 +527,6 @@
       "year": "2022",
       "kms": "105.000 Kms",
       "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/2992026/1989141/o_o/pt_1989141_1790640362012_775.jpg",
-      "dealer": "Autos Quito",
-      "dealerId": "1167"
-    },
-    {
-      "id": "1989140",
-      "title": "autos mazda cx30 core quito 2021",
-      "price": "$23,990",
-      "year": "2021",
-      "kms": "160.000 Kms",
-      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/2892026/1989140/o_o/pt_1989140_1790640041115_594.jpg",
       "dealer": "Autos Quito",
       "dealerId": "1167"
     },
@@ -873,7 +883,7 @@
     {
       "id": "1988171",
       "title": "autos renault megane quito 2006",
-      "price": "$5,990",
+      "price": "$4,990",
       "year": "2006",
       "kms": "260.000 Kms",
       "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/2392026/1988171/o_o/pt_1988171_1790179622009_717.jpg",
@@ -1103,20 +1113,10 @@
     {
       "id": "1987461",
       "title": "autos peugeot 207 quito 2012",
-      "price": "$7,400",
+      "price": "$6,990",
       "year": "2012",
       "kms": "200.000 Kms",
       "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/1892026/1987461/o_o/pt_1987461_1789770529024_623.jpg",
-      "dealer": "Autos Quito",
-      "dealerId": "1167"
-    },
-    {
-      "id": "1987459",
-      "title": "autos zx auto terralord quito 2023",
-      "price": "$17,500",
-      "year": "2023",
-      "kms": "70.000 Kms",
-      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/1892026/1987459/o_o/pt_1987459_1789770285299_741.jpg",
       "dealer": "Autos Quito",
       "dealerId": "1167"
     },
@@ -1217,16 +1217,6 @@
       "year": "2020",
       "kms": "86.000 Kms",
       "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/1792026/1987132/o_o/pt_1987132_1789663152084_474.jpg",
-      "dealer": "Autos Quito",
-      "dealerId": "1167"
-    },
-    {
-      "id": "1987125",
-      "title": "autos kia optima hybrid quito 2017",
-      "price": "$14,900",
-      "year": "2017",
-      "kms": "150.000 Kms",
-      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/1792026/1987125/o_o/pt_1987125_1789662546835_260.jpg",
       "dealer": "Autos Quito",
       "dealerId": "1167"
     },
@@ -1343,20 +1333,10 @@
     {
       "id": "1986772",
       "title": "autos jeep compass quito 2014",
-      "price": "$12,990",
+      "price": "$11,990",
       "year": "2014",
       "kms": "170.000 Kms",
       "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/1692026/1986772/o_o/pt_1986772_1789530165137_606.jpg",
-      "dealer": "Autos Quito",
-      "dealerId": "1167"
-    },
-    {
-      "id": "1986771",
-      "title": "autos kia carnival quito 2010",
-      "price": "$8,990",
-      "year": "2010",
-      "kms": "250.000 Kms",
-      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/1692026/1986771/o_o/pt_1986771_1789530043846_728.jpg",
       "dealer": "Autos Quito",
       "dealerId": "1167"
     },
@@ -1397,16 +1377,6 @@
       "year": "2017",
       "kms": "170.000 Kms",
       "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/1292026/1986153/o_o/pt_1986153_1789230853159_658.jpg",
-      "dealer": "Autos Quito",
-      "dealerId": "1167"
-    },
-    {
-      "id": "1986147",
-      "title": "autos toyota fortuner 2 7 quito 2013",
-      "price": "$21,900",
-      "year": "2013",
-      "kms": "300.000 Kms",
-      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/1292026/1986147/o_o/pt_1986147_1789230433447_623.jpg",
       "dealer": "Autos Quito",
       "dealerId": "1167"
     },
@@ -1661,16 +1631,6 @@
       "dealerId": "1167"
     },
     {
-      "id": "1985188",
-      "title": "autos chevrolet onix premier quito 2021",
-      "price": "$10,900",
-      "year": "2021",
-      "kms": "80.000 Kms",
-      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/892026/1985188/o_o/pt_1985188_1788884678866_357.jpg",
-      "dealer": "Autos Quito",
-      "dealerId": "1167"
-    },
-    {
       "id": "1985186",
       "title": "autos volkswagen virtus trendline quito 2024",
       "price": "$17,990",
@@ -1727,16 +1687,6 @@
       "year": "2009",
       "kms": "476.000 Kms",
       "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/892026/1985134/o_o/pt_1985134_1788880468201_149.jpg",
-      "dealer": "Autos Quito",
-      "dealerId": "1167"
-    },
-    {
-      "id": "1985118",
-      "title": "autos audi q5 quito 2011",
-      "price": "$15,990",
-      "year": "2011",
-      "kms": "167.000 Kms",
-      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/892026/1985118/o_o/pt_1985118_1788878906116_212.jpg",
       "dealer": "Autos Quito",
       "dealerId": "1167"
     },
@@ -1961,42 +1911,12 @@
       "dealerId": "1167"
     },
     {
-      "id": "1980322",
-      "title": "autos great wall wingle 5 quito 2019",
-      "price": "$13,990",
-      "year": "2019",
-      "kms": "167.000 Kms",
-      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/1382026/1980322/o_o/pt_1980322_1786649742774_587.jpg",
-      "dealer": "Autos Quito",
-      "dealerId": "1167"
-    },
-    {
       "id": "1974558",
       "title": "autos nissan x trail xtreme quito 2014",
       "price": "$12,990",
       "year": "2014",
       "kms": "188.000 Kms",
       "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/1272026/1974558/o_o/pt_1974558_1783897491112_246.jpg",
-      "dealer": "Autos Quito",
-      "dealerId": "1167"
-    },
-    {
-      "id": "1980436",
-      "title": "autos citroen c3 quito 2008",
-      "price": "$6,990",
-      "year": "2008",
-      "kms": "156.000 Kms",
-      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/1482026/1980436/o_o/pt_1980436_1786717392069_335.jpg",
-      "dealer": "Autos Quito",
-      "dealerId": "1167"
-    },
-    {
-      "id": "1974103",
-      "title": "autos volkswagen amarok quito 2018",
-      "price": "$24,900",
-      "year": "2018",
-      "kms": "110.000 Kms",
-      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/972026/1974103/o_o/pt_1974103_1783617829990_250.jpg",
       "dealer": "Autos Quito",
       "dealerId": "1167"
     },
@@ -2011,12 +1931,52 @@
       "dealerId": "1167"
     },
     {
+      "id": "1980322",
+      "title": "autos great wall wingle 5 quito 2019",
+      "price": "$13,990",
+      "year": "2019",
+      "kms": "167.000 Kms",
+      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/1382026/1980322/o_o/pt_1980322_1786649742774_587.jpg",
+      "dealer": "Autos Quito",
+      "dealerId": "1167"
+    },
+    {
+      "id": "1974103",
+      "title": "autos volkswagen amarok quito 2018",
+      "price": "$24,900",
+      "year": "2018",
+      "kms": "110.000 Kms",
+      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/972026/1974103/o_o/pt_1974103_1783617829990_250.jpg",
+      "dealer": "Autos Quito",
+      "dealerId": "1167"
+    },
+    {
+      "id": "1980436",
+      "title": "autos citroen c3 quito 2008",
+      "price": "$6,990",
+      "year": "2008",
+      "kms": "156.000 Kms",
+      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/1482026/1980436/o_o/pt_1980436_1786717392069_335.jpg",
+      "dealer": "Autos Quito",
+      "dealerId": "1167"
+    },
+    {
       "id": "1971682",
       "title": "autos mercedes benz sl 550 quito 2013",
       "price": "$99,000",
       "year": "2013",
       "kms": "30.000 Kms",
       "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/2562026/1971682/o_o/1971682_1782402689941_114.jpg",
+      "dealer": "Autos Quito",
+      "dealerId": "1167"
+    },
+    {
+      "id": "1980402",
+      "title": "autos hyundai accent new quito 2024",
+      "price": "$18,990",
+      "year": "2024",
+      "kms": "8.000 Kms",
+      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/1382026/1980402/o_o/pt_1980402_1786660752851_270.jpg",
       "dealer": "Autos Quito",
       "dealerId": "1167"
     },
@@ -2071,22 +2031,12 @@
       "dealerId": "1167"
     },
     {
-      "id": "1957610",
-      "title": "autos jeep new compass sport quito 2018",
-      "price": "$17,900",
-      "year": "2018",
-      "kms": "100.000 Kms",
-      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/742026/1957610/o_o/pt_1957610_1786113046308_349.jpg",
-      "dealer": "Autos Quito",
-      "dealerId": "1167"
-    },
-    {
-      "id": "1974620",
-      "title": "autos jeep new compass sport quito 2019",
-      "price": "$18,900",
-      "year": "2019",
-      "kms": "100.000 Kms",
-      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/1372026/1974620/o_o/pt_1974620_1783960326311_266.jpg",
+      "id": "1981437",
+      "title": "autos hyundai accent new quito 2024",
+      "price": "$18,990",
+      "year": "2024",
+      "kms": "42.000 Kms",
+      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/2082026/1981437/o_o/pt_1981437_1787184571335_723.jpg",
       "dealer": "Autos Quito",
       "dealerId": "1167"
     },
@@ -2111,16 +2061,6 @@
       "dealerId": "1167"
     },
     {
-      "id": "1974622",
-      "title": "autos ford escape quito 2015",
-      "price": "$13,990",
-      "year": "2015",
-      "kms": "140.000 Kms",
-      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/1372026/1974622/o_o/pt_1974622_1783960612025_833.jpg",
-      "dealer": "Autos Quito",
-      "dealerId": "1167"
-    },
-    {
       "id": "1979965",
       "title": "autos chevrolet tracker ltz quito 2023",
       "price": "$17,490",
@@ -2141,6 +2081,16 @@
       "dealerId": "1167"
     },
     {
+      "id": "1957610",
+      "title": "autos jeep new compass sport quito 2018",
+      "price": "$17,900",
+      "year": "2018",
+      "kms": "100.000 Kms",
+      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/742026/1957610/o_o/pt_1957610_1786113046308_349.jpg",
+      "dealer": "Autos Quito",
+      "dealerId": "1167"
+    },
+    {
       "id": "1974940",
       "title": "autos volkswagen jetta 2500 quito 2015",
       "price": "$12,990",
@@ -2151,22 +2101,32 @@
       "dealerId": "1167"
     },
     {
+      "id": "1974936",
+      "title": "autos ford edge quito 2013",
+      "price": "$14,990",
+      "year": "2013",
+      "kms": "200.000 Kms",
+      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/1472026/1974936/o_o/pt_1974936_1784052615541_13.jpg",
+      "dealer": "Autos Quito",
+      "dealerId": "1167"
+    },
+    {
+      "id": "1974733",
+      "title": "autos chevrolet grand vitara 5p 4x2 quito 2014",
+      "price": "$13,990",
+      "year": "2014",
+      "kms": "230.000 Kms",
+      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/1372026/1974733/o_o/pt_1974733_1783977564778_78.jpg",
+      "dealer": "Autos Quito",
+      "dealerId": "1167"
+    },
+    {
       "id": "1978655",
       "title": "autos bmw 330e quito 2023",
       "price": "$47,900",
       "year": "2023",
       "kms": "12.000 Kms",
       "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/482026/1978655/o_o/pt_1978655_1785885309518_554.jpg",
-      "dealer": "Autos Quito",
-      "dealerId": "1167"
-    },
-    {
-      "id": "1975016",
-      "title": "autos suzuki gran vitara sz next quito 2018",
-      "price": "$15,990",
-      "year": "2018",
-      "kms": "130.000 Kms",
-      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/1472026/1975016/o_o/pt_1975016_1784064775948_227.jpg",
       "dealer": "Autos Quito",
       "dealerId": "1167"
     },
@@ -2191,12 +2151,22 @@
       "dealerId": "1167"
     },
     {
-      "id": "1974733",
-      "title": "autos chevrolet grand vitara 5p 4x2 quito 2014",
-      "price": "$13,990",
-      "year": "2014",
-      "kms": "230.000 Kms",
-      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/1372026/1974733/o_o/pt_1974733_1783977564778_78.jpg",
+      "id": "1975016",
+      "title": "autos suzuki gran vitara sz next quito 2018",
+      "price": "$15,990",
+      "year": "2018",
+      "kms": "130.000 Kms",
+      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/1472026/1975016/o_o/pt_1975016_1784064775948_227.jpg",
+      "dealer": "Autos Quito",
+      "dealerId": "1167"
+    },
+    {
+      "id": "1980389",
+      "title": "autos porsche cayenne quito 2006",
+      "price": "$16,990",
+      "year": "2006",
+      "kms": "190.000 Kms",
+      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/1382026/1980389/o_o/pt_1980389_1786659063919_450.jpg",
       "dealer": "Autos Quito",
       "dealerId": "1167"
     },
@@ -2211,16 +2181,6 @@
       "dealerId": "1167"
     },
     {
-      "id": "1980393",
-      "title": "autos chery tiggo 3 quito 2019",
-      "price": "$11,990",
-      "year": "2019",
-      "kms": "170.000 Kms",
-      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/1382026/1980393/o_o/pt_1980393_1786659782310_24.jpg",
-      "dealer": "Autos Quito",
-      "dealerId": "1167"
-    },
-    {
       "id": "1981424",
       "title": "autos kia seltos quito 2024",
       "price": "$21,990",
@@ -2231,12 +2191,32 @@
       "dealerId": "1167"
     },
     {
-      "id": "1974936",
-      "title": "autos ford edge quito 2013",
-      "price": "$14,990",
-      "year": "2013",
+      "id": "1980393",
+      "title": "autos chery tiggo 3 quito 2019",
+      "price": "$11,990",
+      "year": "2019",
+      "kms": "170.000 Kms",
+      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/1382026/1980393/o_o/pt_1980393_1786659782310_24.jpg",
+      "dealer": "Autos Quito",
+      "dealerId": "1167"
+    },
+    {
+      "id": "1979238",
+      "title": "autos great wall h3 quito 2018",
+      "price": "$11,990",
+      "year": "2018",
+      "kms": "119.000 Kms",
+      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/782026/1979238/o_o/pt_1979238_1786113508973_20.jpg",
+      "dealer": "Autos Quito",
+      "dealerId": "1167"
+    },
+    {
+      "id": "1980385",
+      "title": "autos ford f150 xlt cd quito 2010",
+      "price": "$12,990",
+      "year": "2010",
       "kms": "200.000 Kms",
-      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/1472026/1974936/o_o/pt_1974936_1784052615541_13.jpg",
+      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/1382026/1980385/o_o/pt_1980385_1786658745561_781.jpg",
       "dealer": "Autos Quito",
       "dealerId": "1167"
     },
@@ -2251,12 +2231,12 @@
       "dealerId": "1167"
     },
     {
-      "id": "1980402",
-      "title": "autos hyundai accent new quito 2024",
-      "price": "$18,990",
-      "year": "2024",
-      "kms": "8.000 Kms",
-      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/1382026/1980402/o_o/pt_1980402_1786660752851_270.jpg",
+      "id": "1974620",
+      "title": "autos jeep new compass sport quito 2019",
+      "price": "$18,900",
+      "year": "2019",
+      "kms": "100.000 Kms",
+      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/1372026/1974620/o_o/pt_1974620_1783960326311_266.jpg",
       "dealer": "Autos Quito",
       "dealerId": "1167"
     },
@@ -2267,6 +2247,16 @@
       "year": "2015",
       "kms": "100.000 Kms",
       "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/1982026/1981426/o_o/pt_1981426_1787182601502_434.jpg",
+      "dealer": "Autos Quito",
+      "dealerId": "1167"
+    },
+    {
+      "id": "1972828",
+      "title": "autos hyundai tucson quito 2014",
+      "price": "$15,990",
+      "year": "2014",
+      "kms": "169.000 Kms",
+      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/272026/1972828/o_o/1972828_1783009754637_997.jpg",
       "dealer": "Autos Quito",
       "dealerId": "1167"
     },
@@ -2301,26 +2291,6 @@
       "dealerId": "1167"
     },
     {
-      "id": "1981437",
-      "title": "autos hyundai accent new quito 2024",
-      "price": "$18,990",
-      "year": "2024",
-      "kms": "42.000 Kms",
-      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/2082026/1981437/o_o/pt_1981437_1787184571335_723.jpg",
-      "dealer": "Autos Quito",
-      "dealerId": "1167"
-    },
-    {
-      "id": "1972828",
-      "title": "autos hyundai tucson quito 2014",
-      "price": "$15,990",
-      "year": "2014",
-      "kms": "169.000 Kms",
-      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/272026/1972828/o_o/1972828_1783009754637_997.jpg",
-      "dealer": "Autos Quito",
-      "dealerId": "1167"
-    },
-    {
       "id": "1957611",
       "title": "autos audi q5 quito 2016",
       "price": "$25,990",
@@ -2331,22 +2301,12 @@
       "dealerId": "1167"
     },
     {
-      "id": "1975012",
-      "title": "autos changan cs35 plus quito 2023",
-      "price": "$17,990",
-      "year": "2023",
-      "kms": "52.000 Kms",
-      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/1472026/1975012/o_o/pt_1975012_1784064469255_355.jpg",
-      "dealer": "Autos Quito",
-      "dealerId": "1167"
-    },
-    {
-      "id": "1980538",
-      "title": "autos nissan pathfinder quito 2015",
-      "price": "$15,990",
+      "id": "1974622",
+      "title": "autos ford escape quito 2015",
+      "price": "$13,990",
       "year": "2015",
-      "kms": "169.000 Kms",
-      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/1482026/1980538/o_o/pt_1980538_1786737791040_866.jpg",
+      "kms": "140.000 Kms",
+      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/1372026/1974622/o_o/pt_1974622_1783960612025_833.jpg",
       "dealer": "Autos Quito",
       "dealerId": "1167"
     },
@@ -2361,22 +2321,22 @@
       "dealerId": "1167"
     },
     {
-      "id": "1980389",
-      "title": "autos porsche cayenne quito 2006",
-      "price": "$16,990",
-      "year": "2006",
-      "kms": "190.000 Kms",
-      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/1382026/1980389/o_o/pt_1980389_1786659063919_450.jpg",
-      "dealer": "Autos Quito",
-      "dealerId": "1167"
-    },
-    {
       "id": "1979237",
       "title": "autos kia new sportage gt line quito 2024",
       "price": "$29,800",
       "year": "2024",
       "kms": "30.000 Kms",
       "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/782026/1979237/o_o/pt_1979237_1786113169656_559.jpg",
+      "dealer": "Autos Quito",
+      "dealerId": "1167"
+    },
+    {
+      "id": "1974934",
+      "title": "autos jetour dashing quito 2024",
+      "price": "$19,990",
+      "year": "2024",
+      "kms": "70.000 Kms",
+      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/1472026/1974934/o_o/pt_1974934_1784052466654_231.jpg",
       "dealer": "Autos Quito",
       "dealerId": "1167"
     },
@@ -2411,16 +2371,6 @@
       "dealerId": "1167"
     },
     {
-      "id": "1974934",
-      "title": "autos jetour dashing quito 2024",
-      "price": "$19,990",
-      "year": "2024",
-      "kms": "70.000 Kms",
-      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/1472026/1974934/o_o/pt_1974934_1784052466654_231.jpg",
-      "dealer": "Autos Quito",
-      "dealerId": "1167"
-    },
-    {
       "id": "1955510",
       "title": "autos volkswagen nivus quito 2024",
       "price": "$20,900",
@@ -2441,32 +2391,12 @@
       "dealerId": "1167"
     },
     {
-      "id": "1980385",
-      "title": "autos ford f150 xlt cd quito 2010",
-      "price": "$12,990",
-      "year": "2010",
-      "kms": "200.000 Kms",
-      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/1382026/1980385/o_o/pt_1980385_1786658745561_781.jpg",
-      "dealer": "Autos Quito",
-      "dealerId": "1167"
-    },
-    {
-      "id": "1978643",
-      "title": "autos toyota fortuner 2 7 quito 2020",
-      "price": "$41,900",
-      "year": "2020",
-      "kms": "50.000 Kms",
-      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/482026/1978643/o_o/pt_1978643_1785884492747_700.jpg",
-      "dealer": "Autos Quito",
-      "dealerId": "1167"
-    },
-    {
-      "id": "1979238",
-      "title": "autos great wall h3 quito 2018",
-      "price": "$11,990",
-      "year": "2018",
-      "kms": "119.000 Kms",
-      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/782026/1979238/o_o/pt_1979238_1786113508973_20.jpg",
+      "id": "1975012",
+      "title": "autos changan cs35 plus quito 2023",
+      "price": "$17,990",
+      "year": "2023",
+      "kms": "52.000 Kms",
+      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/1472026/1975012/o_o/pt_1975012_1784064469255_355.jpg",
       "dealer": "Autos Quito",
       "dealerId": "1167"
     },
@@ -2481,12 +2411,12 @@
       "dealerId": "1167"
     },
     {
-      "id": "1978627",
-      "title": "autos dongfeng mini truck quito 2023",
-      "price": "$11,600",
-      "year": "2023",
-      "kms": "8.000 Kms",
-      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/482026/1978627/o_o/pt_1978627_1785883135268_718.jpg",
+      "id": "1978643",
+      "title": "autos toyota fortuner 2 7 quito 2020",
+      "price": "$41,900",
+      "year": "2020",
+      "kms": "50.000 Kms",
+      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/482026/1978643/o_o/pt_1978643_1785884492747_700.jpg",
       "dealer": "Autos Quito",
       "dealerId": "1167"
     },
@@ -2501,12 +2431,42 @@
       "dealerId": "1167"
     },
     {
+      "id": "1978627",
+      "title": "autos dongfeng mini truck quito 2023",
+      "price": "$11,600",
+      "year": "2023",
+      "kms": "8.000 Kms",
+      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/482026/1978627/o_o/pt_1978627_1785883135268_718.jpg",
+      "dealer": "Autos Quito",
+      "dealerId": "1167"
+    },
+    {
       "id": "1979247",
       "title": "autos chevrolet optra quito 2008",
       "price": "$7,990",
       "year": "2008",
       "kms": "270.000 Kms",
       "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/782026/1979247/o_o/pt_1979247_1786114827758_443.jpg",
+      "dealer": "Autos Quito",
+      "dealerId": "1167"
+    },
+    {
+      "id": "1975029",
+      "title": "autos citroen air cross quito 2020",
+      "price": "$18,990",
+      "year": "2020",
+      "kms": "135.000 Kms",
+      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/1472026/1975029/o_o/pt_1975029_1784065924127_543.jpg",
+      "dealer": "Autos Quito",
+      "dealerId": "1167"
+    },
+    {
+      "id": "1978903",
+      "title": "autos nissan xtrail sense quito 2019",
+      "price": "$18,900",
+      "year": "2019",
+      "kms": "130.000 Kms",
+      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/582026/1978903/o_o/pt_1978903_1785965604275_374.jpg",
       "dealer": "Autos Quito",
       "dealerId": "1167"
     },
@@ -2561,12 +2521,12 @@
       "dealerId": "1167"
     },
     {
-      "id": "1966978",
-      "title": "autos peugeot 2008 quito 2022",
-      "price": "$21,990",
-      "year": "2008",
-      "kms": "60.000 Kms",
-      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/162026/1966978/o_o/1966978_1780328639082_431.jpg",
+      "id": "1978905",
+      "title": "autos great wall poer quito 2024",
+      "price": "$25,990",
+      "year": "2024",
+      "kms": "48.000 Kms",
+      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/582026/1978905/o_o/pt_1978905_1785965867839_117.jpg",
       "dealer": "Autos Quito",
       "dealerId": "1167"
     },
@@ -2581,22 +2541,22 @@
       "dealerId": "1167"
     },
     {
-      "id": "1978905",
-      "title": "autos great wall poer quito 2024",
-      "price": "$25,990",
-      "year": "2024",
-      "kms": "48.000 Kms",
-      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/582026/1978905/o_o/pt_1978905_1785965867839_117.jpg",
+      "id": "1966978",
+      "title": "autos peugeot 2008 quito 2022",
+      "price": "$21,990",
+      "year": "2008",
+      "kms": "60.000 Kms",
+      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/162026/1966978/o_o/1966978_1780328639082_431.jpg",
       "dealer": "Autos Quito",
       "dealerId": "1167"
     },
     {
-      "id": "1978903",
-      "title": "autos nissan xtrail sense quito 2019",
-      "price": "$18,900",
-      "year": "2019",
-      "kms": "130.000 Kms",
-      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/582026/1978903/o_o/pt_1978903_1785965604275_374.jpg",
+      "id": "1980538",
+      "title": "autos nissan pathfinder quito 2015",
+      "price": "$15,990",
+      "year": "2015",
+      "kms": "169.000 Kms",
+      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/1482026/1980538/o_o/pt_1980538_1786737791040_866.jpg",
       "dealer": "Autos Quito",
       "dealerId": "1167"
     },
@@ -2611,16 +2571,6 @@
       "dealerId": "1167"
     },
     {
-      "id": "1980544",
-      "title": "autos honda cr v quito 2004",
-      "price": "$9,990",
-      "year": "2004",
-      "kms": "324.000 Kms",
-      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/1482026/1980544/o_o/pt_1980544_1786738609084_35.jpg",
-      "dealer": "Autos Quito",
-      "dealerId": "1167"
-    },
-    {
       "id": "1980404",
       "title": "autos chevrolet spark quito 2018",
       "price": "$8,990",
@@ -2631,79 +2581,9 @@
       "dealerId": "1167"
     },
     {
-      "id": "1978981",
-      "title": "autos kyc v3 van quito 2024",
-      "price": "$11,990",
-      "year": "2024",
-      "kms": "136.000 Kms",
-      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/682026/1978981/o_o/pt_1978981_1786025375382_370.jpg",
-      "dealer": "Autos Quito",
-      "dealerId": "1167"
-    },
-    {
-      "id": "1974688",
-      "title": "autos chevrolet beat quito 2020",
-      "price": "$11,990",
-      "year": "2020",
-      "kms": "100.000 Kms",
-      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/1372026/1974688/o_o/pt_1974688_1783972666410_189.jpg",
-      "dealer": "Autos Quito",
-      "dealerId": "1167"
-    },
-    {
-      "id": "1975029",
-      "title": "autos citroen air cross quito 2020",
-      "price": "$18,990",
-      "year": "2020",
-      "kms": "135.000 Kms",
-      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/1472026/1975029/o_o/pt_1975029_1784065924127_543.jpg",
-      "dealer": "Autos Quito",
-      "dealerId": "1167"
-    },
-    {
-      "id": "1974550",
-      "title": "autos toyota fortuner quito 2023",
-      "price": "$40,990",
-      "year": "2023",
-      "kms": "99.000 Kms",
-      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/1272026/1974550/o_o/pt_1974550_1783896148891_90.jpg",
-      "dealer": "Autos Quito",
-      "dealerId": "1167"
-    },
-    {
-      "id": "1974020",
-      "title": "autos volkswagen polo quito 2019",
-      "price": "$13,990",
-      "year": "2019",
-      "kms": "160.000 Kms",
-      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/972026/1974020/o_o/pt_1974020_1783609098204_745.jpg",
-      "dealer": "Autos Quito",
-      "dealerId": "1167"
-    },
-    {
-      "id": "1941860",
-      "title": "motos ducati multistrada 1200 quito 2013",
-      "price": "$9,900",
-      "year": "2013",
-      "kms": "48.000 Kms",
-      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/202619/1941860/o_o/pt_1941860_4291150.jpg",
-      "dealer": "Autos Quito",
-      "dealerId": "1167"
-    },
-    {
-      "id": "1979968",
-      "title": "pesados hino dutro 716 quito 2009",
-      "price": "$19,990",
-      "year": "2009",
-      "kms": "379.000 Kms",
-      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/1282026/1979968/o_o/pt_1979968_1786548090485_165.jpg",
-      "dealer": "Autos Quito",
-      "dealerId": "1167"
-    },
-    {
       "id": "1989421",
       "title": "autos jeep compass quito 2016",
-      "price": "$15,990",
+      "price": "$14,990",
       "year": "2016",
       "kms": "85 Kms",
       "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/2026930/1989421/o_o/pt_1989421_1790779509818_977.jpg",
@@ -2733,7 +2613,7 @@
     {
       "id": "1988481",
       "title": "autos peugeot 2008 quito 2026",
-      "price": "$30,990",
+      "price": "$29,990",
       "year": "2008",
       "kms": "22 Kms",
       "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/2026924/1988481/o_o/pt_1988481_1790282929289_930.jpg",
@@ -3007,6 +2887,26 @@
       "year": "2011",
       "kms": "227.000 Kms",
       "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/2026102/1989805/o_o/pt_1989805_1790954906333_353.jpg",
+      "dealer": "10 de Agosto",
+      "dealerId": "1570"
+    },
+    {
+      "id": "1989804",
+      "title": "autos chevrolet aveo emotion quito 2016",
+      "price": "$10,900",
+      "year": "2016",
+      "kms": "170.000 Kms",
+      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/2026102/1989804/o_o/pt_1989804_1790954673204_805.jpg",
+      "dealer": "10 de Agosto",
+      "dealerId": "1570"
+    },
+    {
+      "id": "1989803",
+      "title": "autos soueast dx7 quito 2019",
+      "price": "$12,900",
+      "year": "2019",
+      "kms": "150.000 Kms",
+      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/2026102/1989803/o_o/pt_1989803_1790954323122_384.jpg",
       "dealer": "10 de Agosto",
       "dealerId": "1570"
     },
@@ -3681,22 +3581,22 @@
       "dealerId": "1570"
     },
     {
+      "id": "1974312",
+      "title": "autos chery tiggo 8 luxury quito 2023",
+      "price": "$17,900",
+      "year": "2023",
+      "kms": "60.000 Kms",
+      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/2026710/1974312/o_o/pt_1974312_8435899.jpeg",
+      "dealer": "10 de Agosto",
+      "dealerId": "1570"
+    },
+    {
       "id": "1981110",
       "title": "autos suzuki grand vitara sz quito 2017",
       "price": "$14,900",
       "year": "2017",
       "kms": "100.000 Kms",
       "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/1882026/1981110/o_o/pt_1981110_1787074781399_813.jpg",
-      "dealer": "10 de Agosto",
-      "dealerId": "1570"
-    },
-    {
-      "id": "1978543",
-      "title": "autos volvo xc90 quito 2006",
-      "price": "$11,990",
-      "year": "2006",
-      "kms": "170.000 Kms",
-      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/482026/1978543/o_o/pt_1978543_1785871465764_975.jpg",
       "dealer": "10 de Agosto",
       "dealerId": "1570"
     },
@@ -3711,6 +3611,16 @@
       "dealerId": "1570"
     },
     {
+      "id": "1979021",
+      "title": "autos suzuki grand vitara sz quito 2019",
+      "price": "$14,200",
+      "year": "2019",
+      "kms": "140.000 Kms",
+      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/682026/1979021/o_o/pt_1979021_1786031777816_409.jpg",
+      "dealer": "10 de Agosto",
+      "dealerId": "1570"
+    },
+    {
       "id": "1963767",
       "title": "autos toyota fortuner quito 2011",
       "price": "$19,900",
@@ -3721,12 +3631,12 @@
       "dealerId": "1570"
     },
     {
-      "id": "1974312",
-      "title": "autos chery tiggo 8 luxury quito 2023",
-      "price": "$17,900",
-      "year": "2023",
-      "kms": "60.000 Kms",
-      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/2026710/1974312/o_o/pt_1974312_8435899.jpeg",
+      "id": "1981899",
+      "title": "autos chevrolet spark gt quito 2019",
+      "price": "$10,990",
+      "year": "2019",
+      "kms": "149.000 Kms",
+      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/2182026/1981899/o_o/pt_1981899_1787346369313_942.jpg",
       "dealer": "10 de Agosto",
       "dealerId": "1570"
     },
@@ -3751,32 +3661,32 @@
       "dealerId": "1570"
     },
     {
+      "id": "1969054",
+      "title": "autos dodge ram quito 2025",
+      "price": "$65,900",
+      "year": "2025",
+      "kms": "30.000 Kms",
+      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/2026611/1969054/o_o/pt_1969054_8357377.jpeg",
+      "dealer": "10 de Agosto",
+      "dealerId": "1570"
+    },
+    {
+      "id": "1978543",
+      "title": "autos volvo xc90 quito 2006",
+      "price": "$11,990",
+      "year": "2006",
+      "kms": "170.000 Kms",
+      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/482026/1978543/o_o/pt_1978543_1785871465764_975.jpg",
+      "dealer": "10 de Agosto",
+      "dealerId": "1570"
+    },
+    {
       "id": "1978433",
       "title": "autos kia sonet lx std quito 2023",
       "price": "$18,900",
       "year": "2023",
       "kms": "56.000 Kms",
       "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/482026/1978433/o_o/pt_1978433_1785858986900_396.jpg",
-      "dealer": "10 de Agosto",
-      "dealerId": "1570"
-    },
-    {
-      "id": "1975656",
-      "title": "autos peugeot 206 quito 2007",
-      "price": "$4,900",
-      "year": "2007",
-      "kms": "200.000 Kms",
-      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/2026717/1975656/o_o/pt_1975656_6154425.jpeg",
-      "dealer": "10 de Agosto",
-      "dealerId": "1570"
-    },
-    {
-      "id": "1981899",
-      "title": "autos chevrolet spark gt quito 2019",
-      "price": "$10,990",
-      "year": "2019",
-      "kms": "149.000 Kms",
-      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/2182026/1981899/o_o/pt_1981899_1787346369313_942.jpg",
       "dealer": "10 de Agosto",
       "dealerId": "1570"
     },
@@ -3791,12 +3701,12 @@
       "dealerId": "1570"
     },
     {
-      "id": "1974657",
-      "title": "autos volkswagen gol 1 6 quito 2013",
-      "price": "$8,600",
-      "year": "2013",
-      "kms": "190.000 Kms",
-      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/2026713/1974657/o_o/pt_1974657_4641000.jpeg",
+      "id": "1975656",
+      "title": "autos peugeot 206 quito 2007",
+      "price": "$4,900",
+      "year": "2007",
+      "kms": "200.000 Kms",
+      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/2026717/1975656/o_o/pt_1975656_6154425.jpeg",
       "dealer": "10 de Agosto",
       "dealerId": "1570"
     },
@@ -3811,12 +3721,32 @@
       "dealerId": "1570"
     },
     {
-      "id": "1979021",
-      "title": "autos suzuki grand vitara sz quito 2019",
-      "price": "$14,200",
-      "year": "2019",
-      "kms": "140.000 Kms",
-      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/682026/1979021/o_o/pt_1979021_1786031777816_409.jpg",
+      "id": "1956765",
+      "title": "autos mitsubishi montero quito 2003",
+      "price": "$10,300",
+      "year": "2003",
+      "kms": "220.000 Kms",
+      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/202641/1956765/o_o/pt_1956765_7012963.jpeg",
+      "dealer": "10 de Agosto",
+      "dealerId": "1570"
+    },
+    {
+      "id": "1974657",
+      "title": "autos volkswagen gol 1 6 quito 2013",
+      "price": "$8,600",
+      "year": "2013",
+      "kms": "190.000 Kms",
+      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/2026713/1974657/o_o/pt_1974657_4641000.jpeg",
+      "dealer": "10 de Agosto",
+      "dealerId": "1570"
+    },
+    {
+      "id": "1977161",
+      "title": "autos great wall haval h6 quito 2018",
+      "price": "$10,990",
+      "year": "2018",
+      "kms": "",
+      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/2026727/1977161/o_o/pt_1977161_7269605.jpeg",
       "dealer": "10 de Agosto",
       "dealerId": "1570"
     },
@@ -3851,16 +3781,6 @@
       "dealerId": "1570"
     },
     {
-      "id": "1973941",
-      "title": "autos ford explorer xlt quito 2007",
-      "price": "$7,900",
-      "year": "2007",
-      "kms": "350.000 Kms",
-      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/202678/1973941/o_o/pt_1973941_7090732.jpeg",
-      "dealer": "10 de Agosto",
-      "dealerId": "1570"
-    },
-    {
       "id": "1979565",
       "title": "autos great wall h3 quito 2018",
       "price": "$12,600",
@@ -3871,22 +3791,22 @@
       "dealerId": "1570"
     },
     {
+      "id": "1973941",
+      "title": "autos ford explorer xlt quito 2007",
+      "price": "$7,900",
+      "year": "2007",
+      "kms": "350.000 Kms",
+      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/202678/1973941/o_o/pt_1973941_7090732.jpeg",
+      "dealer": "10 de Agosto",
+      "dealerId": "1570"
+    },
+    {
       "id": "1979569",
       "title": "autos chevrolet optra quito 2008",
       "price": "$6,990",
       "year": "2008",
       "kms": "270.000 Kms",
       "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/1082026/1979569/o_o/pt_1979569_1786379556181_82.jpg",
-      "dealer": "10 de Agosto",
-      "dealerId": "1570"
-    },
-    {
-      "id": "1969054",
-      "title": "autos dodge ram quito 2025",
-      "price": "$65,900",
-      "year": "2025",
-      "kms": "30.000 Kms",
-      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/2026611/1969054/o_o/pt_1969054_8357377.jpeg",
       "dealer": "10 de Agosto",
       "dealerId": "1570"
     },
@@ -3911,22 +3831,22 @@
       "dealerId": "1570"
     },
     {
-      "id": "1967899",
-      "title": "autos peugeot 2008 quito 2022",
-      "price": "$17,990",
-      "year": "2008",
-      "kms": "100.000 Kms",
-      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/202665/1967899/o_o/pt_1967899_2347974.jpeg",
-      "dealer": "10 de Agosto",
-      "dealerId": "1570"
-    },
-    {
       "id": "1955996",
       "title": "autos peugeot 3008n act quito 2020",
       "price": "$19,900",
       "year": "2020",
       "kms": "98.000 Kms",
       "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/2026327/1955996/o_o/pt_1955996_5677732.jpeg",
+      "dealer": "10 de Agosto",
+      "dealerId": "1570"
+    },
+    {
+      "id": "1967899",
+      "title": "autos peugeot 2008 quito 2022",
+      "price": "$17,990",
+      "year": "2008",
+      "kms": "100.000 Kms",
+      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/202665/1967899/o_o/pt_1967899_2347974.jpeg",
       "dealer": "10 de Agosto",
       "dealerId": "1570"
     },
@@ -3941,26 +3861,6 @@
       "dealerId": "1570"
     },
     {
-      "id": "1956765",
-      "title": "autos mitsubishi montero quito 2003",
-      "price": "$10,300",
-      "year": "2003",
-      "kms": "220.000 Kms",
-      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/202641/1956765/o_o/pt_1956765_7012963.jpeg",
-      "dealer": "10 de Agosto",
-      "dealerId": "1570"
-    },
-    {
-      "id": "1977967",
-      "title": "autos chevrolet spark gt quito 2019",
-      "price": "$11,990",
-      "year": "2019",
-      "kms": "150.000 Kms",
-      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/3172026/1977967/o_o/pt_1977967_1785535904149_616.jpg",
-      "dealer": "10 de Agosto",
-      "dealerId": "1570"
-    },
-    {
       "id": "1981907",
       "title": "autos kia sportage r quito 2015",
       "price": "$17,300",
@@ -3971,12 +3871,12 @@
       "dealerId": "1570"
     },
     {
-      "id": "1977161",
-      "title": "autos great wall haval h6 quito 2018",
-      "price": "$10,990",
-      "year": "2018",
-      "kms": "",
-      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/2026727/1977161/o_o/pt_1977161_7269605.jpeg",
+      "id": "1963795",
+      "title": "autos renault logan quito 2014",
+      "price": "$8,900",
+      "year": "2014",
+      "kms": "70.000 Kms",
+      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/2026513/1963795/o_o/pt_1963795_6535210.jpeg",
       "dealer": "10 de Agosto",
       "dealerId": "1570"
     },
@@ -4021,6 +3921,16 @@
       "dealerId": "1570"
     },
     {
+      "id": "1977967",
+      "title": "autos chevrolet spark gt quito 2019",
+      "price": "$11,990",
+      "year": "2019",
+      "kms": "150.000 Kms",
+      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/3172026/1977967/o_o/pt_1977967_1785535904149_616.jpg",
+      "dealer": "10 de Agosto",
+      "dealerId": "1570"
+    },
+    {
       "id": "1969623",
       "title": "autos kia carens quito 2025",
       "price": "$25,900",
@@ -4051,22 +3961,22 @@
       "dealerId": "1570"
     },
     {
-      "id": "1968239",
-      "title": "autos chevrolet grand vitara std quito 2012",
-      "price": "$12,900",
-      "year": "2012",
-      "kms": "180.000 Kms",
-      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/202668/1968239/o_o/pt_1968239_9595880.jpeg",
-      "dealer": "10 de Agosto",
-      "dealerId": "1570"
-    },
-    {
       "id": "1978256",
       "title": "autos hyundai accent quito 2024",
       "price": "$18,900",
       "year": "2024",
       "kms": "42.000 Kms",
       "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/382026/1978256/o_o/pt_1978256_1785779825661_102.jpg",
+      "dealer": "10 de Agosto",
+      "dealerId": "1570"
+    },
+    {
+      "id": "1968239",
+      "title": "autos chevrolet grand vitara std quito 2012",
+      "price": "$12,900",
+      "year": "2012",
+      "kms": "180.000 Kms",
+      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/202668/1968239/o_o/pt_1968239_9595880.jpeg",
       "dealer": "10 de Agosto",
       "dealerId": "1570"
     },
@@ -4201,16 +4111,6 @@
       "dealerId": "1570"
     },
     {
-      "id": "1963795",
-      "title": "autos renault logan quito 2014",
-      "price": "$8,900",
-      "year": "2014",
-      "kms": "70.000 Kms",
-      "img": "https://images.patiotuerca.com/thumbs/w/sm/amz_ptf_ecuador/2026513/1963795/o_o/pt_1963795_6535210.jpeg",
-      "dealer": "10 de Agosto",
-      "dealerId": "1570"
-    },
-    {
       "id": "1952038",
       "title": "autos bmw x6 m quito 2016",
       "price": "$86,900",
@@ -4301,6 +4201,6 @@
       "dealerId": "1570"
     }
   ],
-  "total": 430,
-  "updated": "2026-10-06T02:31:50.605326+00:00"
+  "total": 420,
+  "updated": "2026-10-07T05:06:52.312826+00:00"
 }
