@@ -109,6 +109,16 @@
   .modal-img { width: 100%; height: 260px; object-fit: cover; display: block; }
   .modal-img-placeholder { width: 100%; height: 260px; background: var(--bg); display: flex; align-items: center; justify-content: center; font-size: 4rem; color: var(--text-faint); }
   .modal-body { padding: 1.5rem; }
+  .gallery { position: relative; background: var(--bg); touch-action: pan-y; }
+  .gal-btn { position: absolute; top: 50%; transform: translateY(-50%); width: 40px; height: 40px; border-radius: 50%; border: none; background: rgba(15,25,35,.6); color: white; font-size: 22px; line-height: 1; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background .15s; }
+  .gal-btn:hover { background: rgba(15,25,35,.85); }
+  .gal-prev { left: 10px; } .gal-next { right: 10px; }
+  .gal-count { position: absolute; bottom: 10px; right: 10px; background: rgba(15,25,35,.75); color: white; font-size: 11px; font-weight: 500; padding: 3px 10px; border-radius: 20px; }
+  .gal-thumbs { display: flex; gap: 6px; padding: 10px 1.5rem 0; overflow-x: auto; scrollbar-width: none; }
+  .gal-thumbs::-webkit-scrollbar { display: none; }
+  .gal-thumbs img { width: 58px; height: 44px; object-fit: cover; border-radius: 6px; cursor: pointer; opacity: .5; border: 2px solid transparent; flex-shrink: 0; transition: opacity .15s, border-color .15s; }
+  .gal-thumbs img.active { opacity: 1; border-color: var(--accent); }
+  .card-photos { position: absolute; bottom: 10px; right: 10px; background: rgba(15,25,35,.75); color: white; font-size: 10px; font-weight: 500; padding: 3px 9px; border-radius: 20px; }
   .modal-meta { display: flex; gap: 8px; margin-bottom: .75rem; flex-wrap: wrap; }
   .modal-badge { font-size: 11px; font-weight: 500; background: var(--bg); color: var(--text-muted); padding: 3px 10px; border-radius: 10px; }
   .modal-title { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; margin-bottom: .5rem; line-height: 1.3; }
@@ -160,7 +170,7 @@
 </div>
 
 <div class="tab-bar">
-  <button class="tab active" data-tab="all" onclick="switchTab(this)">CARPLACE Matriz <span class="tab-count" id="cnt-all">—</span></button>
+  <button class="tab active" data-tab="all" onclick="switchTab(this)">CarPlace PAUL <span class="tab-count" id="cnt-all">—</span></button>
   <button class="tab" data-tab="fb" onclick="switchTab(this)">Facebook</button>
 </div>
 
@@ -215,7 +225,7 @@
 </div>
 
 <footer ondblclick="location.href='/admin'">
-  <p>Catálogo oficial de <strong>Paul AUTOS</strong> &nbsp;·&nbsp; CARPLACE Matriz &nbsp;·&nbsp; Paul Bonifaz &nbsp;·&nbsp; 0968886211</p>
+  <p>Catálogo oficial de <strong>Paul AUTOS</strong> &nbsp;·&nbsp; CarPlace PAUL &nbsp;·&nbsp; Paul Bonifaz &nbsp;·&nbsp; 0968886211</p>
 </footer>
 
 <script>
@@ -330,6 +340,7 @@ function renderGrid() {
           : ''}
         <div class="card-placeholder" style="display:${v.img?'none':'flex'}">🚗</div>
         <span class="card-dealer-tag">${v.dealer}</span>
+        ${(v.images||[]).length > 1 ? `<span class="card-photos">📷 ${v.images.length}</span>` : ''}
       </div>
       <div class="card-body">
         <div class="card-meta">
@@ -365,9 +376,10 @@ function scrollToGrid() {
 
 function openModal(v) {
   const msg = encodeURIComponent(`Hola Paul, estoy interesado en el ${v.title} ${v.year} (${v.price}). ¿Está disponible?`);
-  document.getElementById('modal-img-wrap').innerHTML = v.img
-    ? `<img class="modal-img" src="${v.img}" alt="${v.title}">`
-    : `<div class="modal-img-placeholder">🚗</div>`;
+  galImgs = (v.images && v.images.length) ? v.images : (v.img ? [v.img] : []);
+  galIdx = 0;
+  galTitle = v.title;
+  renderGallery();
   document.getElementById('modal-meta').innerHTML =
     `<span class="modal-badge">${v.year||'—'}</span><span class="modal-badge">${v.kms||'—'}</span><span class="modal-badge">${v.dealer}</span>`;
   document.getElementById('modal-title').textContent = v.title;
@@ -377,13 +389,49 @@ function openModal(v) {
   document.body.style.overflow = 'hidden';
 }
 
+let galImgs = [], galIdx = 0, galTitle = '';
+function renderGallery() {
+  const wrap = document.getElementById('modal-img-wrap');
+  if (!galImgs.length) { wrap.innerHTML = `<div class="modal-img-placeholder">🚗</div>`; return; }
+  const multi = galImgs.length > 1;
+  wrap.innerHTML = `
+    <div class="gallery" id="gallery">
+      <img class="modal-img" src="${galImgs[galIdx]}" alt="${galTitle}">
+      ${multi ? `<button class="gal-btn gal-prev" onclick="galGo(-1)" aria-label="Foto anterior">‹</button>
+      <button class="gal-btn gal-next" onclick="galGo(1)" aria-label="Foto siguiente">›</button>
+      <span class="gal-count">${galIdx + 1} / ${galImgs.length}</span>` : ''}
+    </div>
+    ${multi ? `<div class="gal-thumbs">${galImgs.map((src, i) =>
+      `<img src="${src}" class="${i === galIdx ? 'active' : ''}" onclick="galGo(${i - galIdx})" alt="">`).join('')}</div>` : ''}`;
+  const g = document.getElementById('gallery');
+  let x0 = null;
+  g.addEventListener('touchstart', e => { x0 = e.touches[0].clientX; }, { passive: true });
+  g.addEventListener('touchend', e => {
+    if (x0 === null) return;
+    const dx = e.changedTouches[0].clientX - x0; x0 = null;
+    if (Math.abs(dx) > 40) galGo(dx < 0 ? 1 : -1);
+  });
+  const act = wrap.querySelector('.gal-thumbs img.active');
+  if (act) act.scrollIntoView({ block: 'nearest', inline: 'nearest' });
+}
+function galGo(d) {
+  if (!galImgs.length) return;
+  galIdx = (galIdx + d + galImgs.length) % galImgs.length;
+  renderGallery();
+}
+
 function closeModal(e) {
   if (e && e.target !== document.getElementById('modal-overlay')) return;
   document.getElementById('modal-overlay').classList.remove('open');
   document.body.style.overflow = '';
 }
 
-document.addEventListener('keydown', e => { if (e.key === 'Escape') { document.getElementById('modal-overlay').classList.remove('open'); document.body.style.overflow = ''; }});
+document.addEventListener('keydown', e => {
+  if (document.getElementById('modal-overlay').classList.contains('open')) {
+    if (e.key === 'ArrowRight') galGo(1);
+    if (e.key === 'ArrowLeft') galGo(-1);
+  }
+  if (e.key === 'Escape') { document.getElementById('modal-overlay').classList.remove('open'); document.body.style.overflow = ''; }});
 loadVehicles();
 </script>
 </body>
