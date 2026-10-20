@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="Content-Security-Policy" content="img-src * data: blob:;">
-<title>Autos Quito — Catálogo de Vehículos</title>
+<title>Paul AUTOS — Catálogo de Vehículos</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 <style>
@@ -23,6 +23,17 @@
   .logo-text { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: white; }
   .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem,5vw,3rem); color: white; line-height: 1.15; margin-bottom: .75rem; position: relative; }
   .hero h1 span { color: var(--accent); }
+  .tiktok-promo { display: flex; width: fit-content; align-items: center; gap: 12px; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.14); border-radius: 40px; padding: 7px 8px 7px 8px; margin: -0.25rem auto 1.5rem; position: relative; text-decoration: none; transition: background .15s, border-color .15s; max-width: 100%; }
+  .tiktok-promo:hover { background: rgba(255,255,255,.1); border-color: rgba(254,44,85,.5); }
+  .tt-icon { width: 34px; height: 34px; border-radius: 50%; background: #000; border: 1px solid rgba(255,255,255,.2); display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: -2px -1px 0 #25f4ee, 2px 1px 0 #fe2c55; }
+  .tt-icon svg { width: 16px; height: 16px; fill: white; }
+  .tt-info { display: flex; flex-direction: column; text-align: left; line-height: 1.25; min-width: 0; }
+  .tt-handle { font-size: 13px; font-weight: 600; color: white; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .tt-followers { font-size: 12px; color: rgba(255,255,255,.55); }
+  .tt-followers strong { color: #fe2c55; font-weight: 600; }
+  .tt-btn { background: #fe2c55; color: white; font-size: 13px; font-weight: 600; padding: 8px 16px; border-radius: 30px; white-space: nowrap; flex-shrink: 0; }
+  .tiktok-promo:hover .tt-btn { background: #e8264c; }
+  @media (max-width: 420px) { .tiktok-promo { gap: 8px; } .tt-handle { font-size: 12px; } .tt-followers { font-size: 11px; } .tt-btn { padding: 7px 12px; font-size: 12px; } }
   .live-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(229,57,53,.15); border: 1px solid rgba(229,57,53,.3); color: #f08080; font-size: 12px; font-weight: 500; padding: 4px 14px; border-radius: 20px; margin-bottom: 1.25rem; position: relative; }
   .live-dot { width: 7px; height: 7px; background: var(--accent); border-radius: 50%; animation: blink 1.4s infinite; }
   @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.25} }
@@ -119,8 +130,16 @@
 <div class="hero">
   <div class="logo-row">
     <div class="logo-icon">🚗</div>
-    <span class="logo-text">Autos Quito</span>
+    <span class="logo-text">Paul AUTOS</span>
   </div>
+  <a class="tiktok-promo" href="https://www.tiktok.com/@paulelmandeloscarros" target="_blank" rel="noopener">
+    <span class="tt-icon"><svg viewBox="0 0 24 24"><path d="M9 3v10.55A4 4 0 1 0 11 17V7h4V3H9z"/></svg></span>
+    <span class="tt-info">
+      <span class="tt-handle">@paulelmandeloscarros</span>
+      <span class="tt-followers"><strong>331.3 mil</strong> seguidores en TikTok</span>
+    </span>
+    <span class="tt-btn">Sígueme</span>
+  </a>
   <div class="live-badge"><span class="live-dot"></span> Catálogo en vivo</div>
   <h1>Encuentra tu<br><span>próximo vehículo</span></h1>
   <div class="contact-card">
@@ -135,16 +154,13 @@
   </div>
   <div class="hero-stats">
     <div class="stat"><div class="stat-num" id="total-count">—</div><div class="stat-label">Vehículos</div></div>
-    <div class="stat"><div class="stat-num">3</div><div class="stat-label">Sucursales</div></div>
+    <div class="stat"><div class="stat-num">331K</div><div class="stat-label">Seguidores</div></div>
     <div class="stat"><div class="stat-num" id="last-update">—</div><div class="stat-label">Actualizado</div></div>
   </div>
 </div>
 
 <div class="tab-bar">
-  <button class="tab active" data-tab="all" onclick="switchTab(this)">Todos <span class="tab-count" id="cnt-all">—</span></button>
-  <button class="tab" data-tab="1167" onclick="switchTab(this)">Autos Quito <span class="tab-count" id="cnt-1167">—</span></button>
-  <button class="tab" data-tab="1378" onclick="switchTab(this)">Sucursal <span class="tab-count" id="cnt-1378">—</span></button>
-  <button class="tab" data-tab="1570" onclick="switchTab(this)">10 de Agosto <span class="tab-count" id="cnt-1570">—</span></button>
+  <button class="tab active" data-tab="all" onclick="switchTab(this)">CARPLACE Matriz <span class="tab-count" id="cnt-all">—</span></button>
   <button class="tab" data-tab="fb" onclick="switchTab(this)">Facebook</button>
 </div>
 
@@ -175,7 +191,7 @@
 <div id="fb-banner" style="display:none" class="fb-banner">
   <div class="fb-banner-inner">
     <p>También puedes ver nuestros vehículos en Facebook Marketplace.</p>
-    <a href="https://www.facebook.com/marketplace/profile/61579291691451/?ref=permalink&mibextid=dXMIcH" target="_blank" class="fb-link">Ver en Facebook →</a>
+    <a href="https://www.facebook.com/marketplace/profile/61594202110008/" target="_blank" class="fb-link">Ver en Facebook →</a>
   </div>
 </div>
 
@@ -198,8 +214,8 @@
   </div>
 </div>
 
-<footer>
-  <p>Catálogo oficial de <strong>Autos Quito</strong> &nbsp;·&nbsp; Paul Bonifaz &nbsp;·&nbsp; 0968886211</p>
+<footer ondblclick="location.href='/admin'">
+  <p>Catálogo oficial de <strong>Paul AUTOS</strong> &nbsp;·&nbsp; CARPLACE Matriz &nbsp;·&nbsp; Paul Bonifaz &nbsp;·&nbsp; 0968886211</p>
 </footer>
 
 <script>
@@ -234,10 +250,6 @@ async function loadVehicles() {
     const now = new Date();
     document.getElementById('last-update').textContent = now.getHours().toString().padStart(2,'0') + ':' + now.getMinutes().toString().padStart(2,'0');
     document.getElementById('cnt-all').textContent = allVehicles.length;
-    ['1167','1378','1570'].forEach(id => {
-      const el = document.getElementById('cnt-' + id);
-      if (el) el.textContent = allVehicles.filter(v => v.dealerId === id).length;
-    });
     const brands = [...new Set(allVehicles.map(v => extractBrand(v.title)).filter(Boolean))].sort();
     const sel = document.getElementById('brand');
     sel.innerHTML = '<option value="">Todas las marcas</option>';
