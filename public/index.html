@@ -35,6 +35,7 @@
   .tiktok-promo:hover .tt-btn { background: #e8264c; }
   @media (max-width: 420px) { .tiktok-promo { gap: 8px; } .tt-handle { font-size: 12px; } .tt-followers { font-size: 11px; } .tt-btn { padding: 7px 12px; font-size: 12px; } }
   .live-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(229,57,53,.15); border: 1px solid rgba(229,57,53,.3); color: #f08080; font-size: 12px; font-weight: 500; padding: 4px 14px; border-radius: 20px; margin-bottom: 1.25rem; position: relative; }
+  #live-badge { user-select: none; -webkit-user-select: none; }
   .live-dot { width: 7px; height: 7px; background: var(--accent); border-radius: 50%; animation: blink 1.4s infinite; }
   @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.25} }
   .contact-card { display: inline-flex; align-items: center; gap: 16px; background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.12); border-radius: 14px; padding: 12px 20px; margin-top: 1.5rem; position: relative; flex-wrap: wrap; justify-content: center; }
@@ -150,7 +151,7 @@
     </span>
     <span class="tt-btn">Sígueme</span>
   </a>
-  <div class="live-badge"><span class="live-dot"></span> Catálogo en vivo</div>
+  <div class="live-badge" id="live-badge" ondblclick="toggleCount()"><span class="live-dot"></span> <span id="live-text">Catálogo en vivo</span></div>
   <h1>Encuentra tu<br><span>próximo vehículo</span></h1>
   <div class="contact-card">
     <div class="contact-info">
@@ -163,14 +164,13 @@
     </a>
   </div>
   <div class="hero-stats">
-    <div class="stat"><div class="stat-num" id="total-count">—</div><div class="stat-label">Vehículos</div></div>
     <div class="stat"><div class="stat-num">331K</div><div class="stat-label">Seguidores</div></div>
     <div class="stat"><div class="stat-num" id="last-update">—</div><div class="stat-label">Actualizado</div></div>
   </div>
 </div>
 
 <div class="tab-bar">
-  <button class="tab active" data-tab="all" onclick="switchTab(this)">CarPlace PAUL <span class="tab-count" id="cnt-all">—</span></button>
+  <button class="tab active" data-tab="all" onclick="switchTab(this)">CarPlace PAUL</button>
   <button class="tab" data-tab="fb" onclick="switchTab(this)">Facebook</button>
 </div>
 
@@ -201,7 +201,7 @@
 <div id="fb-banner" style="display:none" class="fb-banner">
   <div class="fb-banner-inner">
     <p>También puedes ver nuestros vehículos en Facebook Marketplace.</p>
-    <a href="https://www.facebook.com/marketplace/profile/61594202110008/" target="_blank" class="fb-link">Ver en Facebook →</a>
+    <a href="https://www.facebook.com/marketplace/profile/61579291691451" target="_blank" class="fb-link">Ver en Facebook →</a>
   </div>
 </div>
 
@@ -256,10 +256,11 @@ async function loadVehicles() {
     const res = await fetch('/vehicles.json');
     const data = await res.json();
     allVehicles = data.vehicles || [];
-    document.getElementById('total-count').textContent = allVehicles.length;
+    // conteo oculto: tooltip del badge 'Catalogo en vivo' (doble clic lo muestra)
+    document.getElementById('live-badge').title = `${allVehicles.length} vehículos publicados`;
+    if (countShown) document.getElementById('live-text').textContent = `Catálogo en vivo · ${allVehicles.length}`;
     const now = new Date();
     document.getElementById('last-update').textContent = now.getHours().toString().padStart(2,'0') + ':' + now.getMinutes().toString().padStart(2,'0');
-    document.getElementById('cnt-all').textContent = allVehicles.length;
     const brands = [...new Set(allVehicles.map(v => extractBrand(v.title)).filter(Boolean))].sort();
     const sel = document.getElementById('brand');
     sel.innerHTML = '<option value="">Todas las marcas</option>';
@@ -271,6 +272,13 @@ async function loadVehicles() {
   } finally {
     btn.classList.remove('loading'); btn.disabled = false;
   }
+}
+
+let countShown = false;
+function toggleCount() {
+  countShown = !countShown;
+  document.getElementById('live-text').textContent =
+    countShown ? `Catálogo en vivo · ${allVehicles.length}` : 'Catálogo en vivo';
 }
 
 function switchTab(el) {
@@ -323,8 +331,11 @@ function renderGrid() {
   const start = (currentPage - 1) * PAGE_SIZE;
   const page  = filtered.slice(start, start + PAGE_SIZE);
 
-  document.getElementById('result-info').textContent =
-    `${filtered.length} vehículo${filtered.length !== 1 ? 's' : ''} encontrado${filtered.length !== 1 ? 's' : ''}`;
+  // el total no se muestra al publico; solo el resultado de una busqueda/filtro
+  const filtering = document.getElementById('search').value.trim() || document.getElementById('brand').value;
+  document.getElementById('result-info').textContent = filtering
+    ? `${filtered.length} vehículo${filtered.length !== 1 ? 's' : ''} encontrado${filtered.length !== 1 ? 's' : ''}`
+    : '';
 
   if (page.length === 0) {
     grid.innerHTML = '<div class="empty-state"><p>No se encontraron vehículos con esos filtros.</p></div>';
