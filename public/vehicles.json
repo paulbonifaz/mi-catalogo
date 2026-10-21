@@ -841,27 +841,6 @@
       "url": "https://www.facebook.com/marketplace/item/1485431426735238/"
     },
     {
-      "id": "2492264401262861",
-      "title": "MAZDA CX-3 ENTRY (JAPON) 2023",
-      "price": "$22,600",
-      "year": "2023",
-      "kms": "50.000 Kms",
-      "img": "/fotos/2492264401262861.jpg",
-      "images": [
-        "/fotos/2492264401262861.jpg",
-        "/fotos/2492264401262861_2.jpg",
-        "/fotos/2492264401262861_3.jpg",
-        "/fotos/2492264401262861_4.jpg",
-        "/fotos/2492264401262861_5.jpg",
-        "/fotos/2492264401262861_6.jpg",
-        "/fotos/2492264401262861_7.jpg"
-      ],
-      "description": "Mazda CX-3 Entry (Japón) , año 2023 , T/M , motor 2.000 , A/C , kilometraje 50.000 , precio $22.600 , recibimos tú vehículo",
-      "dealer": "CarPlace PAUL",
-      "dealerId": "carplace-matriz",
-      "url": "https://www.facebook.com/marketplace/item/2492264401262861/"
-    },
-    {
       "id": "wa-805c04306283",
       "title": "HYUNDAI VENUE",
       "price": "$16,500",
@@ -1057,6 +1036,6 @@
       "addedAt": "2026-10-21T02:09:13.327921+00:00"
     }
   ],
-  "total": 49,
+  "total": 48,
   "updated": "2026-10-21T02:09:13.350807+00:00"
 }
