@@ -958,30 +958,6 @@
       "addedAt": "2026-10-21T01:52:45.650370+00:00"
     },
     {
-      "id": "wa-1081a701485c",
-      "title": "RENAULT DUSTER INTENS",
-      "price": "$16,900",
-      "year": "2023",
-      "kms": "13.000 Kms",
-      "img": "/fotos/wa-1081a701485c.jpg",
-      "images": [
-        "/fotos/wa-1081a701485c.jpg",
-        "/fotos/wa-1081a701485c_2.jpg",
-        "/fotos/wa-1081a701485c_3.jpg",
-        "/fotos/wa-1081a701485c_4.jpg",
-        "/fotos/wa-1081a701485c_5.jpg",
-        "/fotos/wa-1081a701485c_6.jpg",
-        "/fotos/wa-1081a701485c_7.jpg"
-      ],
-      "description": "RENAULT DUSTER INTENS, AÑO 2023, FULL EQUIPO, MOTOR 1.6, RECORRIDO 13000 KM, $16900",
-      "dealer": "CarPlace PAUL",
-      "dealerId": "carplace-matriz",
-      "tipo": "auto",
-      "source": "wa",
-      "url": "",
-      "addedAt": "2026-10-21T01:52:59.693299+00:00"
-    },
-    {
       "id": "wa-4d0eb27757c0",
       "title": "SHINERAY XY250-11",
       "price": "$1,500",
@@ -1081,6 +1057,6 @@
       "addedAt": "2026-10-21T02:09:13.327921+00:00"
     }
   ],
-  "total": 50,
+  "total": 49,
   "updated": "2026-10-21T02:09:13.350807+00:00"
 }
