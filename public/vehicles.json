@@ -484,27 +484,6 @@
       "url": "https://www.facebook.com/marketplace/item/1140064808484521/"
     },
     {
-      "id": "4971326059789987",
-      "title": "FORD F150 LARIAT",
-      "price": "$34,900",
-      "year": "2015",
-      "kms": "0 Kms",
-      "img": "/fotos/4971326059789987.jpg",
-      "images": [
-        "/fotos/4971326059789987.jpg",
-        "/fotos/4971326059789987_2.jpg",
-        "/fotos/4971326059789987_3.jpg",
-        "/fotos/4971326059789987_4.jpg",
-        "/fotos/4971326059789987_5.jpg",
-        "/fotos/4971326059789987_6.jpg",
-        "/fotos/4971326059789987_7.jpg"
-      ],
-      "description": "🛻Ford F150 Lariat   \n⏳️Año 2015 \n🏁motor 3,5 ecobost \n📟130.00 kilómetros \n🛞Aros y llantas nuevas \n🆓️cubre balde nuevo \n📃matrícula y RTV Quito \n💣Precio $34.900 \n🚙Recibimos tú vehículo",
-      "dealer": "CarPlace PAUL",
-      "dealerId": "carplace-matriz",
-      "url": "https://www.facebook.com/marketplace/item/4971326059789987/"
-    },
-    {
       "id": "1079500925055659",
       "title": "FORD ECOSPORT",
       "price": "$15,900",
@@ -1102,6 +1081,6 @@
       "addedAt": "2026-10-21T02:09:13.327921+00:00"
     }
   ],
-  "total": 51,
+  "total": 50,
   "updated": "2026-10-21T02:09:13.350807+00:00"
 }
