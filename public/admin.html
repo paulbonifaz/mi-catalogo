@@ -24,6 +24,8 @@
   button { font:inherit; padding:8px 12px; border-radius:8px; border:1px solid var(--danger); background:transparent; color:var(--danger); cursor:pointer; }
   button:disabled { opacity:.5; cursor:default; }
   .status { margin:12px 0; font-size:14px; color:var(--muted); min-height:20px; }
+  .prov { display:inline-block; margin-left:6px; font-size:12px; font-weight:600; color:#1d4ed8; }
+  .tipo { display:inline-block; margin-left:8px; font-size:11px; font-weight:600; color:#7c3aed; background:#ede9fe; padding:2px 8px; border-radius:10px; vertical-align:middle; }
   .dup { display:inline-block; margin-left:8px; font-size:11px; font-weight:600; color:#b45309; background:#fef3c7; padding:2px 8px; border-radius:10px; vertical-align:middle; }
   .status.err { color:var(--danger); }
   @media (max-width:520px) { header { flex-direction:column; align-items:stretch; } }
@@ -32,7 +34,10 @@
 <body>
 <header>
   <h1>Admin — eliminar vehículos</h1>
-  <input type="password" id="pwd" placeholder="Contraseña de admin" autocomplete="current-password">
+  <div style="display:flex;gap:8px;flex-wrap:wrap">
+    <input type="password" id="pwd" placeholder="Contraseña de admin" autocomplete="current-password">
+    <button id="provBtn" type="button" style="border-color:var(--line);color:var(--text)">Ver proveedores</button>
+  </div>
 </header>
 <main>
   <div style="display:flex;gap:12px;align-items:center;margin-bottom:12px">
@@ -44,6 +49,7 @@
 </main>
 <script>
   let vehicles = [];
+  let proveedores = {};
   const statusEl = document.getElementById('status');
   const listEl = document.getElementById('list');
   const qEl = document.getElementById('q');
@@ -86,6 +92,20 @@
       const m = document.createElement('div');
       m.className = 'meta';
       m.textContent = [v.dealer, v.year, v.price, v.kms].filter(Boolean).join(' · ');
+      const pv = proveedores[v.id];
+      if (pv && pv.proveedor) {
+        const sp = document.createElement('span');
+        sp.className = 'prov';
+        sp.textContent = `· Proveedor: ${pv.proveedor}`;
+        sp.title = [pv.fuente, pv.fecha].filter(Boolean).join(' · ');
+        m.appendChild(sp);
+      }
+      if (v.tipo === 'moto') {
+        const tp = document.createElement('span');
+        tp.className = 'tipo';
+        tp.textContent = 'Moto';
+        t.appendChild(tp);
+      }
       info.append(t, m);
       const n = counts[dupKey(v)];
       if (n > 1) {
@@ -130,6 +150,23 @@
       setStatus(e.message, true);
     }
   }
+
+  async function loadProveedores() {
+    const password = pwdEl.value;
+    if (!password) { setStatus('Escribe la contraseña de admin primero.', true); pwdEl.focus(); return; }
+    setStatus('Cargando proveedores...');
+    try {
+      const res = await fetch('/api/admin/proveedores', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ password }),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) throw new Error(data.error || `Error ${res.status}`);
+      proveedores = data.proveedores || {};
+      render();
+      setStatus(`${Object.keys(proveedores).length} vehículos con proveedor registrado · ${statusEl.textContent}`);
+    } catch (e) { setStatus(e.message, true); }
+  }
+  document.getElementById('provBtn').addEventListener('click', loadProveedores);
 
   qEl.addEventListener('input', render);
   dupEl.addEventListener('change', render);

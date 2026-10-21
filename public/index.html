@@ -170,7 +170,8 @@
 </div>
 
 <div class="tab-bar">
-  <button class="tab active" data-tab="all" onclick="switchTab(this)">CarPlace PAUL</button>
+  <button class="tab active" data-tab="autos" onclick="switchTab(this)">CarPlace PAUL</button>
+  <button class="tab" data-tab="motos" onclick="switchTab(this)">Motos CarPlace</button>
   <button class="tab" data-tab="fb" onclick="switchTab(this)">Facebook</button>
 </div>
 
@@ -231,7 +232,8 @@
 <script>
 const PAGE_SIZE = 12;
 let allVehicles = [];
-let activeTab = 'all';
+let activeTab = 'autos';
+const tipoOf = v => (v.tipo === 'moto' ? 'motos' : 'autos');
 let currentPage = 1;
 
 function priceNum(v) { return parseFloat((v.price||'0').replace(/[^0-9.]/g,''))||0; }
@@ -261,10 +263,7 @@ async function loadVehicles() {
     if (countShown) document.getElementById('live-text').textContent = `Catálogo en vivo · ${allVehicles.length}`;
     const now = new Date();
     document.getElementById('last-update').textContent = now.getHours().toString().padStart(2,'0') + ':' + now.getMinutes().toString().padStart(2,'0');
-    const brands = [...new Set(allVehicles.map(v => extractBrand(v.title)).filter(Boolean))].sort();
-    const sel = document.getElementById('brand');
-    sel.innerHTML = '<option value="">Todas las marcas</option>';
-    brands.forEach(b => { const o = document.createElement('option'); o.value = b; o.textContent = b; sel.appendChild(o); });
+    refreshBrands();
     goPage(1);
     renderGrid();
   } catch(e) {
@@ -281,10 +280,22 @@ function toggleCount() {
     countShown ? `Catálogo en vivo · ${allVehicles.length}` : 'Catálogo en vivo';
 }
 
+// marcas del filtro segun la pestana (autos o motos)
+function refreshBrands() {
+  const sel = document.getElementById('brand');
+  const prev = sel.value;
+  const pool = allVehicles.filter(v => activeTab === 'fb' || tipoOf(v) === activeTab);
+  const brands = [...new Set(pool.map(v => extractBrand(v.title)).filter(Boolean))].sort();
+  sel.innerHTML = '<option value="">Todas las marcas</option>';
+  brands.forEach(b => { const o = document.createElement('option'); o.value = b; o.textContent = b; sel.appendChild(o); });
+  if (brands.includes(prev)) sel.value = prev;
+}
+
 function switchTab(el) {
   document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
   el.classList.add('active');
   activeTab = el.dataset.tab;
+  refreshBrands();
   document.getElementById('fb-banner').style.display = activeTab === 'fb' ? 'block' : 'none';
   goPage(1);
   renderGrid();
@@ -299,7 +310,7 @@ function getFiltered() {
 
   let list = allVehicles.filter(v => {
     if (activeTab === 'fb') return false;
-    if (activeTab !== 'all' && v.dealerId !== activeTab) return false;
+    if (tipoOf(v) !== activeTab) return false;
     if (brand && extractBrand(v.title) !== brand) return false;
     if (search && !v.title.toLowerCase().includes(search)) return false;
     return true;
@@ -338,7 +349,9 @@ function renderGrid() {
     : '';
 
   if (page.length === 0) {
-    grid.innerHTML = '<div class="empty-state"><p>No se encontraron vehículos con esos filtros.</p></div>';
+    grid.innerHTML = (activeTab === 'motos' && !filtering)
+      ? '<div class="empty-state"><p>Pronto tendremos motos disponibles. Escríbenos por WhatsApp y te avisamos.</p></div>'
+      : '<div class="empty-state"><p>No se encontraron vehículos con esos filtros.</p></div>';
     paginationEl.innerHTML = '';
     return;
   }
