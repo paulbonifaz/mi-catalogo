@@ -1,27 +1,6 @@
 {
   "vehicles": [
     {
-      "id": "1525317528969287",
-      "title": "PEUGEOT 206 XT",
-      "price": "$7,350",
-      "year": "2008",
-      "kms": "",
-      "img": "/fotos/1525317528969287.jpg",
-      "images": [
-        "/fotos/1525317528969287.jpg",
-        "/fotos/1525317528969287_2.jpg",
-        "/fotos/1525317528969287_3.jpg",
-        "/fotos/1525317528969287_4.jpg",
-        "/fotos/1525317528969287_5.jpg",
-        "/fotos/1525317528969287_6.jpg",
-        "/fotos/1525317528969287_7.jpg"
-      ],
-      "description": "Peugeot 206 XT 1.6 AC TM año 2008, techo panorámico, 2 llaves originales, llantas maxxis, radio pionner bluetooth, full equipo, matrícula y corpaire en Pichincha, toda prueba. Precio $7350 negociable",
-      "dealer": "CarPlace PAUL",
-      "dealerId": "carplace-matriz",
-      "url": "https://www.facebook.com/marketplace/item/1525317528969287/"
-    },
-    {
       "id": "1106659548737946",
       "title": "JETOUR X70 COUPE III",
       "price": "$17,500",
@@ -1036,6 +1015,6 @@
       "addedAt": "2026-10-21T02:09:13.327921+00:00"
     }
   ],
-  "total": 48,
+  "total": 47,
   "updated": "2026-10-21T02:09:13.350807+00:00"
 }
