@@ -442,27 +442,6 @@
       "url": "https://www.facebook.com/marketplace/item/2366026280599829/"
     },
     {
-      "id": "1104522645799373",
-      "title": "VOLKSWAGEN TIGUAN TRENDLINE",
-      "price": "$17,500",
-      "year": "2018",
-      "kms": "95.000 Kms",
-      "img": "/fotos/1104522645799373.jpg",
-      "images": [
-        "/fotos/1104522645799373.jpg",
-        "/fotos/1104522645799373_2.jpg",
-        "/fotos/1104522645799373_3.jpg",
-        "/fotos/1104522645799373_4.jpg",
-        "/fotos/1104522645799373_5.jpg",
-        "/fotos/1104522645799373_6.jpg",
-        "/fotos/1104522645799373_7.jpg"
-      ],
-      "description": "🚙Volkswagen Tiguan Trendline 🏁2.0 TSI\n💪4x4\n🕹TA\n🚦4Emotion \n⏳️año 2018\n📟95 mil kms\n🕴ÚNICO DUEÑO\n 🛠MANTENIMIENTOS EN CASA\n🏎full equipo.\n💣 Precio $17500",
-      "dealer": "CarPlace PAUL",
-      "dealerId": "carplace-matriz",
-      "url": "https://www.facebook.com/marketplace/item/1104522645799373/"
-    },
-    {
       "id": "1473344624846465",
       "title": "KIA SOLUTO LX 1.4",
       "price": "$14,700",
@@ -1144,6 +1123,6 @@
       "addedAt": "2026-10-21T02:09:13.327921+00:00"
     }
   ],
-  "total": 53,
+  "total": 52,
   "updated": "2026-10-21T02:09:13.350807+00:00"
 }
