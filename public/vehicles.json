@@ -841,27 +841,6 @@
       "url": "https://www.facebook.com/marketplace/item/1464038022293667/"
     },
     {
-      "id": "3701274586692319",
-      "title": "CHEVROLET BEAT PREMIER",
-      "price": "$12,900",
-      "year": "2022",
-      "kms": "50.000 Kms",
-      "img": "/fotos/3701274586692319.jpg",
-      "images": [
-        "/fotos/3701274586692319.jpg",
-        "/fotos/3701274586692319_2.jpg",
-        "/fotos/3701274586692319_3.jpg",
-        "/fotos/3701274586692319_4.jpg",
-        "/fotos/3701274586692319_5.jpg",
-        "/fotos/3701274586692319_6.jpg",
-        "/fotos/3701274586692319_7.jpg"
-      ],
-      "description": "Chevrolet Beat Premier \núnico dueño \naño 2022 \nmotor 1.200 \nA/C \n50.000 kilómetros  mantenimientos en Concesionario Chevrolet.\nPrecio $12.900\nRecibimos tú vehículo",
-      "dealer": "CarPlace PAUL",
-      "dealerId": "carplace-matriz",
-      "url": "https://www.facebook.com/marketplace/item/3701274586692319/"
-    },
-    {
       "id": "1485431426735238",
       "title": "MAZDA NEW BT50 (TAILANDIA)",
       "price": "$29,900",
@@ -1123,6 +1102,6 @@
       "addedAt": "2026-10-21T02:09:13.327921+00:00"
     }
   ],
-  "total": 52,
+  "total": 51,
   "updated": "2026-10-21T02:09:13.350807+00:00"
 }
