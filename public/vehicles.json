@@ -923,8 +923,206 @@
       "dealer": "CarPlace PAUL",
       "dealerId": "carplace-matriz",
       "url": "https://www.facebook.com/marketplace/item/2492264401262861/"
+    },
+    {
+      "id": "wa-805c04306283",
+      "title": "HYUNDAI VENUE",
+      "price": "$16,500",
+      "year": "2020",
+      "kms": "117.000 Kms",
+      "img": "/fotos/wa-805c04306283.jpg",
+      "images": [
+        "/fotos/wa-805c04306283.jpg",
+        "/fotos/wa-805c04306283_2.jpg",
+        "/fotos/wa-805c04306283_3.jpg",
+        "/fotos/wa-805c04306283_4.jpg",
+        "/fotos/wa-805c04306283_5.jpg",
+        "/fotos/wa-805c04306283_6.jpg",
+        "/fotos/wa-805c04306283_7.jpg"
+      ],
+      "description": "Hyundai Venue 1.6 AC TM año 2020, 117 mil kms, llantas nuevas, full equipo, toda prueba. Precio $16500",
+      "dealer": "CarPlace PAUL",
+      "dealerId": "carplace-matriz",
+      "tipo": "auto",
+      "source": "wa",
+      "url": "",
+      "addedAt": "2026-10-21T01:52:04.441640+00:00"
+    },
+    {
+      "id": "wa-4635853d4cf8",
+      "title": "KIA CERATO FORTE",
+      "price": "$10,900",
+      "year": "2015",
+      "kms": "84.000 Kms",
+      "img": "/fotos/wa-4635853d4cf8.jpg",
+      "images": [
+        "/fotos/wa-4635853d4cf8.jpg",
+        "/fotos/wa-4635853d4cf8_2.jpg",
+        "/fotos/wa-4635853d4cf8_3.jpg",
+        "/fotos/wa-4635853d4cf8_4.jpg",
+        "/fotos/wa-4635853d4cf8_5.jpg",
+        "/fotos/wa-4635853d4cf8_6.jpg",
+        "/fotos/wa-4635853d4cf8_7.jpg"
+      ],
+      "description": "Kia Cerato Forte 1.6 AC TA año 2015, 84 mil kms, full equipo, llantas nuevas, toda prueba. Precio $10900",
+      "dealer": "CarPlace PAUL",
+      "dealerId": "carplace-matriz",
+      "tipo": "auto",
+      "source": "wa",
+      "url": "",
+      "addedAt": "2026-10-21T01:52:18.298095+00:00"
+    },
+    {
+      "id": "wa-4a00c5f4937f",
+      "title": "GREAT WALL HOVER H5 ELITE",
+      "price": "$11,700",
+      "year": "2015",
+      "kms": "130.000 Kms",
+      "img": "/fotos/wa-4a00c5f4937f.jpg",
+      "images": [
+        "/fotos/wa-4a00c5f4937f.jpg",
+        "/fotos/wa-4a00c5f4937f_2.jpg",
+        "/fotos/wa-4a00c5f4937f_3.jpg",
+        "/fotos/wa-4a00c5f4937f_4.jpg",
+        "/fotos/wa-4a00c5f4937f_5.jpg",
+        "/fotos/wa-4a00c5f4937f_6.jpg",
+        "/fotos/wa-4a00c5f4937f_7.jpg"
+      ],
+      "description": "GREAT WALL HOVER H5 ELITE, AÑO 2015, 4X2, TRASMISIÓN MANUAL, MOTOR 2.4, UNICO DUEÑO, RECORRIDO 130000 KM, $11700",
+      "dealer": "CarPlace PAUL",
+      "dealerId": "carplace-matriz",
+      "tipo": "auto",
+      "source": "wa",
+      "url": "",
+      "addedAt": "2026-10-21T01:52:31.685380+00:00"
+    },
+    {
+      "id": "wa-60e33a753bb6",
+      "title": "VESPA ANIVERSARIO 70",
+      "price": "$3,200",
+      "year": "2017",
+      "kms": "23.000 Kms",
+      "img": "/fotos/wa-60e33a753bb6.jpg",
+      "images": [
+        "/fotos/wa-60e33a753bb6.jpg",
+        "/fotos/wa-60e33a753bb6_2.jpg",
+        "/fotos/wa-60e33a753bb6_3.jpg",
+        "/fotos/wa-60e33a753bb6_4.jpg",
+        "/fotos/wa-60e33a753bb6_5.jpg",
+        "/fotos/wa-60e33a753bb6_6.jpg",
+        "/fotos/wa-60e33a753bb6_7.jpg"
+      ],
+      "description": "VESPA ANIVERSARIO 70, AÑO 2017, MOTOR 150, UNICA , RECORRIDO 23000 KM, MATRÍCULA AL DÍA, $3200",
+      "dealer": "Motos CarPlace",
+      "dealerId": "carplace-motos",
+      "tipo": "moto",
+      "source": "wa",
+      "url": "",
+      "addedAt": "2026-10-21T01:52:45.650370+00:00"
+    },
+    {
+      "id": "wa-1081a701485c",
+      "title": "RENAULT DUSTER INTENS",
+      "price": "$16,900",
+      "year": "2023",
+      "kms": "13.000 Kms",
+      "img": "/fotos/wa-1081a701485c.jpg",
+      "images": [
+        "/fotos/wa-1081a701485c.jpg",
+        "/fotos/wa-1081a701485c_2.jpg",
+        "/fotos/wa-1081a701485c_3.jpg",
+        "/fotos/wa-1081a701485c_4.jpg",
+        "/fotos/wa-1081a701485c_5.jpg",
+        "/fotos/wa-1081a701485c_6.jpg",
+        "/fotos/wa-1081a701485c_7.jpg"
+      ],
+      "description": "RENAULT DUSTER INTENS, AÑO 2023, FULL EQUIPO, MOTOR 1.6, RECORRIDO 13000 KM, $16900",
+      "dealer": "CarPlace PAUL",
+      "dealerId": "carplace-matriz",
+      "tipo": "auto",
+      "source": "wa",
+      "url": "",
+      "addedAt": "2026-10-21T01:52:59.693299+00:00"
+    },
+    {
+      "id": "wa-4d0eb27757c0",
+      "title": "SHINERAY XY250-11",
+      "price": "$1,500",
+      "year": "2025",
+      "kms": "10.000 Kms",
+      "img": "/fotos/wa-4d0eb27757c0.jpg",
+      "images": [
+        "/fotos/wa-4d0eb27757c0.jpg"
+      ],
+      "description": "MOTOCICLETA SHINERAY XY250-11, SUPER SPORT, AÑO 2025, RECORRIDO 10000 KM, ÚNICO DUEÑO, MOTOR 250, 4 TIEMPOS , REFRIGERADO POR AIRE, $1500 FIJO",
+      "dealer": "Motos CarPlace",
+      "dealerId": "carplace-motos",
+      "tipo": "moto",
+      "source": "wa",
+      "url": "",
+      "addedAt": "2026-10-21T01:53:24.906896+00:00"
+    },
+    {
+      "id": "wa-5a25d9b761ae",
+      "title": "HAVAL H6",
+      "price": "$16,400",
+      "year": "2020",
+      "kms": "115.000 Kms",
+      "img": "/fotos/wa-5a25d9b761ae.jpg",
+      "images": [
+        "/fotos/wa-5a25d9b761ae.jpg"
+      ],
+      "description": "FLAMANTE HAVAL H6 , AÑO 2020, FULL EQUIPO, TRASMISIÓN AUTOMÁTICA, CON PALETAS DE CAMBIOS AL VOLANTE, MOTOR 2.0,  MATRÍCULA 2026, RECORRIDO 115000 KM, MANTENIMIENTO EN CASA COMERCIAL, $16400",
+      "dealer": "CarPlace PAUL",
+      "dealerId": "carplace-matriz",
+      "tipo": "auto",
+      "source": "wa",
+      "url": "",
+      "addedAt": "2026-10-21T01:53:50.525906+00:00"
+    },
+    {
+      "id": "wa-f50777689a87",
+      "title": "FORD ECOSPORT",
+      "price": "$12,400",
+      "year": "2014",
+      "kms": "145.000 Kms",
+      "img": "/fotos/wa-f50777689a87.jpg",
+      "images": [
+        "/fotos/wa-f50777689a87.jpg"
+      ],
+      "description": "FORD ECOSPORT, AÑO 2014, TRASMISIÓN AUTOMÁTICA, FULL EQUIPO, MATRÍCULA AL DÍA, RECORRIDO 145000 KM, $12400",
+      "dealer": "CarPlace PAUL",
+      "dealerId": "carplace-matriz",
+      "tipo": "auto",
+      "source": "wa",
+      "url": "",
+      "addedAt": "2026-10-21T01:54:15.671361+00:00"
+    },
+    {
+      "id": "wa-4238cda41e63",
+      "title": "TOYOTA FORTUNER",
+      "price": "$22,700",
+      "year": "2013",
+      "kms": "220.000 Kms",
+      "img": "/fotos/wa-4238cda41e63.jpg",
+      "images": [
+        "/fotos/wa-4238cda41e63.jpg",
+        "/fotos/wa-4238cda41e63_2.jpg",
+        "/fotos/wa-4238cda41e63_3.jpg",
+        "/fotos/wa-4238cda41e63_4.jpg",
+        "/fotos/wa-4238cda41e63_5.jpg",
+        "/fotos/wa-4238cda41e63_6.jpg",
+        "/fotos/wa-4238cda41e63_7.jpg"
+      ],
+      "description": "Toyota Fortuner manual 2013 4x4, 7 pasajeros, asientos de cuero, llantas nuevas, con 220.000 km precio $22.700",
+      "dealer": "CarPlace PAUL",
+      "dealerId": "carplace-matriz",
+      "tipo": "auto",
+      "source": "wa",
+      "url": "",
+      "addedAt": "2026-10-21T01:54:29.620179+00:00"
     }
   ],
-  "total": 44,
-  "updated": "2026-10-21T00:45:39.148957+00:00"
+  "total": 53,
+  "updated": "2026-10-21T01:54:29.652150+00:00"
 }
