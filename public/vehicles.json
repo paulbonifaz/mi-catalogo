@@ -1052,7 +1052,13 @@
       "kms": "10.000 Kms",
       "img": "/fotos/wa-4d0eb27757c0.jpg",
       "images": [
-        "/fotos/wa-4d0eb27757c0.jpg"
+        "/fotos/wa-4d0eb27757c0.jpg",
+        "/fotos/wa-4d0eb27757c0_2.jpg",
+        "/fotos/wa-4d0eb27757c0_3.jpg",
+        "/fotos/wa-4d0eb27757c0_4.jpg",
+        "/fotos/wa-4d0eb27757c0_5.jpg",
+        "/fotos/wa-4d0eb27757c0_6.jpg",
+        "/fotos/wa-4d0eb27757c0_7.jpg"
       ],
       "description": "MOTOCICLETA SHINERAY XY250-11, SUPER SPORT, AÑO 2025, RECORRIDO 10000 KM, ÚNICO DUEÑO, MOTOR 250, 4 TIEMPOS , REFRIGERADO POR AIRE, $1500 FIJO",
       "dealer": "Motos CarPlace",
@@ -1060,6 +1066,7 @@
       "tipo": "moto",
       "source": "wa",
       "url": "",
+      "fotosChat": 7,
       "addedAt": "2026-10-21T01:53:24.906896+00:00"
     },
     {
@@ -1070,7 +1077,13 @@
       "kms": "115.000 Kms",
       "img": "/fotos/wa-5a25d9b761ae.jpg",
       "images": [
-        "/fotos/wa-5a25d9b761ae.jpg"
+        "/fotos/wa-5a25d9b761ae.jpg",
+        "/fotos/wa-5a25d9b761ae_2.jpg",
+        "/fotos/wa-5a25d9b761ae_3.jpg",
+        "/fotos/wa-5a25d9b761ae_4.jpg",
+        "/fotos/wa-5a25d9b761ae_5.jpg",
+        "/fotos/wa-5a25d9b761ae_6.jpg",
+        "/fotos/wa-5a25d9b761ae_7.jpg"
       ],
       "description": "FLAMANTE HAVAL H6 , AÑO 2020, FULL EQUIPO, TRASMISIÓN AUTOMÁTICA, CON PALETAS DE CAMBIOS AL VOLANTE, MOTOR 2.0,  MATRÍCULA 2026, RECORRIDO 115000 KM, MANTENIMIENTO EN CASA COMERCIAL, $16400",
       "dealer": "CarPlace PAUL",
@@ -1078,6 +1091,7 @@
       "tipo": "auto",
       "source": "wa",
       "url": "",
+      "fotosChat": 13,
       "addedAt": "2026-10-21T01:53:50.525906+00:00"
     },
     {
@@ -1088,7 +1102,13 @@
       "kms": "145.000 Kms",
       "img": "/fotos/wa-f50777689a87.jpg",
       "images": [
-        "/fotos/wa-f50777689a87.jpg"
+        "/fotos/wa-f50777689a87.jpg",
+        "/fotos/wa-f50777689a87_2.jpg",
+        "/fotos/wa-f50777689a87_3.jpg",
+        "/fotos/wa-f50777689a87_4.jpg",
+        "/fotos/wa-f50777689a87_5.jpg",
+        "/fotos/wa-f50777689a87_6.jpg",
+        "/fotos/wa-f50777689a87_7.jpg"
       ],
       "description": "FORD ECOSPORT, AÑO 2014, TRASMISIÓN AUTOMÁTICA, FULL EQUIPO, MATRÍCULA AL DÍA, RECORRIDO 145000 KM, $12400",
       "dealer": "CarPlace PAUL",
@@ -1096,6 +1116,7 @@
       "tipo": "auto",
       "source": "wa",
       "url": "",
+      "fotosChat": 18,
       "addedAt": "2026-10-21T01:54:15.671361+00:00"
     },
     {
@@ -1124,5 +1145,5 @@
     }
   ],
   "total": 53,
-  "updated": "2026-10-21T01:54:29.652150+00:00"
+  "updated": "2026-10-21T02:00:43.138602+00:00"
 }
