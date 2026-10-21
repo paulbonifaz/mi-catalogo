@@ -1095,31 +1095,6 @@
       "addedAt": "2026-10-21T01:53:50.525906+00:00"
     },
     {
-      "id": "wa-f50777689a87",
-      "title": "FORD ECOSPORT",
-      "price": "$12,400",
-      "year": "2014",
-      "kms": "145.000 Kms",
-      "img": "/fotos/wa-f50777689a87.jpg",
-      "images": [
-        "/fotos/wa-f50777689a87.jpg",
-        "/fotos/wa-f50777689a87_2.jpg",
-        "/fotos/wa-f50777689a87_3.jpg",
-        "/fotos/wa-f50777689a87_4.jpg",
-        "/fotos/wa-f50777689a87_5.jpg",
-        "/fotos/wa-f50777689a87_6.jpg",
-        "/fotos/wa-f50777689a87_7.jpg"
-      ],
-      "description": "FORD ECOSPORT, AÑO 2014, TRASMISIÓN AUTOMÁTICA, FULL EQUIPO, MATRÍCULA AL DÍA, RECORRIDO 145000 KM, $12400",
-      "dealer": "CarPlace PAUL",
-      "dealerId": "carplace-matriz",
-      "tipo": "auto",
-      "source": "wa",
-      "url": "",
-      "fotosChat": 18,
-      "addedAt": "2026-10-21T01:54:15.671361+00:00"
-    },
-    {
       "id": "wa-4238cda41e63",
       "title": "TOYOTA FORTUNER",
       "price": "$22,700",
@@ -1169,6 +1144,6 @@
       "addedAt": "2026-10-21T02:09:13.327921+00:00"
     }
   ],
-  "total": 54,
+  "total": 53,
   "updated": "2026-10-21T02:09:13.350807+00:00"
 }
