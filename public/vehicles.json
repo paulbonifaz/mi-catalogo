@@ -43,27 +43,6 @@
       "url": "https://www.facebook.com/marketplace/item/28721400670802861/"
     },
     {
-      "id": "1837829050896168",
-      "title": "NISSAN KICKS DRIVE",
-      "price": "$16,900",
-      "year": "2019",
-      "kms": "90.000 Kms",
-      "img": "/fotos/1837829050896168.jpg",
-      "images": [
-        "/fotos/1837829050896168.jpg",
-        "/fotos/1837829050896168_2.jpg",
-        "/fotos/1837829050896168_3.jpg",
-        "/fotos/1837829050896168_4.jpg",
-        "/fotos/1837829050896168_5.jpg",
-        "/fotos/1837829050896168_6.jpg",
-        "/fotos/1837829050896168_7.jpg"
-      ],
-      "description": "Nissan Kicks Drive , año 2019 , motor 1.600 , A/C ,vidrios y retrovisores eléctricos , 90.000 kilómetros, transmisión manual.\nprecio $16.900 recibimos tú vehículo",
-      "dealer": "CarPlace PAUL",
-      "dealerId": "carplace-matriz",
-      "url": "https://www.facebook.com/marketplace/item/1837829050896168/"
-    },
-    {
       "id": "1095077246564060",
       "title": "Hyundai Sonata FE limited",
       "price": "$13,400",
@@ -1015,6 +994,6 @@
       "addedAt": "2026-10-21T02:09:13.327921+00:00"
     }
   ],
-  "total": 47,
+  "total": 46,
   "updated": "2026-10-21T02:09:13.350807+00:00"
 }
