@@ -8,5 +8,79 @@
     "2492264401262861",
     "1525317528969287",
     "1837829050896168"
+  ],
+  "removed": [
+    {
+      "id": "wa-f50777689a87",
+      "title": "FORD ECOSPORT",
+      "year": "2014",
+      "kms": "145.000 Kms",
+      "price": "$12,400",
+      "description": "FORD ECOSPORT, AÑO 2014, TRASMISIÓN AUTOMÁTICA, FULL EQUIPO, MATRÍCULA AL DÍA, RECORRIDO 145000 KM, $12400",
+      "removedAt": "2026-10-20T21:25:50-05:00"
+    },
+    {
+      "id": "1104522645799373",
+      "title": "VOLKSWAGEN TIGUAN TRENDLINE",
+      "year": "2018",
+      "kms": "95.000 Kms",
+      "price": "$17,500",
+      "description": "🚙Volkswagen Tiguan Trendline 🏁2.0 TSI\n💪4x4\n🕹TA\n🚦4Emotion \n⏳️año 2018\n📟95 mil kms\n🕴ÚNICO DUEÑO\n 🛠MANTENIMIENTOS EN CASA\n🏎full equipo.\n💣 Precio $17500",
+      "removedAt": "2026-10-21T13:05:33-05:00"
+    },
+    {
+      "id": "3701274586692319",
+      "title": "CHEVROLET BEAT PREMIER",
+      "year": "2022",
+      "kms": "50.000 Kms",
+      "price": "$12,900",
+      "description": "Chevrolet Beat Premier \núnico dueño \naño 2022 \nmotor 1.200 \nA/C \n50.000 kilómetros  mantenimientos en Concesionario Chevrolet.\nPrecio $12.900\nRecibimos tú vehículo",
+      "removedAt": "2026-10-21T13:05:46-05:00"
+    },
+    {
+      "id": "4971326059789987",
+      "title": "FORD F150 LARIAT",
+      "year": "2015",
+      "kms": "0 Kms",
+      "price": "$34,900",
+      "description": "🛻Ford F150 Lariat   \n⏳️Año 2015 \n🏁motor 3,5 ecobost \n📟130.00 kilómetros \n🛞Aros y llantas nuevas \n🆓️cubre balde nuevo \n📃matrícula y RTV Quito \n💣Precio $34.900 \n🚙Recibimos tú vehículo",
+      "removedAt": "2026-10-21T13:06:01-05:00"
+    },
+    {
+      "id": "wa-1081a701485c",
+      "title": "RENAULT DUSTER INTENS",
+      "year": "2023",
+      "kms": "13.000 Kms",
+      "price": "$16,900",
+      "description": "RENAULT DUSTER INTENS, AÑO 2023, FULL EQUIPO, MOTOR 1.6, RECORRIDO 13000 KM, $16900",
+      "removedAt": "2026-10-21T13:06:58-05:00"
+    },
+    {
+      "id": "2492264401262861",
+      "title": "MAZDA CX-3 ENTRY (JAPON) 2023",
+      "year": "2023",
+      "kms": "50.000 Kms",
+      "price": "$22,600",
+      "description": "Mazda CX-3 Entry (Japón) , año 2023 , T/M , motor 2.000 , A/C , kilometraje 50.000 , precio $22.600 , recibimos tú vehículo",
+      "removedAt": "2026-10-21T14:46:51-05:00"
+    },
+    {
+      "id": "1525317528969287",
+      "title": "PEUGEOT 206 XT",
+      "year": "2008",
+      "kms": "",
+      "price": "$7,350",
+      "description": "Peugeot 206 XT 1.6 AC TM año 2008, techo panorámico, 2 llaves originales, llantas maxxis, radio pionner bluetooth, full equipo, matrícula y corpaire en Pichincha, toda prueba. Precio $7350 negociable",
+      "removedAt": "2026-10-21T17:04:08-05:00"
+    },
+    {
+      "id": "1837829050896168",
+      "title": "NISSAN KICKS DRIVE",
+      "year": "2019",
+      "kms": "90.000 Kms",
+      "price": "$16,900",
+      "description": "Nissan Kicks Drive , año 2019 , motor 1.600 , A/C ,vidrios y retrovisores eléctricos , 90.000 kilómetros, transmisión manual.\nprecio $16.900 recibimos tú vehículo",
+      "removedAt": "2026-10-22T17:33:53-05:00"
+    }
   ]
 }

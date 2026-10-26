@@ -76,6 +76,19 @@ module.exports = async (req, res) => {
     }
 
     const catalog = await readJson(VEHICLES_PATH);
+    // se guardan los datos del auto borrado: asi el lector de WhatsApp lo reconoce
+    // aunque venga con otro ID (y no lo vuelve a subir si no se publica de nuevo)
+    const gone = catalog.data.vehicles.find(v => v.id === id);
+    if (gone) {
+      const fresh = await readJson(BLOCKED_PATH);
+      fresh.data.removed = fresh.data.removed || [];
+      if (!fresh.data.removed.some(r => r.id === id)) {
+        fresh.data.removed.push({ id, title: gone.title || '', year: gone.year || '', kms: gone.kms || '',
+          price: gone.price || '', description: (gone.description || '').slice(0, 400), removedAt: new Date().toISOString() });
+        if (fresh.data.removed.length > 500) fresh.data.removed.splice(0, fresh.data.removed.length - 500);
+        await writeJson(BLOCKED_PATH, fresh.sha, fresh.data, `Registra datos del vehiculo eliminado ${id}`);
+      }
+    }
     const before = catalog.data.vehicles.length;
     catalog.data.vehicles = catalog.data.vehicles.filter(v => v.id !== id);
     catalog.data.total = catalog.data.vehicles.length;
