@@ -1122,31 +1122,6 @@
       "addedAt": "2026-10-26T03:18:22.341802+00:00"
     },
     {
-      "id": "wa-0335e3a63a41",
-      "title": "KIA RIO LX HATCHBACK SPORT",
-      "price": "$18,500",
-      "year": "2024",
-      "kms": "15.500 Kms",
-      "img": "/fotos/wa-0335e3a63a41.jpg",
-      "images": [
-        "/fotos/wa-0335e3a63a41.jpg",
-        "/fotos/wa-0335e3a63a41_2.jpg",
-        "/fotos/wa-0335e3a63a41_3.jpg",
-        "/fotos/wa-0335e3a63a41_4.jpg",
-        "/fotos/wa-0335e3a63a41_5.jpg",
-        "/fotos/wa-0335e3a63a41_6.jpg",
-        "/fotos/wa-0335e3a63a41_7.jpg"
-      ],
-      "description": "FLAMANTE KIA RIO LX HATCHBACK SPORT AÑO 2024, FULL EQUIPO, UNICO DUEÑO, MOTOR 1.4, RECORRIDO 15500 KM, $18500",
-      "dealer": "CarPlace PAUL",
-      "dealerId": "carplace-matriz",
-      "tipo": "auto",
-      "source": "wa",
-      "url": "",
-      "fotosChat": 10,
-      "addedAt": "2026-10-26T03:18:29.061176+00:00"
-    },
-    {
       "id": "wa-56e92da984df",
       "title": "CHEVROLET JOY",
       "price": "$13,800",
@@ -1197,6 +1172,32 @@
       "addedAt": "2026-10-26T03:18:42.598915+00:00"
     },
     {
+      "id": "wa-0335e3a63a41",
+      "title": "KIA RIO LX HATCHBACK SPORT",
+      "price": "$18,500",
+      "year": "2024",
+      "kms": "15.500 Kms",
+      "img": "/fotos/wa-0335e3a63a41.jpg",
+      "images": [
+        "/fotos/wa-0335e3a63a41.jpg",
+        "/fotos/wa-0335e3a63a41_2.jpg",
+        "/fotos/wa-0335e3a63a41_3.jpg",
+        "/fotos/wa-0335e3a63a41_4.jpg",
+        "/fotos/wa-0335e3a63a41_5.jpg",
+        "/fotos/wa-0335e3a63a41_6.jpg",
+        "/fotos/wa-0335e3a63a41_7.jpg"
+      ],
+      "description": "FLAMANTE KIA RIO LX HATCHBACK SPORT AÑO 2024, FULL EQUIPO, UNICO DUEÑO, MOTOR 1.4, RECORRIDO 15500 KM, $18500",
+      "dealer": "CarPlace PAUL",
+      "dealerId": "carplace-matriz",
+      "tipo": "auto",
+      "source": "wa",
+      "url": "",
+      "fotosChat": 16,
+      "priceBefore": "",
+      "addedAt": "2026-10-26T03:57:50.895121+00:00"
+    },
+    {
       "id": "wa-11bdf89878dc",
       "title": "BMW X1 XDRIVE 28I",
       "price": "$13,800",
@@ -1204,7 +1205,13 @@
       "kms": "145.000 Kms",
       "img": "/fotos/wa-11bdf89878dc.jpg",
       "images": [
-        "/fotos/wa-11bdf89878dc.jpg"
+        "/fotos/wa-11bdf89878dc.jpg",
+        "/fotos/wa-11bdf89878dc_2.jpg",
+        "/fotos/wa-11bdf89878dc_3.jpg",
+        "/fotos/wa-11bdf89878dc_4.jpg",
+        "/fotos/wa-11bdf89878dc_5.jpg",
+        "/fotos/wa-11bdf89878dc_6.jpg",
+        "/fotos/wa-11bdf89878dc_7.jpg"
       ],
       "description": "BMW X1 XDRIVE 28i año 2012, 145 mil kms, full equipo, llantas nuevas bridgestone, documentos al día.\n\nPrecio $13800",
       "dealer": "CarPlace PAUL",
@@ -1212,11 +1219,37 @@
       "tipo": "auto",
       "source": "wa",
       "url": "",
-      "fotosChat": 1,
+      "fotosChat": 11,
       "priceBefore": "",
-      "addedAt": "2026-10-26T03:33:55.693298+00:00"
+      "addedAt": "2026-10-26T03:58:07.955879+00:00"
+    },
+    {
+      "id": "wa-744bb566d2a9",
+      "title": "NISSAN MURANO",
+      "price": "$12,500",
+      "year": "2012",
+      "kms": "93.000 Kms",
+      "img": "/fotos/wa-744bb566d2a9.jpg",
+      "images": [
+        "/fotos/wa-744bb566d2a9.jpg",
+        "/fotos/wa-744bb566d2a9_2.jpg",
+        "/fotos/wa-744bb566d2a9_3.jpg",
+        "/fotos/wa-744bb566d2a9_4.jpg",
+        "/fotos/wa-744bb566d2a9_5.jpg",
+        "/fotos/wa-744bb566d2a9_6.jpg",
+        "/fotos/wa-744bb566d2a9_7.jpg"
+      ],
+      "description": "Nissan Murano AC 3.5 5P 4X2 TA año 2012, 93 mil kms, llantas nuevas Good Year, 2 llaves originales, placas P-3. Precio $12500",
+      "dealer": "CarPlace PAUL",
+      "dealerId": "carplace-matriz",
+      "tipo": "auto",
+      "source": "wa",
+      "url": "",
+      "fotosChat": 11,
+      "priceBefore": "",
+      "addedAt": "2026-10-26T03:58:21.765220+00:00"
     }
   ],
-  "total": 55,
-  "updated": "2026-10-26T03:34:29.847956+00:00"
+  "total": 56,
+  "updated": "2026-10-26T03:58:21.788218+00:00"
 }
