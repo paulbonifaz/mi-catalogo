@@ -92,6 +92,15 @@
       "price": "$20,800",
       "description": "Kia Sportage R GTI 2.0 AC TA COREANO año 2020, 130 mil kms, toda prueba. \nPrecio $20800",
       "removedAt": "2026-10-26T17:52:51.242Z"
+    },
+    {
+      "id": "1448431923884648",
+      "title": "RENAULT STEPWAY",
+      "year": "2023",
+      "kms": "80.000 Kms",
+      "price": "$15,400",
+      "description": "🚙RENAULT STEPWAY\n⏳️AÑO 2023\n🏁FULL EQUIPO\n🕹TRASMISIÓN MANUAL \n🏎MOTOR 1.6\n📟RECORRIDO 80000 KM\n🆓️PLACAS PXXXXX0\n💣PRECIO $15.400",
+      "removedAt": "2026-10-26T17:53:20.222Z"
     }
   ]
 }
