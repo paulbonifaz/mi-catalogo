@@ -85,27 +85,6 @@
       "url": "https://www.facebook.com/marketplace/item/1798506311297102/"
     },
     {
-      "id": "2997916780557158",
-      "title": "KIA SPORTAGE R GTI",
-      "price": "$20,800",
-      "year": "2020",
-      "kms": "130.000 Kms",
-      "img": "/fotos/2997916780557158.jpg",
-      "images": [
-        "/fotos/2997916780557158.jpg",
-        "/fotos/2997916780557158_2.jpg",
-        "/fotos/2997916780557158_3.jpg",
-        "/fotos/2997916780557158_4.jpg",
-        "/fotos/2997916780557158_5.jpg",
-        "/fotos/2997916780557158_6.jpg",
-        "/fotos/2997916780557158_7.jpg"
-      ],
-      "description": "Kia Sportage R GTI 2.0 AC TA COREANO año 2020, 130 mil kms, toda prueba. \nPrecio $20800",
-      "dealer": "CarPlace PAUL",
-      "dealerId": "carplace-matriz",
-      "url": "https://www.facebook.com/marketplace/item/2997916780557158/"
-    },
-    {
       "id": "1072377869096130",
       "title": "JAC T6",
       "price": "$19,900",
@@ -1250,6 +1229,6 @@
       "addedAt": "2026-10-26T03:58:21.765220+00:00"
     }
   ],
-  "total": 56,
+  "total": 55,
   "updated": "2026-10-26T03:58:21.788218+00:00"
 }
