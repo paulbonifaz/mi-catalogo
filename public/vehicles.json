@@ -570,7 +570,7 @@
     {
       "id": "1094428640160376",
       "title": "HAVAL H6 B01 SUPREME",
-      "price": "$22,700",
+      "price": "$21,900",
       "year": "2023",
       "kms": "30.000 Kms",
       "img": "/fotos/1094428640160376.jpg",
@@ -586,7 +586,8 @@
       "description": "🚙Haval H6 B01 Supreme \n🕴único dueño \n⏳️año 2023 \n🏎motor 2.000 turbo \n💺asientos de cuero \n🏙techo panorámico \n📟30.000 kilómetros \n🛠mantenimiento y garantía en concesionario \n🔑dos llaves \n📃catálogos\n🔥Precio $22.700 \n🚗Recibimos tú vehículo",
       "dealer": "CarPlace PAUL",
       "dealerId": "carplace-matriz",
-      "url": "https://www.facebook.com/marketplace/item/1094428640160376/"
+      "url": "https://www.facebook.com/marketplace/item/1094428640160376/",
+      "priceBefore": "$22,700"
     },
     {
       "id": "1653874886523348",
@@ -1194,8 +1195,28 @@
       "url": "",
       "fotosChat": 11,
       "addedAt": "2026-10-26T03:18:42.598915+00:00"
+    },
+    {
+      "id": "wa-11bdf89878dc",
+      "title": "BMW X1 XDRIVE 28I",
+      "price": "$13,800",
+      "year": "2012",
+      "kms": "145.000 Kms",
+      "img": "/fotos/wa-11bdf89878dc.jpg",
+      "images": [
+        "/fotos/wa-11bdf89878dc.jpg"
+      ],
+      "description": "BMW X1 XDRIVE 28i año 2012, 145 mil kms, full equipo, llantas nuevas bridgestone, documentos al día.\n\nPrecio $13800",
+      "dealer": "CarPlace PAUL",
+      "dealerId": "carplace-matriz",
+      "tipo": "auto",
+      "source": "wa",
+      "url": "",
+      "fotosChat": 1,
+      "priceBefore": "",
+      "addedAt": "2026-10-26T03:33:55.693298+00:00"
     }
   ],
-  "total": 54,
-  "updated": "2026-10-26T03:31:03.330525+00:00"
+  "total": 55,
+  "updated": "2026-10-26T03:34:29.847956+00:00"
 }
