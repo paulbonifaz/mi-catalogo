@@ -526,28 +526,6 @@
       "url": "https://www.facebook.com/marketplace/item/1761017131821535/"
     },
     {
-      "id": "1094428640160376",
-      "title": "HAVAL H6 B01 SUPREME",
-      "price": "$21,900",
-      "year": "2023",
-      "kms": "30.000 Kms",
-      "img": "/fotos/1094428640160376.jpg",
-      "images": [
-        "/fotos/1094428640160376.jpg",
-        "/fotos/1094428640160376_2.jpg",
-        "/fotos/1094428640160376_3.jpg",
-        "/fotos/1094428640160376_4.jpg",
-        "/fotos/1094428640160376_5.jpg",
-        "/fotos/1094428640160376_6.jpg",
-        "/fotos/1094428640160376_7.jpg"
-      ],
-      "description": "🚙Haval H6 B01 Supreme \n🕴único dueño \n⏳️año 2023 \n🏎motor 2.000 turbo \n💺asientos de cuero \n🏙techo panorámico \n📟30.000 kilómetros \n🛠mantenimiento y garantía en concesionario \n🔑dos llaves \n📃catálogos\n🔥Precio $22.700 \n🚗Recibimos tú vehículo",
-      "dealer": "CarPlace PAUL",
-      "dealerId": "carplace-matriz",
-      "url": "https://www.facebook.com/marketplace/item/1094428640160376/",
-      "priceBefore": "$22,700"
-    },
-    {
       "id": "1653874886523348",
       "title": "HYUNDAI SANTA FE",
       "price": "$18,900",
@@ -1208,6 +1186,6 @@
       "addedAt": "2026-10-26T03:58:21.765220+00:00"
     }
   ],
-  "total": 54,
+  "total": 53,
   "updated": "2026-10-26T03:58:21.788218+00:00"
 }
