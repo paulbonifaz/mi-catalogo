@@ -82,6 +82,15 @@
       "price": "$16,900",
       "description": "Nissan Kicks Drive , año 2019 , motor 1.600 , A/C ,vidrios y retrovisores eléctricos , 90.000 kilómetros, transmisión manual.\nprecio $16.900 recibimos tú vehículo",
       "removedAt": "2026-10-22T17:33:53-05:00"
+    },
+    {
+      "id": "2997916780557158",
+      "title": "KIA SPORTAGE R GTI",
+      "year": "2020",
+      "kms": "130.000 Kms",
+      "price": "$20,800",
+      "description": "Kia Sportage R GTI 2.0 AC TA COREANO año 2020, 130 mil kms, toda prueba. \nPrecio $20800",
+      "removedAt": "2026-10-26T17:52:51.242Z"
     }
   ]
 }
