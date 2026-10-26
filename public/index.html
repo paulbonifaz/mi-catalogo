@@ -85,6 +85,11 @@
   .card-title { font-size: 15px; font-weight: 500; line-height: 1.35; color: var(--text); }
   .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: auto; padding-top: 12px; border-top: 1px solid var(--border); }
   .card-price { font-size: 19px; font-weight: 600; color: var(--accent); }
+  .price-wrap { display: flex; flex-direction: column; line-height: 1.15; }
+  .price-before { font-size: 12px; color: var(--text-faint); text-decoration: line-through; }
+  .card-sale { position: absolute; top: 10px; right: 10px; background: var(--accent); color: white; font-size: 10px; font-weight: 600; padding: 3px 9px; border-radius: 20px; letter-spacing: .02em; }
+  .modal-before { font-size: 14px; color: var(--text-faint); margin-bottom: 2px; }
+  .modal-before s { text-decoration: line-through; }
   .card-cta { font-size: 12px; font-weight: 500; color: var(--dark); border: 1px solid var(--border-strong); padding: 4px 12px; border-radius: 6px; transition: background .15s; }
   .card:hover .card-cta { background: var(--bg); }
 
@@ -213,6 +218,7 @@
     <div class="modal-body">
       <div class="modal-meta" id="modal-meta"></div>
       <div class="modal-title" id="modal-title"></div>
+      <div class="modal-before" id="modal-before"></div>
       <div class="modal-price" id="modal-price"></div>
       <div class="modal-actions">
         <a id="modal-whatsapp" href="#" target="_blank" class="btn-whatsapp">
@@ -236,6 +242,8 @@ let activeTab = 'autos';
 const tipoOf = v => (v.tipo === 'moto' ? 'motos' : 'autos');
 let currentPage = 1;
 
+// rebajado: solo si el precio anterior es mayor que el actual
+function isSale(v) { return !!v.priceBefore && priceNum({ price: v.priceBefore }) > priceNum(v) && priceNum(v) > 0; }
 function priceNum(v) { return parseFloat((v.price||'0').replace(/[^0-9.]/g,''))||0; }
 function kmNum(v)    { return parseInt((v.kms||'0').replace(/[^0-9]/g,''))||0; }
 function yearNum(v)  { return parseInt(v.year||0)||0; }
@@ -364,6 +372,7 @@ function renderGrid() {
           : ''}
         <div class="card-placeholder" style="display:${v.img?'none':'flex'}">🚗</div>
         <span class="card-dealer-tag">${v.dealer}</span>
+        ${isSale(v) ? '<span class="card-sale">Rebajado</span>' : ''}
         ${(v.images||[]).length > 1 ? `<span class="card-photos">📷 ${v.images.length}</span>` : ''}
       </div>
       <div class="card-body">
@@ -373,7 +382,7 @@ function renderGrid() {
         </div>
         <div class="card-title">${v.title}</div>
         <div class="card-footer">
-          <span class="card-price">${v.price||'Consultar'}</span>
+          <span class="price-wrap">${isSale(v) ? `<span class="price-before">Antes ${v.priceBefore}</span>` : ''}<span class="card-price">${v.price||'Consultar'}</span></span>
           <span class="card-cta">Ver detalle →</span>
         </div>
       </div>
@@ -408,6 +417,7 @@ function openModal(v) {
     `<span class="modal-badge">${v.year||'—'}</span><span class="modal-badge">${v.kms||'—'}</span><span class="modal-badge">${v.dealer}</span>`;
   document.getElementById('modal-title').textContent = v.title;
   document.getElementById('modal-price').textContent = v.price || 'Consultar precio';
+  document.getElementById('modal-before').innerHTML = isSale(v) ? `Antes <s>${v.priceBefore}</s>` : '';
   document.getElementById('modal-whatsapp').href = `https://wa.me/593968886211?text=${msg}`;
   document.getElementById('modal-overlay').classList.add('open');
   document.body.style.overflow = 'hidden';
