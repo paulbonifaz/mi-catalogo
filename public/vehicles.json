@@ -484,27 +484,6 @@
       "url": "https://www.facebook.com/marketplace/item/1437924541776325/"
     },
     {
-      "id": "1448431923884648",
-      "title": "RENAULT STEPWAY",
-      "price": "$15,400",
-      "year": "2023",
-      "kms": "80.000 Kms",
-      "img": "/fotos/1448431923884648.jpg",
-      "images": [
-        "/fotos/1448431923884648.jpg",
-        "/fotos/1448431923884648_2.jpg",
-        "/fotos/1448431923884648_3.jpg",
-        "/fotos/1448431923884648_4.jpg",
-        "/fotos/1448431923884648_5.jpg",
-        "/fotos/1448431923884648_6.jpg",
-        "/fotos/1448431923884648_7.jpg"
-      ],
-      "description": "🚙RENAULT STEPWAY\n⏳️AÑO 2023\n🏁FULL EQUIPO\n🕹TRASMISIÓN MANUAL \n🏎MOTOR 1.6\n📟RECORRIDO 80000 KM\n🆓️PLACAS PXXXXX0\n💣PRECIO $15.400",
-      "dealer": "CarPlace PAUL",
-      "dealerId": "carplace-matriz",
-      "url": "https://www.facebook.com/marketplace/item/1448431923884648/"
-    },
-    {
       "id": "2992493651092695",
       "title": "GREAT WALL H6 LUXURI HYBRID",
       "price": "$21,500",
@@ -1229,6 +1208,6 @@
       "addedAt": "2026-10-26T03:58:21.765220+00:00"
     }
   ],
-  "total": 55,
+  "total": 54,
   "updated": "2026-10-26T03:58:21.788218+00:00"
 }
