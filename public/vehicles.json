@@ -169,27 +169,6 @@
       "url": "https://www.facebook.com/marketplace/item/1503930394897055/"
     },
     {
-      "id": "1042622048786043",
-      "title": "CHEVROLET TRACKER",
-      "price": "$15,600",
-      "year": "2023",
-      "kms": "30.000 Kms",
-      "img": "/fotos/1042622048786043.jpg",
-      "images": [
-        "/fotos/1042622048786043.jpg",
-        "/fotos/1042622048786043_2.jpg",
-        "/fotos/1042622048786043_3.jpg",
-        "/fotos/1042622048786043_4.jpg",
-        "/fotos/1042622048786043_5.jpg",
-        "/fotos/1042622048786043_6.jpg",
-        "/fotos/1042622048786043_7.jpg"
-      ],
-      "description": "Chevrolet Tracker 1.2L Turbo AC TA año 2023, 30 mil kms, full equipo, TOTALMENTE NUEVO.\nPrecio $15600",
-      "dealer": "CarPlace PAUL",
-      "dealerId": "carplace-matriz",
-      "url": "https://www.facebook.com/marketplace/item/1042622048786043/"
-    },
-    {
       "id": "1870934690557217",
       "title": "kIA STONIC",
       "price": "$13,300",
@@ -1186,6 +1165,6 @@
       "addedAt": "2026-10-26T03:58:21.765220+00:00"
     }
   ],
-  "total": 53,
+  "total": 52,
   "updated": "2026-10-26T03:58:21.788218+00:00"
 }
