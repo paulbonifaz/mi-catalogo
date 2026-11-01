@@ -526,27 +526,6 @@
       "url": "https://www.facebook.com/marketplace/item/1464038022293667/"
     },
     {
-      "id": "1485431426735238",
-      "title": "MAZDA NEW BT50 (TAILANDIA)",
-      "price": "$29,900",
-      "year": "2020",
-      "kms": "145.000 Kms",
-      "img": "/fotos/1485431426735238.jpg",
-      "images": [
-        "/fotos/1485431426735238.jpg",
-        "/fotos/1485431426735238_2.jpg",
-        "/fotos/1485431426735238_3.jpg",
-        "/fotos/1485431426735238_4.jpg",
-        "/fotos/1485431426735238_5.jpg",
-        "/fotos/1485431426735238_6.jpg",
-        "/fotos/1485431426735238_7.jpg"
-      ],
-      "description": "Flamante Mazda New BT50  (Tailandia ) , único dueño , año 2020  , motor 3.200 Diesel , 4X4 ,  145.000 kilometros.\nPrecio $29.900\nRecibimos tú vehículo",
-      "dealer": "CarPlace PAUL",
-      "dealerId": "carplace-matriz",
-      "url": "https://www.facebook.com/marketplace/item/1485431426735238/"
-    },
-    {
       "id": "wa-805c04306283",
       "title": "HYUNDAI VENUE",
       "price": "$16,500",
@@ -897,6 +876,6 @@
       "addedAt": "2026-10-26T03:58:21.765220+00:00"
     }
   ],
-  "total": 40,
+  "total": 39,
   "updated": "2026-10-26T03:58:21.788218+00:00"
 }
