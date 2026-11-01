@@ -142,6 +142,15 @@
       "price": "$15,900",
       "description": "Chery Tiggo 4 Pro Luxury 1.5 \nTA \nHybrid \naño 2025\n26 mil kms\nÚNICO DUEÑO\nGARANTÍA DE FÁBRICA. \nPrecio $15900",
       "removedAt": "2026-11-01T16:15:34.146Z"
+    },
+    {
+      "id": "1798506311297102",
+      "title": "CHERY TIGGO 7PLUS",
+      "year": "2023",
+      "kms": "20.000 Kms",
+      "price": "$16,700",
+      "description": "Chery Tiggo 7 Plus 1.5T TA año 2023, 20 mil kms, GARANTIA DE CASA, full equipo,\nÚNICODUEÑO. \nPrecio $16700",
+      "removedAt": "2026-11-01T16:15:41.780Z"
     }
   ]
 }
