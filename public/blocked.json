@@ -202,6 +202,15 @@
       "price": "$18,500",
       "description": "FLAMANTE KIA RIO LX HATCHBACK SPORT AÑO 2024, FULL EQUIPO, UNICO DUEÑO, MOTOR 1.4, RECORRIDO 15500 KM, $18500",
       "removedAt": "2026-11-01T16:16:29.058Z"
+    },
+    {
+      "id": "wa-4635853d4cf8",
+      "title": "KIA CERATO FORTE",
+      "year": "2015",
+      "kms": "84.000 Kms",
+      "price": "$10,900",
+      "description": "Kia Cerato Forte 1.6 AC TA año 2015, 84 mil kms, full equipo, llantas nuevas, toda prueba. Precio $10900",
+      "removedAt": "2026-11-01T16:16:36.855Z"
     }
   ]
 }
