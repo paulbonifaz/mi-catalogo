@@ -484,27 +484,6 @@
       "url": "https://www.facebook.com/marketplace/item/1835814584530405/"
     },
     {
-      "id": "1832033147809629",
-      "title": "GREAT WALL H6 SUPREME",
-      "price": "$27,500",
-      "year": "2026",
-      "kms": "3.000 Kms",
-      "img": "/fotos/1832033147809629.jpg",
-      "images": [
-        "/fotos/1832033147809629.jpg",
-        "/fotos/1832033147809629_2.jpg",
-        "/fotos/1832033147809629_3.jpg",
-        "/fotos/1832033147809629_4.jpg",
-        "/fotos/1832033147809629_5.jpg",
-        "/fotos/1832033147809629_6.jpg",
-        "/fotos/1832033147809629_7.jpg"
-      ],
-      "description": "🚙GREAT WALL H6 SUPREME HYBRID\n⏳️AÑO 2026\n🏁TOPE DE GAMA\n🏎FULL EQUIPO\n🏙CON TECHO PANORÁMICO 🚦TRASMISIÓN AUTOMÁTICA \n💺ASIENTOS CALEFACTABLES Y ELECTRICOS\n⛵️SISTEMA ADAS\nCONTROL DE CRUCERO ADAPTATIVO\n🛞RECORRIDO 3000 KM\n🏁MOTOR 1.5 TURBO HYBRID DOHC, 16 V, DVVT\n🔥 PRECIO  $27500.",
-      "dealer": "CarPlace PAUL",
-      "dealerId": "carplace-matriz",
-      "url": "https://www.facebook.com/marketplace/item/1832033147809629/"
-    },
-    {
       "id": "2104225413798970",
       "title": "HYUNDAI SONATA HYBRID",
       "price": "$12,300",
@@ -1077,6 +1056,6 @@
       "addedAt": "2026-10-26T03:58:21.765220+00:00"
     }
   ],
-  "total": 48,
+  "total": 47,
   "updated": "2026-10-26T03:58:21.788218+00:00"
 }
