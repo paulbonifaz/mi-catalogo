@@ -232,27 +232,6 @@
       "url": "https://www.facebook.com/marketplace/item/1056510454105451/"
     },
     {
-      "id": "1624641392737307",
-      "title": "CHERY TIGGO 4PRO LUXURI",
-      "price": "$15,900",
-      "year": "2025",
-      "kms": "26.000 Kms",
-      "img": "/fotos/1624641392737307.jpg",
-      "images": [
-        "/fotos/1624641392737307.jpg",
-        "/fotos/1624641392737307_2.jpg",
-        "/fotos/1624641392737307_3.jpg",
-        "/fotos/1624641392737307_4.jpg",
-        "/fotos/1624641392737307_5.jpg",
-        "/fotos/1624641392737307_6.jpg",
-        "/fotos/1624641392737307_7.jpg"
-      ],
-      "description": "Chery Tiggo 4 Pro Luxury 1.5 \nTA \nHybrid \naño 2025\n26 mil kms\nÚNICO DUEÑO\nGARANTÍA DE FÁBRICA. \nPrecio $15900",
-      "dealer": "CarPlace PAUL",
-      "dealerId": "carplace-matriz",
-      "url": "https://www.facebook.com/marketplace/item/1624641392737307/"
-    },
-    {
       "id": "1401540535029931",
       "title": "NISSAN QASHQAI SENSE",
       "price": "$25,800",
@@ -1140,6 +1119,6 @@
       "addedAt": "2026-10-26T03:58:21.765220+00:00"
     }
   ],
-  "total": 51,
+  "total": 50,
   "updated": "2026-10-26T03:58:21.788218+00:00"
 }
