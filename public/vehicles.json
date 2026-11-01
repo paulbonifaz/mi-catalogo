@@ -484,27 +484,6 @@
       "url": "https://www.facebook.com/marketplace/item/2104225413798970/"
     },
     {
-      "id": "1098009366556079",
-      "title": "KIA SPORTAGE R",
-      "price": "$15,600",
-      "year": "2011",
-      "kms": "165.000 Kms",
-      "img": "/fotos/1098009366556079.jpg",
-      "images": [
-        "/fotos/1098009366556079.jpg",
-        "/fotos/1098009366556079_2.jpg",
-        "/fotos/1098009366556079_3.jpg",
-        "/fotos/1098009366556079_4.jpg",
-        "/fotos/1098009366556079_5.jpg",
-        "/fotos/1098009366556079_6.jpg",
-        "/fotos/1098009366556079_7.jpg"
-      ],
-      "description": "🚘Kia Sportage R \n⏳️año 2011 (Corea del Sur ) \n🚦motor 2.000 \n🏁T/A \n🏙Techo corredizo \n💺Asientos de cuero \n🛞llantas nuevas \n📟165.000 kilómetros \n📃matrícula y RTV  en Quito 2026  \n🔥Precio $15.600 \n🚗Recibimos tú vehículo",
-      "dealer": "CarPlace PAUL",
-      "dealerId": "carplace-matriz",
-      "url": "https://www.facebook.com/marketplace/item/1098009366556079/"
-    },
-    {
       "id": "1783126449502020",
       "title": "CHEVROLET SPARK LIFE",
       "price": "$9,400",
@@ -939,6 +918,6 @@
       "addedAt": "2026-10-26T03:58:21.765220+00:00"
     }
   ],
-  "total": 42,
+  "total": 41,
   "updated": "2026-10-26T03:58:21.788218+00:00"
 }
