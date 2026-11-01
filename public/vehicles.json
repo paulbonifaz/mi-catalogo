@@ -526,27 +526,6 @@
       "url": "https://www.facebook.com/marketplace/item/1783126449502020/"
     },
     {
-      "id": "1852128535815920",
-      "title": "KIA SPORTAGE R GTI LX",
-      "price": "$20,900",
-      "year": "2020",
-      "kms": "150.000 Kms",
-      "img": "/fotos/1852128535815920.jpg",
-      "images": [
-        "/fotos/1852128535815920.jpg",
-        "/fotos/1852128535815920_2.jpg",
-        "/fotos/1852128535815920_3.jpg",
-        "/fotos/1852128535815920_4.jpg",
-        "/fotos/1852128535815920_5.jpg",
-        "/fotos/1852128535815920_6.jpg",
-        "/fotos/1852128535815920_7.jpg"
-      ],
-      "description": "🚘Kia Sportage R GTI LX  (Corea del Sur) \n⏳️año 2020 \n🕴único dueño \n🏁motor 2.000 \n🚦T/A \n🏎modo Sport \n🛞150.000 kilómetros \n🎴matrícula y RTV 2026 \n🔥Precio $20.900",
-      "dealer": "CarPlace PAUL",
-      "dealerId": "carplace-matriz",
-      "url": "https://www.facebook.com/marketplace/item/1852128535815920/"
-    },
-    {
       "id": "2178990779670950",
       "title": "CHANGAN ALSVIN COMFORT",
       "price": "$13,900",
@@ -960,6 +939,6 @@
       "addedAt": "2026-10-26T03:58:21.765220+00:00"
     }
   ],
-  "total": 43,
+  "total": 42,
   "updated": "2026-10-26T03:58:21.788218+00:00"
 }
