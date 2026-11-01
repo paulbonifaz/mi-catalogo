@@ -127,27 +127,6 @@
       "url": "https://www.facebook.com/marketplace/item/1503930394897055/"
     },
     {
-      "id": "1870934690557217",
-      "title": "kIA STONIC",
-      "price": "$13,300",
-      "year": "2022",
-      "kms": "123.000 Kms",
-      "img": "/fotos/1870934690557217.jpg",
-      "images": [
-        "/fotos/1870934690557217.jpg",
-        "/fotos/1870934690557217_2.jpg",
-        "/fotos/1870934690557217_3.jpg",
-        "/fotos/1870934690557217_4.jpg",
-        "/fotos/1870934690557217_5.jpg",
-        "/fotos/1870934690557217_6.jpg",
-        "/fotos/1870934690557217_7.jpg"
-      ],
-      "description": "Kia Stonic 1.0 AC TM Hybrid año 2022, 123 mil kms, full equipo, ÚNICO DUEÑO, llantas nuevas, toda prueba. \nPrecio $13300",
-      "dealer": "CarPlace PAUL",
-      "dealerId": "carplace-matriz",
-      "url": "https://www.facebook.com/marketplace/item/1870934690557217/"
-    },
-    {
       "id": "2115314992708015",
       "title": "RENAULT SANDERO",
       "price": "$10,500",
@@ -918,6 +897,6 @@
       "addedAt": "2026-10-26T03:58:21.765220+00:00"
     }
   ],
-  "total": 41,
+  "total": 40,
   "updated": "2026-10-26T03:58:21.788218+00:00"
 }
