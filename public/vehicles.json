@@ -400,27 +400,6 @@
       "url": "https://www.facebook.com/marketplace/item/3212788602260901/"
     },
     {
-      "id": "1437924541776325",
-      "title": "CHEVROLET CAPTIVA PREMIER",
-      "price": "$16,500",
-      "year": "2021",
-      "kms": "80.000 Kms",
-      "img": "/fotos/1437924541776325.jpg",
-      "images": [
-        "/fotos/1437924541776325.jpg",
-        "/fotos/1437924541776325_2.jpg",
-        "/fotos/1437924541776325_3.jpg",
-        "/fotos/1437924541776325_4.jpg",
-        "/fotos/1437924541776325_5.jpg",
-        "/fotos/1437924541776325_6.jpg",
-        "/fotos/1437924541776325_7.jpg"
-      ],
-      "description": "🚙CHEVROLET CAPTIVA PREMIER\n⏳️AÑO 2021 \n🚦FULL EQUIPO\n💺3 FILAS DE ASIENTOS\n🕹TRASMISIÓN MANUAL\n🏁MOTOR 1.5 TURBO\n📟RECORRIDO 80000 KM\n🕴ÚNICO DUEÑO\n💣PRECIO $16500",
-      "dealer": "CarPlace PAUL",
-      "dealerId": "carplace-matriz",
-      "url": "https://www.facebook.com/marketplace/item/1437924541776325/"
-    },
-    {
       "id": "2992493651092695",
       "title": "GREAT WALL H6 LUXURI HYBRID",
       "price": "$21,500",
@@ -1098,6 +1077,6 @@
       "addedAt": "2026-10-26T03:58:21.765220+00:00"
     }
   ],
-  "total": 49,
+  "total": 48,
   "updated": "2026-10-26T03:58:21.788218+00:00"
 }
