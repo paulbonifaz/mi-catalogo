@@ -252,6 +252,15 @@
       "price": "$29,900",
       "description": "Flamante Mazda New BT50  (Tailandia ) , único dueño , año 2020  , motor 3.200 Diesel , 4X4 ,  145.000 kilometros.\nPrecio $29.900\nRecibimos tú vehículo",
       "removedAt": "2026-11-01T16:17:08.573Z"
+    },
+    {
+      "id": "wa-768c25af9ad2",
+      "title": "SUZUKI FRONX",
+      "year": "2024",
+      "kms": "60.000 Kms",
+      "price": "$19,400",
+      "description": "Flamante Suzuki  FRONX  , año 2024  , único dueño , motor 1.5 Hibryd , T/M , 60.000 kilómetros ,  precio $19.400 ,recibimos tú vehículo",
+      "removedAt": "2026-11-01T16:17:18.801Z"
     }
   ]
 }
