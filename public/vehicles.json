@@ -64,27 +64,6 @@
       "url": "https://www.facebook.com/marketplace/item/1095077246564060/"
     },
     {
-      "id": "1072377869096130",
-      "title": "JAC T6",
-      "price": "$19,900",
-      "year": "2026",
-      "kms": "10.000 Kms",
-      "img": "/fotos/1072377869096130.jpg",
-      "images": [
-        "/fotos/1072377869096130.jpg",
-        "/fotos/1072377869096130_2.jpg",
-        "/fotos/1072377869096130_3.jpg",
-        "/fotos/1072377869096130_4.jpg",
-        "/fotos/1072377869096130_5.jpg",
-        "/fotos/1072377869096130_6.jpg",
-        "/fotos/1072377869096130_7.jpg"
-      ],
-      "description": "Jac T6 2.0 4X2 TM Diesel año 2026, 10 mil kms, ÚNICO DUEÑO, GARANTÍA DE CASA, flamante.\nPrecio $19900",
-      "dealer": "CarPlace PAUL",
-      "dealerId": "carplace-matriz",
-      "url": "https://www.facebook.com/marketplace/item/1072377869096130/"
-    },
-    {
       "id": "1449278817086719",
       "title": "PEUGEOT 3008",
       "price": "$20,700",
@@ -1031,6 +1010,6 @@
       "addedAt": "2026-10-26T03:58:21.765220+00:00"
     }
   ],
-  "total": 46,
+  "total": 45,
   "updated": "2026-10-26T03:58:21.788218+00:00"
 }
