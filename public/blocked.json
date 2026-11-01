@@ -192,6 +192,15 @@
       "price": "$19,900",
       "description": "Jac T6 2.0 4X2 TM Diesel año 2026, 10 mil kms, ÚNICO DUEÑO, GARANTÍA DE CASA, flamante.\nPrecio $19900",
       "removedAt": "2026-11-01T16:16:23.902Z"
+    },
+    {
+      "id": "wa-0335e3a63a41",
+      "title": "KIA RIO LX HATCHBACK SPORT",
+      "year": "2024",
+      "kms": "15.500 Kms",
+      "price": "$18,500",
+      "description": "FLAMANTE KIA RIO LX HATCHBACK SPORT AÑO 2024, FULL EQUIPO, UNICO DUEÑO, MOTOR 1.4, RECORRIDO 15500 KM, $18500",
+      "removedAt": "2026-11-01T16:16:29.058Z"
     }
   ]
 }
