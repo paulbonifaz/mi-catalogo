@@ -634,30 +634,6 @@
       "addedAt": "2026-10-21T01:52:04.441640+00:00"
     },
     {
-      "id": "wa-4635853d4cf8",
-      "title": "KIA CERATO FORTE",
-      "price": "$10,900",
-      "year": "2015",
-      "kms": "84.000 Kms",
-      "img": "/fotos/wa-4635853d4cf8.jpg",
-      "images": [
-        "/fotos/wa-4635853d4cf8.jpg",
-        "/fotos/wa-4635853d4cf8_2.jpg",
-        "/fotos/wa-4635853d4cf8_3.jpg",
-        "/fotos/wa-4635853d4cf8_4.jpg",
-        "/fotos/wa-4635853d4cf8_5.jpg",
-        "/fotos/wa-4635853d4cf8_6.jpg",
-        "/fotos/wa-4635853d4cf8_7.jpg"
-      ],
-      "description": "Kia Cerato Forte 1.6 AC TA año 2015, 84 mil kms, full equipo, llantas nuevas, toda prueba. Precio $10900",
-      "dealer": "CarPlace PAUL",
-      "dealerId": "carplace-matriz",
-      "tipo": "auto",
-      "source": "wa",
-      "url": "",
-      "addedAt": "2026-10-21T01:52:18.298095+00:00"
-    },
-    {
       "id": "wa-4a00c5f4937f",
       "title": "GREAT WALL HOVER H5 ELITE",
       "price": "$11,700",
@@ -984,6 +960,6 @@
       "addedAt": "2026-10-26T03:58:21.765220+00:00"
     }
   ],
-  "total": 44,
+  "total": 43,
   "updated": "2026-10-26T03:58:21.788218+00:00"
 }
