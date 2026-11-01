@@ -752,31 +752,6 @@
       "addedAt": "2026-10-21T01:53:24.906896+00:00"
     },
     {
-      "id": "wa-5a25d9b761ae",
-      "title": "HAVAL H6",
-      "price": "$16,400",
-      "year": "2020",
-      "kms": "115.000 Kms",
-      "img": "/fotos/wa-5a25d9b761ae.jpg",
-      "images": [
-        "/fotos/wa-5a25d9b761ae.jpg",
-        "/fotos/wa-5a25d9b761ae_2.jpg",
-        "/fotos/wa-5a25d9b761ae_3.jpg",
-        "/fotos/wa-5a25d9b761ae_4.jpg",
-        "/fotos/wa-5a25d9b761ae_5.jpg",
-        "/fotos/wa-5a25d9b761ae_6.jpg",
-        "/fotos/wa-5a25d9b761ae_7.jpg"
-      ],
-      "description": "FLAMANTE HAVAL H6 , AÑO 2020, FULL EQUIPO, TRASMISIÓN AUTOMÁTICA, CON PALETAS DE CAMBIOS AL VOLANTE, MOTOR 2.0,  MATRÍCULA 2026, RECORRIDO 115000 KM, MANTENIMIENTO EN CASA COMERCIAL, $16400",
-      "dealer": "CarPlace PAUL",
-      "dealerId": "carplace-matriz",
-      "tipo": "auto",
-      "source": "wa",
-      "url": "",
-      "fotosChat": 13,
-      "addedAt": "2026-10-21T01:53:50.525906+00:00"
-    },
-    {
       "id": "wa-4238cda41e63",
       "title": "TOYOTA FORTUNER",
       "price": "$22,700",
@@ -1056,6 +1031,6 @@
       "addedAt": "2026-10-26T03:58:21.765220+00:00"
     }
   ],
-  "total": 47,
+  "total": 46,
   "updated": "2026-10-26T03:58:21.788218+00:00"
 }
