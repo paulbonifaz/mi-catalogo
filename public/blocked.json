@@ -122,6 +122,15 @@
       "price": "$15,600",
       "description": "Chevrolet Tracker 1.2L Turbo AC TA año 2023, 30 mil kms, full equipo, TOTALMENTE NUEVO.\nPrecio $15600",
       "removedAt": "2026-10-27T20:36:47.074Z"
+    },
+    {
+      "id": "wa-091f47978cce",
+      "title": "KIA PICANTO PRO",
+      "year": "2022",
+      "kms": "45.000 Kms",
+      "price": "$13,800",
+      "description": "Flamante Kia Picanto Pro 2022 motor 1.2 con aire acondicionado, llantas nuevas, batería nueva, cámara de retro con apenas 45.000 km precio $13.800",
+      "removedAt": "2026-11-01T16:14:35.571Z"
     }
   ]
 }
