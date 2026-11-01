@@ -799,31 +799,6 @@
       "addedAt": "2026-10-26T03:18:35.981775+00:00"
     },
     {
-      "id": "wa-768c25af9ad2",
-      "title": "SUZUKI FRONX",
-      "price": "$19,400",
-      "year": "2024",
-      "kms": "60.000 Kms",
-      "img": "/fotos/wa-768c25af9ad2.jpg",
-      "images": [
-        "/fotos/wa-768c25af9ad2.jpg",
-        "/fotos/wa-768c25af9ad2_2.jpg",
-        "/fotos/wa-768c25af9ad2_3.jpg",
-        "/fotos/wa-768c25af9ad2_4.jpg",
-        "/fotos/wa-768c25af9ad2_5.jpg",
-        "/fotos/wa-768c25af9ad2_6.jpg",
-        "/fotos/wa-768c25af9ad2_7.jpg"
-      ],
-      "description": "Flamante Suzuki  FRONX  , año 2024  , único dueño , motor 1.5 Hibryd , T/M , 60.000 kilómetros ,  precio $19.400 ,recibimos tú vehículo",
-      "dealer": "CarPlace PAUL",
-      "dealerId": "carplace-matriz",
-      "tipo": "auto",
-      "source": "wa",
-      "url": "",
-      "fotosChat": 11,
-      "addedAt": "2026-10-26T03:18:42.598915+00:00"
-    },
-    {
       "id": "wa-11bdf89878dc",
       "title": "BMW X1 XDRIVE 28I",
       "price": "$13,800",
@@ -876,6 +851,6 @@
       "addedAt": "2026-10-26T03:58:21.765220+00:00"
     }
   ],
-  "total": 39,
+  "total": 38,
   "updated": "2026-10-26T03:58:21.788218+00:00"
 }
