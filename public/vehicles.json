@@ -1012,31 +1012,6 @@
       "priceBefore": "$22,600"
     },
     {
-      "id": "wa-091f47978cce",
-      "title": "KIA PICANTO PRO",
-      "price": "$13,800",
-      "year": "2022",
-      "kms": "45.000 Kms",
-      "img": "/fotos/wa-091f47978cce.jpg",
-      "images": [
-        "/fotos/wa-091f47978cce.jpg",
-        "/fotos/wa-091f47978cce_2.jpg",
-        "/fotos/wa-091f47978cce_3.jpg",
-        "/fotos/wa-091f47978cce_4.jpg",
-        "/fotos/wa-091f47978cce_5.jpg",
-        "/fotos/wa-091f47978cce_6.jpg",
-        "/fotos/wa-091f47978cce_7.jpg"
-      ],
-      "description": "Flamante Kia Picanto Pro 2022 motor 1.2 con aire acondicionado, llantas nuevas, batería nueva, cámara de retro con apenas 45.000 km precio $13.800",
-      "dealer": "CarPlace PAUL",
-      "dealerId": "carplace-matriz",
-      "tipo": "auto",
-      "source": "wa",
-      "url": "",
-      "fotosChat": 12,
-      "addedAt": "2026-10-26T03:18:22.341802+00:00"
-    },
-    {
       "id": "wa-56e92da984df",
       "title": "CHEVROLET JOY",
       "price": "$13,800",
@@ -1165,6 +1140,6 @@
       "addedAt": "2026-10-26T03:58:21.765220+00:00"
     }
   ],
-  "total": 52,
+  "total": 51,
   "updated": "2026-10-26T03:58:21.788218+00:00"
 }
