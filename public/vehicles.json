@@ -932,32 +932,6 @@
       "addedAt": "2026-10-26T03:18:42.598915+00:00"
     },
     {
-      "id": "wa-0335e3a63a41",
-      "title": "KIA RIO LX HATCHBACK SPORT",
-      "price": "$18,500",
-      "year": "2024",
-      "kms": "15.500 Kms",
-      "img": "/fotos/wa-0335e3a63a41.jpg",
-      "images": [
-        "/fotos/wa-0335e3a63a41.jpg",
-        "/fotos/wa-0335e3a63a41_2.jpg",
-        "/fotos/wa-0335e3a63a41_3.jpg",
-        "/fotos/wa-0335e3a63a41_4.jpg",
-        "/fotos/wa-0335e3a63a41_5.jpg",
-        "/fotos/wa-0335e3a63a41_6.jpg",
-        "/fotos/wa-0335e3a63a41_7.jpg"
-      ],
-      "description": "FLAMANTE KIA RIO LX HATCHBACK SPORT AÑO 2024, FULL EQUIPO, UNICO DUEÑO, MOTOR 1.4, RECORRIDO 15500 KM, $18500",
-      "dealer": "CarPlace PAUL",
-      "dealerId": "carplace-matriz",
-      "tipo": "auto",
-      "source": "wa",
-      "url": "",
-      "fotosChat": 16,
-      "priceBefore": "",
-      "addedAt": "2026-10-26T03:57:50.895121+00:00"
-    },
-    {
       "id": "wa-11bdf89878dc",
       "title": "BMW X1 XDRIVE 28I",
       "price": "$13,800",
@@ -1010,6 +984,6 @@
       "addedAt": "2026-10-26T03:58:21.765220+00:00"
     }
   ],
-  "total": 45,
+  "total": 44,
   "updated": "2026-10-26T03:58:21.788218+00:00"
 }
