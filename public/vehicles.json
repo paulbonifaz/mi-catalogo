@@ -937,32 +937,6 @@
       "addedAt": "2026-11-05T15:51:30.685639+00:00"
     },
     {
-      "id": "wa-bee83bd30441",
-      "title": "NUEVO KIA SPORTAGE GTLINE",
-      "price": "$28,900",
-      "year": "2025",
-      "kms": "13.000 Kms",
-      "img": "/fotos/wa-bee83bd30441.jpg",
-      "images": [
-        "/fotos/wa-bee83bd30441.jpg",
-        "/fotos/wa-bee83bd30441_2.jpg",
-        "/fotos/wa-bee83bd30441_3.jpg",
-        "/fotos/wa-bee83bd30441_4.jpg",
-        "/fotos/wa-bee83bd30441_5.jpg",
-        "/fotos/wa-bee83bd30441_6.jpg",
-        "/fotos/wa-bee83bd30441_7.jpg"
-      ],
-      "description": "Nuevo Kia Sportage GTLine , año 2025 , único dueño , motor 2.000 , T/M , dos llaves , mantenimiento en concesionario , kilometraje 13.000 , precio $28.900 , recibimos tú vehículo",
-      "dealer": "CarPlace PAUL",
-      "dealerId": "carplace-matriz",
-      "tipo": "auto",
-      "source": "wa",
-      "url": "",
-      "fotosChat": 12,
-      "priceBefore": "",
-      "addedAt": "2026-11-05T15:51:44.023765+00:00"
-    },
-    {
       "id": "wa-e50565110a12",
       "title": "FLAMNTE TRAILBLAZER",
       "price": "$32,400",
@@ -1067,6 +1041,6 @@
       "addedAt": "2026-11-05T15:58:28.471407+00:00"
     }
   ],
-  "total": 46,
+  "total": 45,
   "updated": "2026-11-05T15:58:28.487179+00:00"
 }
