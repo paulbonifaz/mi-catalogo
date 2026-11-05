@@ -23,6 +23,9 @@
   .meta { color:var(--muted); font-size:13px; margin-top:2px; }
   button { font:inherit; padding:8px 12px; border-radius:8px; border:1px solid var(--danger); background:transparent; color:var(--danger); cursor:pointer; }
   button:disabled { opacity:.5; cursor:default; }
+  .acts { display:flex; gap:8px; flex-shrink:0; }
+  button.sold { border-color:#15803d; color:#15803d; }
+  @media (max-width:520px) { .acts { flex-direction:column; } }
   .status { margin:12px 0; font-size:14px; color:var(--muted); min-height:20px; }
   .prov { display:inline-block; margin-left:6px; font-size:12px; font-weight:600; color:#1d4ed8; }
   .tipo { display:inline-block; margin-left:8px; font-size:11px; font-weight:600; color:#7c3aed; background:#ede9fe; padding:2px 8px; border-radius:10px; vertical-align:middle; }
@@ -116,37 +119,51 @@
       }
       row.appendChild(info);
 
+      const acts = document.createElement('div');
+      acts.className = 'acts';
+      const sold = document.createElement('button');
+      sold.className = 'sold';
+      sold.textContent = 'Vendido';
+      sold.title = 'Se quita de la web y no vuelve aunque se reenvie al grupo';
+      sold.addEventListener('click', () => removeVehicle(v, sold, 'vendido'));
       const btn = document.createElement('button');
       btn.textContent = 'Eliminar';
-      btn.addEventListener('click', () => removeVehicle(v, btn));
-      row.appendChild(btn);
+      btn.title = 'Error o duplicado: se quita de la web; vuelve si se publica de nuevo despues';
+      btn.addEventListener('click', () => removeVehicle(v, btn, 'eliminado'));
+      acts.append(sold, btn);
+      row.appendChild(acts);
 
       listEl.appendChild(row);
     }
     setStatus(`${shown.length} de ${vehicles.length} vehículos`);
   }
 
-  async function removeVehicle(v, btn) {
+  async function removeVehicle(v, btn, reason) {
     const password = pwdEl.value;
     if (!password) { setStatus('Escribe la contraseña de admin primero.', true); pwdEl.focus(); return; }
-    if (!confirm(`¿Eliminar "${v.title}" del catálogo? No volverá a aparecer en futuras corridas.`)) return;
+    const vendido = reason === 'vendido';
+    const msg = vendido
+      ? `¿Marcar "${v.title}" como VENDIDO? Se quita del catálogo y no vuelve a aparecer, aunque lo reenvíen al grupo.`
+      : `¿Eliminar "${v.title}" del catálogo? (error o duplicado) Si el proveedor lo vuelve a publicar después, volverá a aparecer.`;
+    if (!confirm(msg)) return;
+    const label = btn.textContent;
 
     btn.disabled = true;
-    btn.textContent = 'Eliminando...';
+    btn.textContent = vendido ? 'Marcando...' : 'Eliminando...';
     try {
       const res = await fetch('/api/admin/delete', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ id: v.id, password }),
+        body: JSON.stringify({ id: v.id, password, reason }),
       });
       const data = await res.json().catch(() => ({}));
       if (!res.ok) throw new Error(data.error || `Error ${res.status}`);
       vehicles = vehicles.filter(x => x.id !== v.id);
       render();
-      setStatus(`Eliminado: ${v.title}. El cambio se publicará en unos segundos.`);
+      setStatus(`${vendido ? 'Vendido' : 'Eliminado'}: ${v.title}. El cambio se publicará en unos segundos.`);
     } catch (e) {
       btn.disabled = false;
-      btn.textContent = 'Eliminar';
+      btn.textContent = label;
       setStatus(e.message, true);
     }
   }

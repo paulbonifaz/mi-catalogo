@@ -59,7 +59,9 @@ module.exports = async (req, res) => {
   if (typeof body === 'string') {
     try { body = JSON.parse(body); } catch (e) { body = {}; }
   }
-  const { id, password } = body || {};
+  const { id, password, reason } = body || {};
+  // motivo: 'vendido' (no vuelve nunca) o 'eliminado' (error/duplicado; vuelve si se publica de nuevo)
+  const motivo = reason === 'vendido' ? 'vendido' : 'eliminado';
 
   if (!samePassword(password, ADMIN_PASSWORD)) {
     return res.status(401).json({ error: 'Contrasena incorrecta' });
@@ -84,7 +86,8 @@ module.exports = async (req, res) => {
       fresh.data.removed = fresh.data.removed || [];
       if (!fresh.data.removed.some(r => r.id === id)) {
         fresh.data.removed.push({ id, title: gone.title || '', year: gone.year || '', kms: gone.kms || '',
-          price: gone.price || '', description: (gone.description || '').slice(0, 400), removedAt: new Date().toISOString() });
+          price: gone.price || '', description: (gone.description || '').slice(0, 400), removedAt: new Date().toISOString(),
+          reason: motivo });
         if (fresh.data.removed.length > 500) fresh.data.removed.splice(0, fresh.data.removed.length - 500);
         await writeJson(BLOCKED_PATH, fresh.sha, fresh.data, `Registra datos del vehiculo eliminado ${id}`);
       }
@@ -94,7 +97,7 @@ module.exports = async (req, res) => {
     catalog.data.total = catalog.data.vehicles.length;
     const removed = before - catalog.data.vehicles.length;
     if (removed > 0) {
-      await writeJson(VEHICLES_PATH, catalog.sha, catalog.data, `Elimina vehiculo ${id}`);
+      await writeJson(VEHICLES_PATH, catalog.sha, catalog.data, `Elimina vehiculo ${id}${motivo === 'vendido' ? ' (vendido)' : ''}`);
     }
 
     return res.status(200).json({ ok: true, removed });
