@@ -255,7 +255,7 @@
     {
       "id": "2366026280599829",
       "title": "KIA SPORTAGE ACTIVE",
-      "price": "$14,500",
+      "price": "$13,900",
       "year": "2014",
       "kms": "155.000 Kms",
       "img": "/fotos/2366026280599829.jpg",
@@ -271,7 +271,8 @@
       "description": "🚙KIA SPORTAGE ACTIVE\n⏳️AÑO 2014\n🚦FULL EQUIPO\n🕹TRASMISIÓN AUTOMÁTICO\n🏁MOTOR 2.0\n🕴ÚNICO DUEÑO\n📟RECORRIDO 155000 KM \n📃MATRÍCULA AL DÍA\n💣PRECIO $14500",
       "dealer": "CarPlace PAUL",
       "dealerId": "carplace-matriz",
-      "url": "https://www.facebook.com/marketplace/item/2366026280599829/"
+      "url": "https://www.facebook.com/marketplace/item/2366026280599829/",
+      "priceBefore": "$14,500"
     },
     {
       "id": "1473344624846465",
@@ -339,7 +340,7 @@
     {
       "id": "3212788602260901",
       "title": "CHEVROLET GRAN VITARA",
-      "price": "$14,700",
+      "price": "$14,400",
       "year": "2015",
       "kms": "140.000 Kms",
       "img": "/fotos/3212788602260901.jpg",
@@ -355,12 +356,13 @@
       "description": "🚙CHEVROLET GRAND VITARA\n👨‍👩‍👧‍👧5 PUERTAS\n⏳️AÑO 2015\n🌬AIRE ACONDICIONADO\n🏁MOTOR 2.0\n📟RECORRIDO 140000 KM\n💣PRECIO $14700",
       "dealer": "CarPlace PAUL",
       "dealerId": "carplace-matriz",
-      "url": "https://www.facebook.com/marketplace/item/3212788602260901/"
+      "url": "https://www.facebook.com/marketplace/item/3212788602260901/",
+      "priceBefore": "$14,700"
     },
     {
       "id": "2992493651092695",
       "title": "GREAT WALL H6 LUXURI HYBRID",
-      "price": "$21,500",
+      "price": "$20,900",
       "year": "2023",
       "kms": "85.000 Kms",
       "img": "/fotos/2992493651092695.jpg",
@@ -376,7 +378,8 @@
       "description": "🚘GREAT WALL HAVAL H6 LUXURY HYBRID\n⏳️AÑO 2023\n🏁MOTOR 1.5\n🛠FULL EQUIPO\n🛞TRASMISIÓN AUTOMÁTICA\n 🏙TECHO PANORÁMICO\n🔥BOTIN DE ENCENDIDO\n 📟RECORRIDO 85000 KM\n💣PRECIO $21500",
       "dealer": "CarPlace PAUL",
       "dealerId": "carplace-matriz",
-      "url": "https://www.facebook.com/marketplace/item/2992493651092695/"
+      "url": "https://www.facebook.com/marketplace/item/2992493651092695/",
+      "priceBefore": "$21,500"
     },
     {
       "id": "1761017131821535",
@@ -849,8 +852,86 @@
       "fotosChat": 11,
       "priceBefore": "",
       "addedAt": "2026-10-26T03:58:21.765220+00:00"
+    },
+    {
+      "id": "wa-a6241d5c0e74",
+      "title": "HAVAL H6",
+      "price": "$15,700",
+      "year": "2020",
+      "kms": "115.000 Kms",
+      "img": "/fotos/wa-a6241d5c0e74.jpg",
+      "images": [
+        "/fotos/wa-a6241d5c0e74.jpg",
+        "/fotos/wa-a6241d5c0e74_2.jpg",
+        "/fotos/wa-a6241d5c0e74_3.jpg",
+        "/fotos/wa-a6241d5c0e74_4.jpg",
+        "/fotos/wa-a6241d5c0e74_5.jpg",
+        "/fotos/wa-a6241d5c0e74_6.jpg",
+        "/fotos/wa-a6241d5c0e74_7.jpg"
+      ],
+      "description": "FLAMANTE HAVAL H6 , AÑO 2020, FULL EQUIPO, TRASMISIÓN AUTOMÁTICA, CON PALETAS DE CAMBIOS AL VOLANTE, MOTOR 2.0,  MATRÍCULA 2026, RECORRIDO 115000 KM, MANTENIMIENTO EN CASA COMERCIAL, $15700",
+      "dealer": "CarPlace PAUL",
+      "dealerId": "carplace-matriz",
+      "tipo": "auto",
+      "source": "wa",
+      "url": "",
+      "fotosChat": 16,
+      "priceBefore": "$16,400",
+      "addedAt": "2026-11-05T15:40:31.649229+00:00"
+    },
+    {
+      "id": "wa-eb8f69a189b8",
+      "title": "CHEVROLET SAIL SPORT",
+      "price": "$11,900",
+      "year": "2019",
+      "kms": "115.000 Kms",
+      "img": "/fotos/wa-eb8f69a189b8.jpg",
+      "images": [
+        "/fotos/wa-eb8f69a189b8.jpg",
+        "/fotos/wa-eb8f69a189b8_2.jpg",
+        "/fotos/wa-eb8f69a189b8_3.jpg",
+        "/fotos/wa-eb8f69a189b8_4.jpg",
+        "/fotos/wa-eb8f69a189b8_5.jpg",
+        "/fotos/wa-eb8f69a189b8_6.jpg",
+        "/fotos/wa-eb8f69a189b8_7.jpg"
+      ],
+      "description": "Flamante Chevrolet Sail Sport 2019, techo corredizo y paquete eléctrico con 115.000 km a cualquier prueba $11.900",
+      "dealer": "CarPlace PAUL",
+      "dealerId": "carplace-matriz",
+      "tipo": "auto",
+      "source": "wa",
+      "url": "",
+      "fotosChat": 13,
+      "priceBefore": "",
+      "addedAt": "2026-11-05T15:40:37.931366+00:00"
+    },
+    {
+      "id": "wa-44103f56ab9e",
+      "title": "RENAULT DUSTER ZEN",
+      "price": "$18,600",
+      "year": "2026",
+      "kms": "35.000 Kms",
+      "img": "/fotos/wa-44103f56ab9e.jpg",
+      "images": [
+        "/fotos/wa-44103f56ab9e.jpg",
+        "/fotos/wa-44103f56ab9e_2.jpg",
+        "/fotos/wa-44103f56ab9e_3.jpg",
+        "/fotos/wa-44103f56ab9e_4.jpg",
+        "/fotos/wa-44103f56ab9e_5.jpg",
+        "/fotos/wa-44103f56ab9e_6.jpg",
+        "/fotos/wa-44103f56ab9e_7.jpg"
+      ],
+      "description": "Renault Duster Zen , año 2026 , único dueño , T/M , motor 1.600 , 35,000 kilómetros , precio $18.600 , recibimos tú vehículo",
+      "dealer": "CarPlace PAUL",
+      "dealerId": "carplace-matriz",
+      "tipo": "auto",
+      "source": "wa",
+      "url": "",
+      "fotosChat": 10,
+      "priceBefore": "",
+      "addedAt": "2026-11-05T15:40:44.773249+00:00"
     }
   ],
-  "total": 38,
-  "updated": "2026-10-26T03:58:21.788218+00:00"
+  "total": 41,
+  "updated": "2026-11-05T15:40:44.821509+00:00"
 }
