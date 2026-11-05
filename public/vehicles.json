@@ -1039,8 +1039,34 @@
       "fotosChat": 15,
       "priceBefore": "",
       "addedAt": "2026-11-05T15:52:22.580166+00:00"
+    },
+    {
+      "id": "wa-04f29ed6f3f0",
+      "title": "HYUNDAI IONIQ",
+      "price": "$14,900",
+      "year": "2018",
+      "kms": "115.000 Kms",
+      "img": "/fotos/wa-04f29ed6f3f0.jpg",
+      "images": [
+        "/fotos/wa-04f29ed6f3f0.jpg",
+        "/fotos/wa-04f29ed6f3f0_2.jpg",
+        "/fotos/wa-04f29ed6f3f0_3.jpg",
+        "/fotos/wa-04f29ed6f3f0_4.jpg",
+        "/fotos/wa-04f29ed6f3f0_5.jpg",
+        "/fotos/wa-04f29ed6f3f0_6.jpg",
+        "/fotos/wa-04f29ed6f3f0_7.jpg"
+      ],
+      "description": "HYUNDAI IONIQ AÑO 2018, HYBRID, TRANSMISIÓN AUTOMÁTICA, FULL EQUIPO, TOTALMENTE FLAMANTE, RECORRIDO 115.00 KM, MANTENIMIENTOS EN CASA, MOTOR 1.6, $14900",
+      "dealer": "CarPlace PAUL",
+      "dealerId": "carplace-matriz",
+      "tipo": "auto",
+      "source": "wa",
+      "url": "",
+      "fotosChat": 13,
+      "priceBefore": "",
+      "addedAt": "2026-11-05T15:58:28.471407+00:00"
     }
   ],
-  "total": 45,
-  "updated": "2026-11-05T15:52:22.613957+00:00"
+  "total": 46,
+  "updated": "2026-11-05T15:58:28.487179+00:00"
 }
