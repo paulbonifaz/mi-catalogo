@@ -262,6 +262,15 @@
       "price": "$19,400",
       "description": "Flamante Suzuki  FRONX  , año 2024  , único dueño , motor 1.5 Hibryd , T/M , 60.000 kilómetros ,  precio $19.400 ,recibimos tú vehículo",
       "removedAt": "2026-11-01T16:17:18.801Z"
+    },
+    {
+      "id": "1652897873120236",
+      "title": "TOYOTA COROLLA SCROSS HIGH",
+      "year": "2025",
+      "kms": "14.000 Kms",
+      "price": "$31,300",
+      "description": "Toyota Corolla Cross HIGH 1.8 Hybrid TA año 2025, 14 mil kms, CHEQUEOS EN CASA, TOTALMENTE NUEVO. \nPrecio $31300",
+      "removedAt": "2026-11-05T15:43:28.088Z"
     }
   ]
 }
