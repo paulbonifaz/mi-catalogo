@@ -85,27 +85,6 @@
       "url": "https://www.facebook.com/marketplace/item/1449278817086719/"
     },
     {
-      "id": "1652897873120236",
-      "title": "TOYOTA COROLLA SCROSS HIGH",
-      "price": "$31,300",
-      "year": "2025",
-      "kms": "14.000 Kms",
-      "img": "/fotos/1652897873120236.jpg",
-      "images": [
-        "/fotos/1652897873120236.jpg",
-        "/fotos/1652897873120236_2.jpg",
-        "/fotos/1652897873120236_3.jpg",
-        "/fotos/1652897873120236_4.jpg",
-        "/fotos/1652897873120236_5.jpg",
-        "/fotos/1652897873120236_6.jpg",
-        "/fotos/1652897873120236_7.jpg"
-      ],
-      "description": "Toyota Corolla Cross HIGH 1.8 Hybrid TA año 2025, 14 mil kms, CHEQUEOS EN CASA, TOTALMENTE NUEVO. \nPrecio $31300",
-      "dealer": "CarPlace PAUL",
-      "dealerId": "carplace-matriz",
-      "url": "https://www.facebook.com/marketplace/item/1652897873120236/"
-    },
-    {
       "id": "1503930394897055",
       "title": "HAVAL H6 CONFORT",
       "price": "$16,300",
@@ -932,6 +911,6 @@
       "addedAt": "2026-11-05T15:40:44.773249+00:00"
     }
   ],
-  "total": 41,
+  "total": 40,
   "updated": "2026-11-05T15:40:44.821509+00:00"
 }
