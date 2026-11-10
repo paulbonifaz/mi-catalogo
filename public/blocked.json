@@ -304,6 +304,16 @@
       "description": "Renault Duster Zen , año 2026 , único dueño , T/M , motor 1.600 , 35,000 kilómetros , precio $18.600 , recibimos tú vehículo",
       "removedAt": "2026-11-10T02:27:24.640Z",
       "reason": "eliminado"
+    },
+    {
+      "id": "wa-2202ede6d847",
+      "title": "TUCSON NX4E",
+      "year": "2023",
+      "kms": "80.000 Kms",
+      "price": "$26,900",
+      "description": "Flamante Tucson NX4E , año 2023  , motor 2.000 , T/M , llantas nuevas , forros en los asientos , 80.000 kilómetros , precio $ 26.900 , recibimos tú vehículo ,,",
+      "removedAt": "2026-11-10T02:27:35.092Z",
+      "reason": "eliminado"
     }
   ]
 }
