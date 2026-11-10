@@ -487,27 +487,6 @@
       "url": "https://www.facebook.com/marketplace/item/2178990779670950/"
     },
     {
-      "id": "1464038022293667",
-      "title": "NISSAN XTRAIL CLASSIC",
-      "price": "$10,900",
-      "year": "2011",
-      "kms": "210.000 Kms",
-      "img": "/fotos/1464038022293667.jpg",
-      "images": [
-        "/fotos/1464038022293667.jpg",
-        "/fotos/1464038022293667_2.jpg",
-        "/fotos/1464038022293667_3.jpg",
-        "/fotos/1464038022293667_4.jpg",
-        "/fotos/1464038022293667_5.jpg",
-        "/fotos/1464038022293667_6.jpg",
-        "/fotos/1464038022293667_7.jpg"
-      ],
-      "description": "Nissan Xtrail Classic 2.5 4x2 AC  año 2011, 210 mil kms, full equipo, trasmisión automático, placas P-1, toda prueba. Precio $10900 negociable. Matrícula y Corpaire 2026",
-      "dealer": "CarPlace PAUL",
-      "dealerId": "carplace-matriz",
-      "url": "https://www.facebook.com/marketplace/item/1464038022293667/"
-    },
-    {
       "id": "wa-805c04306283",
       "title": "HYUNDAI VENUE",
       "price": "$16,500",
@@ -1171,6 +1150,6 @@
       "addedAt": "2026-11-10T02:23:42.241126+00:00"
     }
   ],
-  "total": 50,
+  "total": 49,
   "updated": "2026-11-10T02:23:42.257250+00:00"
 }
