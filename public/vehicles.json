@@ -916,32 +916,6 @@
       "addedAt": "2026-11-05T15:51:55.306522+00:00"
     },
     {
-      "id": "wa-2202ede6d847",
-      "title": "TUCSON NX4E",
-      "price": "$26,900",
-      "year": "2023",
-      "kms": "80.000 Kms",
-      "img": "/fotos/wa-2202ede6d847.jpg",
-      "images": [
-        "/fotos/wa-2202ede6d847.jpg",
-        "/fotos/wa-2202ede6d847_2.jpg",
-        "/fotos/wa-2202ede6d847_3.jpg",
-        "/fotos/wa-2202ede6d847_4.jpg",
-        "/fotos/wa-2202ede6d847_5.jpg",
-        "/fotos/wa-2202ede6d847_6.jpg",
-        "/fotos/wa-2202ede6d847_7.jpg"
-      ],
-      "description": "Flamante Tucson NX4E , año 2023  , motor 2.000 , T/M , llantas nuevas , forros en los asientos , 80.000 kilómetros , precio $ 26.900 , recibimos tú vehículo ,,",
-      "dealer": "CarPlace PAUL",
-      "dealerId": "carplace-matriz",
-      "tipo": "auto",
-      "source": "wa",
-      "url": "",
-      "fotosChat": 11,
-      "priceBefore": "",
-      "addedAt": "2026-11-05T15:52:09.081111+00:00"
-    },
-    {
       "id": "wa-c94e3d413b33",
       "title": "RENAULT DUSTER INTENS",
       "price": "$19,500",
@@ -1124,6 +1098,6 @@
       "addedAt": "2026-11-10T02:23:42.241126+00:00"
     }
   ],
-  "total": 48,
+  "total": 47,
   "updated": "2026-11-10T02:23:42.257250+00:00"
 }
