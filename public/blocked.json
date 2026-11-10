@@ -282,6 +282,16 @@
       "price": "$28,900",
       "description": "Nuevo Kia Sportage GTLine , año 2025 , único dueño , motor 2.000 , T/M , dos llaves , mantenimiento en concesionario , kilometraje 13.000 , precio $28.900 , recibimos tú vehículo",
       "removedAt": "2026-11-05T16:10:24.324Z"
+    },
+    {
+      "id": "1464038022293667",
+      "title": "NISSAN XTRAIL CLASSIC",
+      "year": "2011",
+      "kms": "210.000 Kms",
+      "price": "$10,900",
+      "description": "Nissan Xtrail Classic 2.5 4x2 AC  año 2011, 210 mil kms, full equipo, trasmisión automático, placas P-1, toda prueba. Precio $10900 negociable. Matrícula y Corpaire 2026",
+      "removedAt": "2026-11-10T02:26:42.591Z",
+      "reason": "eliminado"
     }
   ]
 }
