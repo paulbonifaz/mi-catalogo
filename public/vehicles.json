@@ -864,32 +864,6 @@
       "addedAt": "2026-11-05T15:40:37.931366+00:00"
     },
     {
-      "id": "wa-44103f56ab9e",
-      "title": "RENAULT DUSTER ZEN",
-      "price": "$18,600",
-      "year": "2026",
-      "kms": "35.000 Kms",
-      "img": "/fotos/wa-44103f56ab9e.jpg",
-      "images": [
-        "/fotos/wa-44103f56ab9e.jpg",
-        "/fotos/wa-44103f56ab9e_2.jpg",
-        "/fotos/wa-44103f56ab9e_3.jpg",
-        "/fotos/wa-44103f56ab9e_4.jpg",
-        "/fotos/wa-44103f56ab9e_5.jpg",
-        "/fotos/wa-44103f56ab9e_6.jpg",
-        "/fotos/wa-44103f56ab9e_7.jpg"
-      ],
-      "description": "Renault Duster Zen , año 2026 , único dueño , T/M , motor 1.600 , 35,000 kilómetros , precio $18.600 , recibimos tú vehículo",
-      "dealer": "CarPlace PAUL",
-      "dealerId": "carplace-matriz",
-      "tipo": "auto",
-      "source": "wa",
-      "url": "",
-      "fotosChat": 10,
-      "priceBefore": "",
-      "addedAt": "2026-11-05T15:40:44.773249+00:00"
-    },
-    {
       "id": "wa-53cc00f37291",
       "title": "CHERY TIGGO 8",
       "price": "$14,800",
@@ -1150,6 +1124,6 @@
       "addedAt": "2026-11-10T02:23:42.241126+00:00"
     }
   ],
-  "total": 49,
+  "total": 48,
   "updated": "2026-11-10T02:23:42.257250+00:00"
 }
