@@ -293,6 +293,16 @@
       "description": "Nissan Xtrail Classic 2.5 4x2 AC  año 2011, 210 mil kms, full equipo, trasmisión automático, placas P-1, toda prueba. Precio $10900 negociable. Matrícula y Corpaire 2026",
       "removedAt": "2026-11-10T02:26:42.591Z",
       "reason": "eliminado"
+    },
+    {
+      "id": "wa-44103f56ab9e",
+      "title": "RENAULT DUSTER ZEN",
+      "year": "2026",
+      "kms": "35.000 Kms",
+      "price": "$18,600",
+      "description": "Renault Duster Zen , año 2026 , único dueño , T/M , motor 1.600 , 35,000 kilómetros , precio $18.600 , recibimos tú vehículo",
+      "removedAt": "2026-11-10T02:27:24.640Z",
+      "reason": "eliminado"
     }
   ]
 }
