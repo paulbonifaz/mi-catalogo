@@ -1143,8 +1143,34 @@
       "fotosChat": 11,
       "priceBefore": "",
       "addedAt": "2026-11-10T02:18:52.542394+00:00"
+    },
+    {
+      "id": "wa-29b3e5258edf",
+      "title": "HAVAL H6",
+      "price": "$15,400",
+      "year": "2020",
+      "kms": "130.000 Kms",
+      "img": "/fotos/wa-29b3e5258edf.jpg",
+      "images": [
+        "/fotos/wa-29b3e5258edf.jpg",
+        "/fotos/wa-29b3e5258edf_2.jpg",
+        "/fotos/wa-29b3e5258edf_3.jpg",
+        "/fotos/wa-29b3e5258edf_4.jpg",
+        "/fotos/wa-29b3e5258edf_5.jpg",
+        "/fotos/wa-29b3e5258edf_6.jpg",
+        "/fotos/wa-29b3e5258edf_7.jpg"
+      ],
+      "description": "FLAMANTE HAVAL H6 , AÑO 2020, FULL EQUIPO, TRASMISIÓN AUTOMÁTICA, CON PALETAS DE CAMBIOS AL VOLANTE, MOTOR 2.0, RECORRIDO 130000 KM, ÚNICO DUEÑO, $15400",
+      "dealer": "CarPlace PAUL",
+      "dealerId": "carplace-matriz",
+      "tipo": "auto",
+      "source": "wa",
+      "url": "",
+      "fotosChat": 15,
+      "priceBefore": "",
+      "addedAt": "2026-11-10T02:23:42.241126+00:00"
     }
   ],
-  "total": 49,
-  "updated": "2026-11-10T02:18:52.575177+00:00"
+  "total": 50,
+  "updated": "2026-11-10T02:23:42.257250+00:00"
 }
