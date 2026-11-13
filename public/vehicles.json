@@ -1162,8 +1162,34 @@
       "fotosChat": 11,
       "priceBefore": "",
       "addedAt": "2026-11-13T02:41:25.638113+00:00"
+    },
+    {
+      "id": "wa-63caa8657ce5",
+      "title": "PORSCHE CAYENNE S",
+      "price": "$58,500",
+      "year": "2017",
+      "kms": "49.000 Kms",
+      "img": "/fotos/wa-63caa8657ce5.jpg",
+      "images": [
+        "/fotos/wa-63caa8657ce5.jpg",
+        "/fotos/wa-63caa8657ce5_2.jpg",
+        "/fotos/wa-63caa8657ce5_3.jpg",
+        "/fotos/wa-63caa8657ce5_4.jpg",
+        "/fotos/wa-63caa8657ce5_5.jpg",
+        "/fotos/wa-63caa8657ce5_6.jpg",
+        "/fotos/wa-63caa8657ce5_7.jpg"
+      ],
+      "description": "Porsche Cayenne S 3.0 4x4 Hybrid año 2017, 49 mil kms, suspensión regulable,  caja de 8 velocidades, techo panorámico,  modos de manejo, paletas de cambios al volante, full equipo, mantenimientos en Alvarez Barba, totalmente nuevo.\n\n\n\nPrecio $58500",
+      "dealer": "CarPlace PAUL",
+      "dealerId": "carplace-matriz",
+      "tipo": "auto",
+      "source": "wa",
+      "url": "",
+      "fotosChat": 12,
+      "priceBefore": "",
+      "addedAt": "2026-11-13T02:55:58.299380+00:00"
     }
   ],
-  "total": 49,
-  "updated": "2026-11-13T02:41:25.666816+00:00"
+  "total": 50,
+  "updated": "2026-11-13T02:55:58.331130+00:00"
 }
