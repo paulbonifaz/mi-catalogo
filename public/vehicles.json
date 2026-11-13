@@ -339,27 +339,6 @@
       "priceBefore": "$21,500"
     },
     {
-      "id": "1761017131821535",
-      "title": "OPEL CORSA",
-      "price": "$15,800",
-      "year": "2024",
-      "kms": "45.000 Kms",
-      "img": "/fotos/1761017131821535.jpg",
-      "images": [
-        "/fotos/1761017131821535.jpg",
-        "/fotos/1761017131821535_2.jpg",
-        "/fotos/1761017131821535_3.jpg",
-        "/fotos/1761017131821535_4.jpg",
-        "/fotos/1761017131821535_5.jpg",
-        "/fotos/1761017131821535_6.jpg",
-        "/fotos/1761017131821535_7.jpg"
-      ],
-      "description": "🏎Opel  Corsa \n⏳️año 2024 \n🏁motor 1.200 turbo  \n📟45.000 kilómetros \n📃garantía y mantenimiento en concesionario\n🛞llantas nuevas \n🔑dos llaves\n📃matrícula y revisión 2026\n🕴Único dueño \n🔥Precio $15.800\n🚙Recibimos tú vehículo",
-      "dealer": "CarPlace PAUL",
-      "dealerId": "carplace-matriz",
-      "url": "https://www.facebook.com/marketplace/item/1761017131821535/"
-    },
-    {
       "id": "1835814584530405",
       "title": "CHERY TIGGO 7PRO PLUS",
       "price": "$15,350",
@@ -1133,6 +1112,6 @@
       "addedAt": "2026-11-13T02:00:13.460129+00:00"
     }
   ],
-  "total": 48,
+  "total": 47,
   "updated": "2026-11-13T02:00:13.487458+00:00"
 }
