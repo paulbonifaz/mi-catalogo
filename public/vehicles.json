@@ -232,28 +232,6 @@
       "url": "https://www.facebook.com/marketplace/item/867533286387297/"
     },
     {
-      "id": "2366026280599829",
-      "title": "KIA SPORTAGE ACTIVE",
-      "price": "$13,900",
-      "year": "2014",
-      "kms": "155.000 Kms",
-      "img": "/fotos/2366026280599829.jpg",
-      "images": [
-        "/fotos/2366026280599829.jpg",
-        "/fotos/2366026280599829_2.jpg",
-        "/fotos/2366026280599829_3.jpg",
-        "/fotos/2366026280599829_4.jpg",
-        "/fotos/2366026280599829_5.jpg",
-        "/fotos/2366026280599829_6.jpg",
-        "/fotos/2366026280599829_7.jpg"
-      ],
-      "description": "🚙KIA SPORTAGE ACTIVE\n⏳️AÑO 2014\n🚦FULL EQUIPO\n🕹TRASMISIÓN AUTOMÁTICO\n🏁MOTOR 2.0\n🕴ÚNICO DUEÑO\n📟RECORRIDO 155000 KM \n📃MATRÍCULA AL DÍA\n💣PRECIO $14500",
-      "dealer": "CarPlace PAUL",
-      "dealerId": "carplace-matriz",
-      "url": "https://www.facebook.com/marketplace/item/2366026280599829/",
-      "priceBefore": "$14,500"
-    },
-    {
       "id": "1473344624846465",
       "title": "KIA SOLUTO LX 1.4",
       "price": "$14,700",
@@ -1155,6 +1133,6 @@
       "addedAt": "2026-11-13T02:00:13.460129+00:00"
     }
   ],
-  "total": 49,
+  "total": 48,
   "updated": "2026-11-13T02:00:13.487458+00:00"
 }
