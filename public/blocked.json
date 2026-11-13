@@ -315,6 +315,16 @@
       "description": "Flamante Tucson NX4E , año 2023  , motor 2.000 , T/M , llantas nuevas , forros en los asientos , 80.000 kilómetros , precio $ 26.900 , recibimos tú vehículo ,,",
       "removedAt": "2026-11-10T02:27:35.092Z",
       "reason": "eliminado"
+    },
+    {
+      "id": "1653874886523348",
+      "title": "HYUNDAI SANTA FE",
+      "year": "2015",
+      "kms": "160.000 Kms",
+      "price": "$18,900",
+      "description": "🚙HYUNDAI SANTA FE\n⏳️AÑO 2015\n🏎TRASMISIÓN MANUAL DE 6 VELOCIDADES\n🏁FULL EQUIPO\n👨‍👩‍👧‍👧7 PASAJEROS\n🏎MOTOR 2400\n📟RECORRIDO 160000 KM\n🔥PRECIO $18900",
+      "removedAt": "2026-11-13T02:02:16.218Z",
+      "reason": "vendido"
     }
   ]
 }
