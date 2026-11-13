@@ -1096,8 +1096,60 @@
       "fotosChat": 15,
       "priceBefore": "",
       "addedAt": "2026-11-10T02:23:42.241126+00:00"
+    },
+    {
+      "id": "wa-7784a4522619",
+      "title": "CHEVROLET CAPTIVA LTZ",
+      "price": "$17,400",
+      "year": "2023",
+      "kms": "50.000 Kms",
+      "img": "/fotos/wa-7784a4522619.jpg",
+      "images": [
+        "/fotos/wa-7784a4522619.jpg",
+        "/fotos/wa-7784a4522619_2.jpg",
+        "/fotos/wa-7784a4522619_3.jpg",
+        "/fotos/wa-7784a4522619_4.jpg",
+        "/fotos/wa-7784a4522619_5.jpg",
+        "/fotos/wa-7784a4522619_6.jpg",
+        "/fotos/wa-7784a4522619_7.jpg"
+      ],
+      "description": "Flamante Chevrolet Captiva LTZ  , único dueño , año 2023 , motor 1.500 , 50.000 kilómetros , láminas de seguridad  , aros y llantas nuevas , RTV Quito , precio $17.400 recibimos tú vehículo",
+      "dealer": "CarPlace PAUL",
+      "dealerId": "carplace-matriz",
+      "tipo": "auto",
+      "source": "wa",
+      "url": "",
+      "fotosChat": 11,
+      "priceBefore": "",
+      "addedAt": "2026-11-13T01:55:24.888572+00:00"
+    },
+    {
+      "id": "wa-dc6e87b0e240",
+      "title": "NISSAN XTRAIL SENSE",
+      "price": "$15,900",
+      "year": "2017",
+      "kms": "91.000 Kms",
+      "img": "/fotos/wa-dc6e87b0e240.jpg",
+      "images": [
+        "/fotos/wa-dc6e87b0e240.jpg",
+        "/fotos/wa-dc6e87b0e240_2.jpg",
+        "/fotos/wa-dc6e87b0e240_3.jpg",
+        "/fotos/wa-dc6e87b0e240_4.jpg",
+        "/fotos/wa-dc6e87b0e240_5.jpg",
+        "/fotos/wa-dc6e87b0e240_6.jpg",
+        "/fotos/wa-dc6e87b0e240_7.jpg"
+      ],
+      "description": "Nissan Xtrail Sense 2.5 AT año 2017, 91 mil kms, ÚNICO DUEÑO, chequeos en Nissan, 3 filas de asientos, 2 llaves originales, toda prueba. Precio $15900",
+      "dealer": "CarPlace PAUL",
+      "dealerId": "carplace-matriz",
+      "tipo": "auto",
+      "source": "wa",
+      "url": "",
+      "fotosChat": 13,
+      "priceBefore": "",
+      "addedAt": "2026-11-13T01:55:31.571660+00:00"
     }
   ],
-  "total": 47,
-  "updated": "2026-11-10T02:23:42.257250+00:00"
+  "total": 49,
+  "updated": "2026-11-13T01:55:31.605356+00:00"
 }
