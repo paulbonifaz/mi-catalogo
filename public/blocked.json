@@ -326,6 +326,16 @@
       "description": "🚙HYUNDAI SANTA FE\n⏳️AÑO 2015\n🏎TRASMISIÓN MANUAL DE 6 VELOCIDADES\n🏁FULL EQUIPO\n👨‍👩‍👧‍👧7 PASAJEROS\n🏎MOTOR 2400\n📟RECORRIDO 160000 KM\n🔥PRECIO $18900",
       "removedAt": "2026-11-13T02:02:16.218Z",
       "reason": "vendido"
+    },
+    {
+      "id": "2366026280599829",
+      "title": "KIA SPORTAGE ACTIVE",
+      "year": "2014",
+      "kms": "155.000 Kms",
+      "price": "$13,900",
+      "description": "🚙KIA SPORTAGE ACTIVE\n⏳️AÑO 2014\n🚦FULL EQUIPO\n🕹TRASMISIÓN AUTOMÁTICO\n🏁MOTOR 2.0\n🕴ÚNICO DUEÑO\n📟RECORRIDO 155000 KM \n📃MATRÍCULA AL DÍA\n💣PRECIO $14500",
+      "removedAt": "2026-11-13T02:02:27.348Z",
+      "reason": "vendido"
     }
   ]
 }
