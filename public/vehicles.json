@@ -1110,8 +1110,60 @@
       "fotosChat": 13,
       "priceBefore": "",
       "addedAt": "2026-11-13T02:00:13.460129+00:00"
+    },
+    {
+      "id": "wa-4adb15f65b5f",
+      "title": "AUDI Q5 QUATTRO",
+      "price": "$16,400",
+      "year": "2013",
+      "kms": "115.000 Kms",
+      "img": "/fotos/wa-4adb15f65b5f.jpg",
+      "images": [
+        "/fotos/wa-4adb15f65b5f.jpg",
+        "/fotos/wa-4adb15f65b5f_2.jpg",
+        "/fotos/wa-4adb15f65b5f_3.jpg",
+        "/fotos/wa-4adb15f65b5f_4.jpg",
+        "/fotos/wa-4adb15f65b5f_5.jpg",
+        "/fotos/wa-4adb15f65b5f_6.jpg",
+        "/fotos/wa-4adb15f65b5f_7.jpg"
+      ],
+      "description": "Flamante AUDI Q5 QUATTRO (alemán) , año 2013 , T/A , motor 2.000 , asientos de cuero , llantas nuevas , 115.000 kilómetros , precio $16.400 , recibimos tú vehículo",
+      "dealer": "CarPlace PAUL",
+      "dealerId": "carplace-matriz",
+      "tipo": "auto",
+      "source": "wa",
+      "url": "",
+      "fotosChat": 10,
+      "priceBefore": "",
+      "addedAt": "2026-11-13T02:41:18.693590+00:00"
+    },
+    {
+      "id": "wa-1e1586fb8a2d",
+      "title": "RENAULT LOGAN",
+      "price": "$8,400",
+      "year": "2012",
+      "kms": "115.000 Kms",
+      "img": "/fotos/wa-1e1586fb8a2d.jpg",
+      "images": [
+        "/fotos/wa-1e1586fb8a2d.jpg",
+        "/fotos/wa-1e1586fb8a2d_2.jpg",
+        "/fotos/wa-1e1586fb8a2d_3.jpg",
+        "/fotos/wa-1e1586fb8a2d_4.jpg",
+        "/fotos/wa-1e1586fb8a2d_5.jpg",
+        "/fotos/wa-1e1586fb8a2d_6.jpg",
+        "/fotos/wa-1e1586fb8a2d_7.jpg"
+      ],
+      "description": "Flamante Renault Logan , año 2012 , motor 1.400 , A/C , llantas nuevas ,115.000 kilómetros ,  precio $ 8400",
+      "dealer": "CarPlace PAUL",
+      "dealerId": "carplace-matriz",
+      "tipo": "auto",
+      "source": "wa",
+      "url": "",
+      "fotosChat": 11,
+      "priceBefore": "",
+      "addedAt": "2026-11-13T02:41:25.638113+00:00"
     }
   ],
-  "total": 47,
-  "updated": "2026-11-13T02:00:13.487458+00:00"
+  "total": 49,
+  "updated": "2026-11-13T02:41:25.666816+00:00"
 }
