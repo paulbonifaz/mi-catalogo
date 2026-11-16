@@ -622,31 +622,6 @@
       "priceBefore": "$16,900"
     },
     {
-      "id": "wa-5f73cc5ae77c",
-      "title": "SUZUKI SCROSS",
-      "price": "$16,400",
-      "year": "2019",
-      "kms": "90.000 Kms",
-      "img": "/fotos/wa-5f73cc5ae77c.jpg",
-      "images": [
-        "/fotos/wa-5f73cc5ae77c.jpg",
-        "/fotos/wa-5f73cc5ae77c_2.jpg",
-        "/fotos/wa-5f73cc5ae77c_3.jpg",
-        "/fotos/wa-5f73cc5ae77c_4.jpg",
-        "/fotos/wa-5f73cc5ae77c_5.jpg",
-        "/fotos/wa-5f73cc5ae77c_6.jpg",
-        "/fotos/wa-5f73cc5ae77c_7.jpg"
-      ],
-      "description": "Flamante Suzuki SCROSS  , año 2019 , único dueño , ( auto de casa ) motor 1.600  , T/M , 90.000 kilómetros , llantas nuevas , precio $16.400  , recibimos tú vehículo",
-      "dealer": "CarPlace PAUL",
-      "dealerId": "carplace-matriz",
-      "tipo": "auto",
-      "source": "wa",
-      "url": "",
-      "fotosChat": 11,
-      "addedAt": "2026-10-26T03:18:04.991395+00:00"
-    },
-    {
       "id": "wa-a44a9c8b1b1c",
       "title": "MAZDA CX-3 ENTRY",
       "price": "$21,900",
@@ -1244,6 +1219,6 @@
       "addedAt": "2026-11-16T20:15:49.926809+00:00"
     }
   ],
-  "total": 52,
+  "total": 51,
   "updated": "2026-11-16T20:15:50.053865+00:00"
 }
