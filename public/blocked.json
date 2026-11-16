@@ -359,6 +359,16 @@
       "description": "Flamnte Trailblazer , año 2018 , motor 2.8 Diesel , 4x4 ,T/A ,tres filas de asientos , llantas nuevas , barra de tiro Chevrolet ,120.000  kilómetros , precio $32.400 recibimos tú vehículo",
       "removedAt": "2026-11-16T21:34:18.364Z",
       "reason": "eliminado"
+    },
+    {
+      "id": "wa-5f73cc5ae77c",
+      "title": "SUZUKI SCROSS",
+      "year": "2019",
+      "kms": "90.000 Kms",
+      "price": "$16,400",
+      "description": "Flamante Suzuki SCROSS  , año 2019 , único dueño , ( auto de casa ) motor 1.600  , T/M , 90.000 kilómetros , llantas nuevas , precio $16.400  , recibimos tú vehículo",
+      "removedAt": "2026-11-16T21:56:33.187Z",
+      "reason": "eliminado"
     }
   ]
 }
