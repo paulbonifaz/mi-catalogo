@@ -255,7 +255,7 @@
     {
       "id": "1140064808484521",
       "title": "DONGFENG MAGE T",
-      "price": "$21,400",
+      "price": "$20,900",
       "year": "2026",
       "kms": "15.000 Kms",
       "img": "/fotos/1140064808484521.jpg",
@@ -271,7 +271,8 @@
       "description": "🚙DONGFENG MAGE T HYBRID\n⏳️AÑO 2026\n💪FULL EQUIPO\n🕹TRASMISIÓN AUTOMÁTICA\n🏙CON TECHO PANORÁMICO 🆓️SISTEMA ADAS\n🏎3 MODOS DE MANEJO (ECO, CONFORT, SPORT)\n📟RECORRIDO 15000 KM\n🎥CAMARA DE VISION PERIFERICA DE 360\n💣PRECIO$21400",
       "dealer": "CarPlace PAUL",
       "dealerId": "carplace-matriz",
-      "url": "https://www.facebook.com/marketplace/item/1140064808484521/"
+      "url": "https://www.facebook.com/marketplace/item/1140064808484521/",
+      "priceBefore": "$21,400"
     },
     {
       "id": "1079500925055659",
@@ -546,7 +547,7 @@
     {
       "id": "wa-064ba77a2e50",
       "title": "HAVAL H6",
-      "price": "$13,200",
+      "price": "$12,500",
       "year": "2018",
       "kms": "130.000 Kms",
       "img": "/fotos/wa-064ba77a2e50.jpg",
@@ -566,7 +567,8 @@
       "source": "wa",
       "url": "",
       "fotosChat": 9,
-      "addedAt": "2026-10-21T02:09:13.327921+00:00"
+      "addedAt": "2026-10-21T02:09:13.327921+00:00",
+      "priceBefore": "$13,200"
     },
     {
       "id": "wa-0759a57b0022",
@@ -1188,8 +1190,86 @@
       "fotosChat": 12,
       "priceBefore": "",
       "addedAt": "2026-11-13T02:55:58.299380+00:00"
+    },
+    {
+      "id": "wa-932c696f712b",
+      "title": "FLAMNTE TRAILBLAZER",
+      "price": "$31,900",
+      "year": "2018",
+      "kms": "130.000 Kms",
+      "img": "/fotos/wa-932c696f712b.jpg",
+      "images": [
+        "/fotos/wa-932c696f712b.jpg",
+        "/fotos/wa-932c696f712b_2.jpg",
+        "/fotos/wa-932c696f712b_3.jpg",
+        "/fotos/wa-932c696f712b_4.jpg",
+        "/fotos/wa-932c696f712b_5.jpg",
+        "/fotos/wa-932c696f712b_6.jpg",
+        "/fotos/wa-932c696f712b_7.jpg"
+      ],
+      "description": "Flamnte Trailblazer , año 2018 , motor 2.8 Diesel , 4x4 ,T/A ,tres filas de asientos , llantas nuevas , barra de tiro Chevrolet ,130.000 kilómetros , precio $31.900  recibimos tú vehículo",
+      "dealer": "CarPlace PAUL",
+      "dealerId": "carplace-matriz",
+      "tipo": "auto",
+      "source": "wa",
+      "url": "",
+      "fotosChat": 11,
+      "priceBefore": "",
+      "addedAt": "2026-11-16T20:15:15.930297+00:00"
+    },
+    {
+      "id": "wa-9e06cf08fa4b",
+      "title": "MAZDA CX-30 CORE",
+      "price": "$25,400",
+      "year": "2023",
+      "kms": "85.000 Kms",
+      "img": "/fotos/wa-9e06cf08fa4b.jpg",
+      "images": [
+        "/fotos/wa-9e06cf08fa4b.jpg",
+        "/fotos/wa-9e06cf08fa4b_2.jpg",
+        "/fotos/wa-9e06cf08fa4b_3.jpg",
+        "/fotos/wa-9e06cf08fa4b_4.jpg",
+        "/fotos/wa-9e06cf08fa4b_5.jpg",
+        "/fotos/wa-9e06cf08fa4b_6.jpg",
+        "/fotos/wa-9e06cf08fa4b_7.jpg"
+      ],
+      "description": "FLAMANTE MAZDA CX-30 CORE HYBRID AÑO 2023, FULL EQUIPO, TRASMISIÓN AUTOMÁTICA, MOTOR 2.0, RECORRIDO 85000 KM, $25400",
+      "dealer": "CarPlace PAUL",
+      "dealerId": "carplace-matriz",
+      "tipo": "auto",
+      "source": "wa",
+      "url": "",
+      "fotosChat": 16,
+      "priceBefore": "",
+      "addedAt": "2026-11-16T20:15:36.191429+00:00"
+    },
+    {
+      "id": "wa-3ca48eaef55c",
+      "title": "MAZDA CX-5 CORE",
+      "price": "$32,500",
+      "year": "2026",
+      "kms": "6.000 Kms",
+      "img": "/fotos/wa-3ca48eaef55c.jpg",
+      "images": [
+        "/fotos/wa-3ca48eaef55c.jpg",
+        "/fotos/wa-3ca48eaef55c_2.jpg",
+        "/fotos/wa-3ca48eaef55c_3.jpg",
+        "/fotos/wa-3ca48eaef55c_4.jpg",
+        "/fotos/wa-3ca48eaef55c_5.jpg",
+        "/fotos/wa-3ca48eaef55c_6.jpg",
+        "/fotos/wa-3ca48eaef55c_7.jpg"
+      ],
+      "description": "Mazda CX-5 CORE 2.0 AT año 2026, 6 mil kms, ÚNICO DUEÑO, 2 llaves originales, full equipo, flamate. Precio $32500",
+      "dealer": "CarPlace PAUL",
+      "dealerId": "carplace-matriz",
+      "tipo": "auto",
+      "source": "wa",
+      "url": "",
+      "fotosChat": 12,
+      "priceBefore": "",
+      "addedAt": "2026-11-16T20:15:49.926809+00:00"
     }
   ],
-  "total": 50,
-  "updated": "2026-11-13T02:55:58.331130+00:00"
+  "total": 53,
+  "updated": "2026-11-16T20:15:50.053865+00:00"
 }
