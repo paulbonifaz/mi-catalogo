@@ -828,32 +828,6 @@
       "addedAt": "2026-11-05T15:51:30.685639+00:00"
     },
     {
-      "id": "wa-e50565110a12",
-      "title": "FLAMNTE TRAILBLAZER",
-      "price": "$32,400",
-      "year": "2018",
-      "kms": "120.000 Kms",
-      "img": "/fotos/wa-e50565110a12.jpg",
-      "images": [
-        "/fotos/wa-e50565110a12.jpg",
-        "/fotos/wa-e50565110a12_2.jpg",
-        "/fotos/wa-e50565110a12_3.jpg",
-        "/fotos/wa-e50565110a12_4.jpg",
-        "/fotos/wa-e50565110a12_5.jpg",
-        "/fotos/wa-e50565110a12_6.jpg",
-        "/fotos/wa-e50565110a12_7.jpg"
-      ],
-      "description": "Flamnte Trailblazer , año 2018 , motor 2.8 Diesel , 4x4 ,T/A ,tres filas de asientos , llantas nuevas , barra de tiro Chevrolet ,120.000  kilómetros , precio $32.400 recibimos tú vehículo",
-      "dealer": "CarPlace PAUL",
-      "dealerId": "carplace-matriz",
-      "tipo": "auto",
-      "source": "wa",
-      "url": "",
-      "fotosChat": 11,
-      "priceBefore": "",
-      "addedAt": "2026-11-05T15:51:55.306522+00:00"
-    },
-    {
       "id": "wa-c94e3d413b33",
       "title": "RENAULT DUSTER INTENS",
       "price": "$19,500",
@@ -1270,6 +1244,6 @@
       "addedAt": "2026-11-16T20:15:49.926809+00:00"
     }
   ],
-  "total": 53,
+  "total": 52,
   "updated": "2026-11-16T20:15:50.053865+00:00"
 }
