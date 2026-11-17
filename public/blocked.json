@@ -381,6 +381,16 @@
       "description": "Nissan Xtrail Sense 2.5 AT año 2017, 91 mil kms, ÚNICO DUEÑO, chequeos en Nissan, 3 filas de asientos, 2 llaves originales, toda prueba. Precio $15900",
       "removedAt": "2026-11-17T14:40:37.656Z",
       "reason": "vendido"
+    },
+    {
+      "id": "1079500925055659",
+      "title": "FORD ECOSPORT",
+      "year": "2020",
+      "kms": "80.000 Kms",
+      "price": "$12,400",
+      "description": "🚙Ford  Ecosport  \n⏳️año 2020 \n🏎motor 1.500 \n🕹T/M \n🛞Llantas nuevas \n📟80.000 kilómetros \n💣Preció  $15.900\n🚘Recibimos tú vehículo",
+      "removedAt": "2026-11-17T14:41:14.068Z",
+      "reason": "eliminado"
     }
   ]
 }
