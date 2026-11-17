@@ -25,6 +25,11 @@
   button:disabled { opacity:.5; cursor:default; }
   .acts { display:flex; gap:8px; flex-shrink:0; }
   button.sold { border-color:#15803d; color:#15803d; }
+  button.price { border-color:#1d4ed8; color:#1d4ed8; }
+  button.cancel { border-color:var(--line); color:var(--muted); }
+  .rebajado { display:inline-block; margin-left:8px; font-size:11px; font-weight:600; color:#fff; background:#e53935; padding:2px 8px; border-radius:10px; }
+  .pedit { display:flex; gap:6px; align-items:center; margin-top:8px; flex-wrap:wrap; font-weight:600; }
+  .pedit input { width:130px; padding:7px 10px; }
   @media (max-width:520px) { .acts { flex-direction:column; } }
   .status { margin:12px 0; font-size:14px; color:var(--muted); min-height:20px; }
   .prov { display:inline-block; margin-left:6px; font-size:12px; font-weight:600; color:#1d4ed8; }
@@ -95,6 +100,12 @@
       const m = document.createElement('div');
       m.className = 'meta';
       m.textContent = [v.dealer, v.year, v.price, v.kms].filter(Boolean).join(' · ');
+      if (v.priceBefore && parseInt(String(v.priceBefore).replace(/\D/g, '')) > parseInt(String(v.price).replace(/\D/g, ''))) {
+        const rb = document.createElement('span');
+        rb.className = 'rebajado';
+        rb.textContent = `Rebajado (antes ${v.priceBefore})`;
+        m.appendChild(rb);
+      }
       const pv = proveedores[v.id];
       if (pv && pv.proveedor) {
         const sp = document.createElement('span');
@@ -130,7 +141,12 @@
       btn.textContent = 'Eliminar';
       btn.title = 'Error o duplicado: se quita de la web; vuelve si se publica de nuevo despues';
       btn.addEventListener('click', () => removeVehicle(v, btn, 'eliminado'));
-      acts.append(sold, btn);
+      const pr = document.createElement('button');
+      pr.className = 'price';
+      pr.textContent = 'Precio';
+      pr.title = 'Cambiar el precio (si baja, sale la etiqueta "Rebajado")';
+      pr.addEventListener('click', () => editPrice(v, row, info));
+      acts.append(pr, sold, btn);
       row.appendChild(acts);
 
       listEl.appendChild(row);
@@ -166,6 +182,47 @@
       btn.textContent = label;
       setStatus(e.message, true);
     }
+  }
+
+  // ---- cambiar precio
+  function editPrice(v, row, info) {
+    if (row.querySelector('.pedit')) return;
+    const box = document.createElement('div');
+    box.className = 'pedit';
+    const inp = document.createElement('input');
+    inp.type = 'text'; inp.inputMode = 'numeric';
+    inp.value = String(v.price || '').replace(/[^0-9]/g, '');
+    inp.placeholder = 'Nuevo precio, ej. 14500';
+    const ok = document.createElement('button'); ok.textContent = 'Guardar'; ok.className = 'price';
+    const no = document.createElement('button'); no.textContent = 'Cancelar'; no.className = 'cancel';
+    box.append('$', inp, ok, no);
+    info.appendChild(box);
+    inp.focus(); inp.select();
+    no.addEventListener('click', () => box.remove());
+    inp.addEventListener('keydown', e => { if (e.key === 'Enter') ok.click(); if (e.key === 'Escape') box.remove(); });
+    ok.addEventListener('click', async () => {
+      const password = pwdEl.value;
+      if (!password) { setStatus('Escribe la contraseña de admin primero.', true); pwdEl.focus(); return; }
+      const n = parseInt(inp.value.replace(/\D/g, ''), 10);
+      if (!n || n < 300) { setStatus('Escribe un precio válido.', true); inp.focus(); return; }
+      ok.disabled = true; ok.textContent = 'Guardando...';
+      try {
+        const res = await fetch('/api/admin/price', {
+          method: 'POST', headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ id: v.id, password, price: n }),
+        });
+        const data = await res.json().catch(() => ({}));
+        if (!res.ok) throw new Error(data.error || `Error ${res.status}`);
+        const antes = v.price;
+        v.price = data.price;
+        if (data.priceBefore) v.priceBefore = data.priceBefore; else delete v.priceBefore;
+        render();
+        setStatus(`${v.title}: ${antes} → ${v.price}${data.priceBefore ? ' (sale como Rebajado)' : ''}. Se verá en la web en unos segundos.`);
+      } catch (e) {
+        ok.disabled = false; ok.textContent = 'Guardar';
+        setStatus(e.message, true);
+      }
+    });
   }
 
   async function loadProveedores() {
