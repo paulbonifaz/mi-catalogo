@@ -277,7 +277,7 @@
     {
       "id": "1079500925055659",
       "title": "FORD ECOSPORT",
-      "price": "$15,900",
+      "price": "$12,400",
       "year": "2020",
       "kms": "80.000 Kms",
       "img": "/fotos/1079500925055659.jpg",
@@ -293,7 +293,8 @@
       "description": "🚙Ford  Ecosport  \n⏳️año 2020 \n🏎motor 1.500 \n🕹T/M \n🛞Llantas nuevas \n📟80.000 kilómetros \n💣Preció  $15.900\n🚘Recibimos tú vehículo",
       "dealer": "CarPlace PAUL",
       "dealerId": "carplace-matriz",
-      "url": "https://www.facebook.com/marketplace/item/1079500925055659/"
+      "url": "https://www.facebook.com/marketplace/item/1079500925055659/",
+      "priceBefore": "$15,900"
     },
     {
       "id": "3212788602260901",
