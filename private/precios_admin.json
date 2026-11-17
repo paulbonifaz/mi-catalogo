@@ -5,5 +5,12 @@
     "title": "FORD ECOSPORT",
     "fromPrice": "$15,900",
     "updatedAt": "2026-11-17T14:41:02.164Z"
+  },
+  "wa-a97353a7ab6c": {
+    "price": "$13,200",
+    "priceBefore": "$13,900",
+    "title": "KIA PICANTO EX GT",
+    "fromPrice": "$13,900",
+    "updatedAt": "2026-11-17T15:12:59.000Z"
   }
 }
