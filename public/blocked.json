@@ -370,6 +370,16 @@
       "description": "Flamante Suzuki SCROSS  , año 2019 , único dueño , ( auto de casa ) motor 1.600  , T/M , 90.000 kilómetros , llantas nuevas , precio $16.400  , recibimos tú vehículo",
       "removedAt": "2026-11-16T21:56:33.187Z",
       "reason": "eliminado"
+    },
+    {
+      "id": "wa-dc6e87b0e240",
+      "title": "NISSAN XTRAIL SENSE",
+      "year": "2017",
+      "kms": "91.000 Kms",
+      "price": "$15,900",
+      "description": "Nissan Xtrail Sense 2.5 AT año 2017, 91 mil kms, ÚNICO DUEÑO, chequeos en Nissan, 3 filas de asientos, 2 llaves originales, toda prueba. Precio $15900",
+      "removedAt": "2026-11-17T14:40:37.656Z",
+      "reason": "vendido"
     }
   ]
 }
