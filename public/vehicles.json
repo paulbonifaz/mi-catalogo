@@ -275,28 +275,6 @@
       "priceBefore": "$21,400"
     },
     {
-      "id": "1079500925055659",
-      "title": "FORD ECOSPORT",
-      "price": "$12,400",
-      "year": "2020",
-      "kms": "80.000 Kms",
-      "img": "/fotos/1079500925055659.jpg",
-      "images": [
-        "/fotos/1079500925055659.jpg",
-        "/fotos/1079500925055659_2.jpg",
-        "/fotos/1079500925055659_3.jpg",
-        "/fotos/1079500925055659_4.jpg",
-        "/fotos/1079500925055659_5.jpg",
-        "/fotos/1079500925055659_6.jpg",
-        "/fotos/1079500925055659_7.jpg"
-      ],
-      "description": "🚙Ford  Ecosport  \n⏳️año 2020 \n🏎motor 1.500 \n🕹T/M \n🛞Llantas nuevas \n📟80.000 kilómetros \n💣Preció  $15.900\n🚘Recibimos tú vehículo",
-      "dealer": "CarPlace PAUL",
-      "dealerId": "carplace-matriz",
-      "url": "https://www.facebook.com/marketplace/item/1079500925055659/",
-      "priceBefore": "$15,900"
-    },
-    {
       "id": "3212788602260901",
       "title": "CHEVROLET GRAN VITARA",
       "price": "$14,400",
@@ -1194,6 +1172,6 @@
       "addedAt": "2026-11-16T20:15:49.926809+00:00"
     }
   ],
-  "total": 50,
+  "total": 49,
   "updated": "2026-11-16T20:15:50.053865+00:00"
 }
