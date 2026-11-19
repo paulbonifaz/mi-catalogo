@@ -915,32 +915,6 @@
       "addedAt": "2026-11-10T02:18:46.193830+00:00"
     },
     {
-      "id": "wa-a97353a7ab6c",
-      "title": "KIA PICANTO EX GT",
-      "price": "$13,200",
-      "year": "2019",
-      "kms": "55.000 Kms",
-      "img": "/fotos/wa-a97353a7ab6c.jpg",
-      "images": [
-        "/fotos/wa-a97353a7ab6c.jpg",
-        "/fotos/wa-a97353a7ab6c_2.jpg",
-        "/fotos/wa-a97353a7ab6c_3.jpg",
-        "/fotos/wa-a97353a7ab6c_4.jpg",
-        "/fotos/wa-a97353a7ab6c_5.jpg",
-        "/fotos/wa-a97353a7ab6c_6.jpg",
-        "/fotos/wa-a97353a7ab6c_7.jpg"
-      ],
-      "description": "Flamante Kia Picanto EX GT , año 2019 , unico dueño , motor 1.200 , A/C , 4 vidrios eléctrico , pluma posterior, llantas nuevas , 55.000 kilómetros , precio $13.900 , recibimos tú vehículo",
-      "dealer": "CarPlace PAUL",
-      "dealerId": "carplace-matriz",
-      "tipo": "auto",
-      "source": "wa",
-      "url": "",
-      "fotosChat": 11,
-      "priceBefore": "$13,900",
-      "addedAt": "2026-11-10T02:18:52.542394+00:00"
-    },
-    {
       "id": "wa-29b3e5258edf",
       "title": "HAVAL H6",
       "price": "$15,400",
@@ -1175,6 +1149,6 @@
       "addedAt": "2026-11-16T20:15:49.926809+00:00"
     }
   ],
-  "total": 49,
+  "total": 48,
   "updated": "2026-11-16T20:15:50.053865+00:00"
 }
