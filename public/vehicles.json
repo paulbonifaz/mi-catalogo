@@ -503,7 +503,7 @@
     {
       "id": "wa-4238cda41e63",
       "title": "TOYOTA FORTUNER",
-      "price": "$22,700",
+      "price": "$22,390",
       "year": "2013",
       "kms": "220.000 Kms",
       "img": "/fotos/wa-4238cda41e63.jpg",
@@ -522,7 +522,8 @@
       "tipo": "auto",
       "source": "wa",
       "url": "",
-      "addedAt": "2026-10-21T01:54:29.620179+00:00"
+      "addedAt": "2026-10-21T01:54:29.620179+00:00",
+      "priceBefore": "$22,700"
     },
     {
       "id": "wa-064ba77a2e50",
