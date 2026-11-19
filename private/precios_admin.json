@@ -19,5 +19,12 @@
     "title": "CHEVROLET SAIL SPORT",
     "fromPrice": "$11,900",
     "updatedAt": "2026-11-19T03:15:22.787Z"
+  },
+  "wa-0759a57b0022": {
+    "price": "$13,850",
+    "priceBefore": "$14,400",
+    "title": "TOYOTA YARIS",
+    "fromPrice": "$14,400",
+    "updatedAt": "2026-11-19T03:17:25.823Z"
   }
 }
