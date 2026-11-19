@@ -364,7 +364,7 @@
     {
       "id": "1783126449502020",
       "title": "CHEVROLET SPARK LIFE",
-      "price": "$9,400",
+      "price": "$8,900",
       "year": "2018",
       "kms": "75.000 Kms",
       "img": "/fotos/1783126449502020.jpg",
@@ -380,7 +380,8 @@
       "description": "🚗Chevrolet Spark Life \n⏳️año 2018 \n🕴un solo traspaso \n🏁motor 1.000 ,\n🛞75.000 kilómetros \n🛞llantas nuevas \n📃matrícula y RTV en Quito 2026 \n🔥Precio $9.400",
       "dealer": "CarPlace PAUL",
       "dealerId": "carplace-matriz",
-      "url": "https://www.facebook.com/marketplace/item/1783126449502020/"
+      "url": "https://www.facebook.com/marketplace/item/1783126449502020/",
+      "priceBefore": "$9,400"
     },
     {
       "id": "2178990779670950",
@@ -1150,5 +1151,5 @@
     }
   ],
   "total": 48,
-  "updated": "2026-11-19T16:04:14.855585+00:00"
+  "updated": "2026-11-19T16:23:20.483718+00:00"
 }
