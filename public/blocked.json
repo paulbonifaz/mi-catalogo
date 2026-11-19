@@ -392,6 +392,16 @@
       "description": "🚙Ford  Ecosport  \n⏳️año 2020 \n🏎motor 1.500 \n🕹T/M \n🛞Llantas nuevas \n📟80.000 kilómetros \n💣Preció  $15.900\n🚘Recibimos tú vehículo",
       "removedAt": "2026-11-17T14:41:14.068Z",
       "reason": "eliminado"
+    },
+    {
+      "id": "wa-a97353a7ab6c",
+      "title": "KIA PICANTO EX GT",
+      "year": "2019",
+      "kms": "55.000 Kms",
+      "price": "$13,200",
+      "description": "Flamante Kia Picanto EX GT , año 2019 , unico dueño , motor 1.200 , A/C , 4 vidrios eléctrico , pluma posterior, llantas nuevas , 55.000 kilómetros , precio $13.900 , recibimos tú vehículo",
+      "removedAt": "2026-11-19T15:32:00.665Z",
+      "reason": "vendido"
     }
   ]
 }
