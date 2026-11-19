@@ -40,5 +40,12 @@
     "title": "HYUNDAI IONIQ",
     "fromPrice": "$14,900",
     "updatedAt": "2026-11-19T03:20:33.628Z"
+  },
+  "wa-4238cda41e63": {
+    "price": "$22,390",
+    "priceBefore": "$22,700",
+    "title": "TOYOTA FORTUNER",
+    "fromPrice": "$22,700",
+    "updatedAt": "2026-11-19T03:23:44.593Z"
   }
 }
