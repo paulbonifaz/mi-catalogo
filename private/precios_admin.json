@@ -26,5 +26,12 @@
     "title": "TOYOTA YARIS",
     "fromPrice": "$14,400",
     "updatedAt": "2026-11-19T03:17:25.823Z"
+  },
+  "1835814584530405": {
+    "price": "$14,800",
+    "priceBefore": "$15,350",
+    "title": "CHERY TIGGO 7PRO PLUS",
+    "fromPrice": "$15,350",
+    "updatedAt": "2026-11-19T03:19:52.217Z"
   }
 }
