@@ -425,6 +425,16 @@
       "description": "Jac S2 Confort 1.5 AC TM año 2022, 53 mil kms, full equipo, llantas nuevas, toda prueba. $11900",
       "removedAt": "2026-11-24T19:27:48.406Z",
       "reason": "eliminado"
+    },
+    {
+      "id": "wa-3ca48eaef55c",
+      "title": "MAZDA CX-5 CORE",
+      "year": "2026",
+      "kms": "6.000 Kms",
+      "price": "$32,500",
+      "description": "Mazda CX-5 CORE 2.0 AT año 2026, 6 mil kms, ÚNICO DUEÑO, 2 llaves originales, full equipo, flamate. Precio $32500",
+      "removedAt": "2026-11-24T19:28:05.112Z",
+      "reason": "eliminado"
     }
   ]
 }
