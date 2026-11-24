@@ -764,32 +764,6 @@
       "addedAt": "2026-11-05T15:51:30.685639+00:00"
     },
     {
-      "id": "wa-c94e3d413b33",
-      "title": "RENAULT DUSTER INTENS",
-      "price": "$19,500",
-      "year": "2023",
-      "kms": "55.000 Kms",
-      "img": "/fotos/wa-c94e3d413b33.jpg",
-      "images": [
-        "/fotos/wa-c94e3d413b33.jpg",
-        "/fotos/wa-c94e3d413b33_2.jpg",
-        "/fotos/wa-c94e3d413b33_3.jpg",
-        "/fotos/wa-c94e3d413b33_4.jpg",
-        "/fotos/wa-c94e3d413b33_5.jpg",
-        "/fotos/wa-c94e3d413b33_6.jpg",
-        "/fotos/wa-c94e3d413b33_7.jpg"
-      ],
-      "description": "RENAULT DUSTER INTENS AÑO 2023, TRASMISIÓN MANUAL 4X4, MOTOR 1.3 TURBO, RECORRIDO 55000 KM, $19500",
-      "dealer": "CarPlace PAUL",
-      "dealerId": "carplace-matriz",
-      "tipo": "auto",
-      "source": "wa",
-      "url": "",
-      "fotosChat": 15,
-      "priceBefore": "",
-      "addedAt": "2026-11-05T15:52:22.580166+00:00"
-    },
-    {
       "id": "wa-04f29ed6f3f0",
       "title": "HYUNDAI IONIQ",
       "price": "$13,700",
@@ -1102,6 +1076,6 @@
       "addedAt": "2026-11-16T20:15:36.191429+00:00"
     }
   ],
-  "total": 46,
+  "total": 45,
   "updated": "2026-11-19T16:27:53.336209+00:00"
 }
