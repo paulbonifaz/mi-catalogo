@@ -447,6 +447,16 @@
       "description": "RENAULT DUSTER INTENS AÑO 2023, TRASMISIÓN MANUAL 4X4, MOTOR 1.3 TURBO, RECORRIDO 55000 KM, $19500",
       "removedAt": "2026-11-24T19:28:18.275Z",
       "reason": "eliminado"
+    },
+    {
+      "id": "2115314992708015",
+      "title": "RENAULT SANDERO",
+      "year": "2019",
+      "kms": "135.000 Kms",
+      "price": "$10,500",
+      "description": "Renault Sandero 1.6 AC AT año 2019, 135 mil kms, full equipo, aros rin 15, radio pionner, automático. \nPrecio $10500",
+      "removedAt": "2026-11-24T19:28:28.137Z",
+      "reason": "eliminado"
     }
   ]
 }
