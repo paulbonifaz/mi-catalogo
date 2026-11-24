@@ -362,28 +362,6 @@
       "url": "https://www.facebook.com/marketplace/item/2104225413798970/"
     },
     {
-      "id": "1783126449502020",
-      "title": "CHEVROLET SPARK LIFE",
-      "price": "$8,900",
-      "year": "2018",
-      "kms": "75.000 Kms",
-      "img": "/fotos/1783126449502020.jpg",
-      "images": [
-        "/fotos/1783126449502020.jpg",
-        "/fotos/1783126449502020_2.jpg",
-        "/fotos/1783126449502020_3.jpg",
-        "/fotos/1783126449502020_4.jpg",
-        "/fotos/1783126449502020_5.jpg",
-        "/fotos/1783126449502020_6.jpg",
-        "/fotos/1783126449502020_7.jpg"
-      ],
-      "description": "🚗Chevrolet Spark Life \n⏳️año 2018 \n🕴un solo traspaso \n🏁motor 1.000 ,\n🛞75.000 kilómetros \n🛞llantas nuevas \n📃matrícula y RTV en Quito 2026 \n🔥Precio $9.400",
-      "dealer": "CarPlace PAUL",
-      "dealerId": "carplace-matriz",
-      "url": "https://www.facebook.com/marketplace/item/1783126449502020/",
-      "priceBefore": "$9,400"
-    },
-    {
       "id": "2178990779670950",
       "title": "CHANGAN ALSVIN COMFORT",
       "price": "$13,900",
@@ -1176,6 +1154,6 @@
       "addedAt": "2026-11-19T16:27:53.296451+00:00"
     }
   ],
-  "total": 49,
+  "total": 48,
   "updated": "2026-11-19T16:27:53.336209+00:00"
 }
