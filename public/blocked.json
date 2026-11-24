@@ -491,6 +491,16 @@
       "description": "Flamante Chevrolet Captiva LTZ  , único dueño , año 2023 , motor 1.500 , 50.000 kilómetros , láminas de seguridad  , aros y llantas nuevas , RTV Quito , precio $17.400 recibimos tú vehículo",
       "removedAt": "2026-11-24T22:04:12.398Z",
       "reason": "eliminado"
+    },
+    {
+      "id": "wa-4a00c5f4937f",
+      "title": "GREAT WALL HOVER H5 ELITE",
+      "year": "2015",
+      "kms": "130.000 Kms",
+      "price": "$11,700",
+      "description": "GREAT WALL HOVER H5 ELITE, AÑO 2015, 4X2, TRASMISIÓN MANUAL, MOTOR 2.4, UNICO DUEÑO, RECORRIDO 130000 KM, $11700",
+      "removedAt": "2026-11-24T22:04:19.539Z",
+      "reason": "eliminado"
     }
   ]
 }
