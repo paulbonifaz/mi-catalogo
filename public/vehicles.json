@@ -106,27 +106,6 @@
       "url": "https://www.facebook.com/marketplace/item/1503930394897055/"
     },
     {
-      "id": "2115314992708015",
-      "title": "RENAULT SANDERO",
-      "price": "$10,500",
-      "year": "2019",
-      "kms": "135.000 Kms",
-      "img": "/fotos/2115314992708015.jpg",
-      "images": [
-        "/fotos/2115314992708015.jpg",
-        "/fotos/2115314992708015_2.jpg",
-        "/fotos/2115314992708015_3.jpg",
-        "/fotos/2115314992708015_4.jpg",
-        "/fotos/2115314992708015_5.jpg",
-        "/fotos/2115314992708015_6.jpg",
-        "/fotos/2115314992708015_7.jpg"
-      ],
-      "description": "Renault Sandero 1.6 AC AT año 2019, 135 mil kms, full equipo, aros rin 15, radio pionner, automático. \nPrecio $10500",
-      "dealer": "CarPlace PAUL",
-      "dealerId": "carplace-matriz",
-      "url": "https://www.facebook.com/marketplace/item/2115314992708015/"
-    },
-    {
       "id": "1056510454105451",
       "title": "FORD EXPLORER XLT",
       "price": "$26,500",
@@ -1076,6 +1055,6 @@
       "addedAt": "2026-11-16T20:15:36.191429+00:00"
     }
   ],
-  "total": 45,
+  "total": 44,
   "updated": "2026-11-19T16:27:53.336209+00:00"
 }
