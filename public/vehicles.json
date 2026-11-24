@@ -769,32 +769,6 @@
       "addedAt": "2026-11-05T15:58:28.471407+00:00"
     },
     {
-      "id": "wa-82dff2846d36",
-      "title": "TOYOTA AGYA",
-      "price": "$16,800",
-      "year": "2027",
-      "kms": "4.000 Kms",
-      "img": "/fotos/wa-82dff2846d36.jpg",
-      "images": [
-        "/fotos/wa-82dff2846d36.jpg",
-        "/fotos/wa-82dff2846d36_2.jpg",
-        "/fotos/wa-82dff2846d36_3.jpg",
-        "/fotos/wa-82dff2846d36_4.jpg",
-        "/fotos/wa-82dff2846d36_5.jpg",
-        "/fotos/wa-82dff2846d36_6.jpg",
-        "/fotos/wa-82dff2846d36_7.jpg"
-      ],
-      "description": "Toyota Agya 1.2 AC TM año 2027, 4 mil kms, ÚNICO DUEÑO, GARANTÍA DE CASA, aros rin 15 ORIGINALES Toyota, llantas michellin, alarma original, cubre carter, láminas de seguridad, 2 llaves originales, placas P-6, totalemente nuevo. \n\n\n\nPrecio $16800",
-      "dealer": "CarPlace PAUL",
-      "dealerId": "carplace-matriz",
-      "tipo": "auto",
-      "source": "wa",
-      "url": "",
-      "fotosChat": 12,
-      "priceBefore": "",
-      "addedAt": "2026-11-10T02:18:33.514513+00:00"
-    },
-    {
       "id": "wa-d0880406ce72",
       "title": "KIA SELTOS LX",
       "price": "$20,400",
@@ -1055,6 +1029,6 @@
       "addedAt": "2026-11-16T20:15:36.191429+00:00"
     }
   ],
-  "total": 44,
+  "total": 43,
   "updated": "2026-11-19T16:27:53.336209+00:00"
 }
