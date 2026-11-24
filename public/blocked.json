@@ -436,6 +436,16 @@
       "description": "Mazda CX-5 CORE 2.0 AT año 2026, 6 mil kms, ÚNICO DUEÑO, 2 llaves originales, full equipo, flamate. Precio $32500",
       "removedAt": "2026-11-24T19:28:05.112Z",
       "reason": "eliminado"
+    },
+    {
+      "id": "wa-c94e3d413b33",
+      "title": "RENAULT DUSTER INTENS",
+      "year": "2023",
+      "kms": "55.000 Kms",
+      "price": "$19,500",
+      "description": "RENAULT DUSTER INTENS AÑO 2023, TRASMISIÓN MANUAL 4X4, MOTOR 1.3 TURBO, RECORRIDO 55000 KM, $19500",
+      "removedAt": "2026-11-24T19:28:18.275Z",
+      "reason": "eliminado"
     }
   ]
 }
