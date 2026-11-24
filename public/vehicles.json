@@ -386,30 +386,6 @@
       "addedAt": "2026-10-21T01:52:04.441640+00:00"
     },
     {
-      "id": "wa-4a00c5f4937f",
-      "title": "GREAT WALL HOVER H5 ELITE",
-      "price": "$11,700",
-      "year": "2015",
-      "kms": "130.000 Kms",
-      "img": "/fotos/wa-4a00c5f4937f.jpg",
-      "images": [
-        "/fotos/wa-4a00c5f4937f.jpg",
-        "/fotos/wa-4a00c5f4937f_2.jpg",
-        "/fotos/wa-4a00c5f4937f_3.jpg",
-        "/fotos/wa-4a00c5f4937f_4.jpg",
-        "/fotos/wa-4a00c5f4937f_5.jpg",
-        "/fotos/wa-4a00c5f4937f_6.jpg",
-        "/fotos/wa-4a00c5f4937f_7.jpg"
-      ],
-      "description": "GREAT WALL HOVER H5 ELITE, AÑO 2015, 4X2, TRASMISIÓN MANUAL, MOTOR 2.4, UNICO DUEÑO, RECORRIDO 130000 KM, $11700",
-      "dealer": "CarPlace PAUL",
-      "dealerId": "carplace-matriz",
-      "tipo": "auto",
-      "source": "wa",
-      "url": "",
-      "addedAt": "2026-10-21T01:52:31.685380+00:00"
-    },
-    {
       "id": "wa-60e33a753bb6",
       "title": "VESPA ANIVERSARIO 70",
       "price": "$3,200",
@@ -1029,6 +1005,6 @@
       "addedAt": "2026-11-24T19:42:48.257392+00:00"
     }
   ],
-  "total": 43,
+  "total": 42,
   "updated": "2026-11-24T19:49:11.263457+00:00"
 }
