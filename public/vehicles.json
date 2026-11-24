@@ -982,8 +982,34 @@
       "fotosChat": 16,
       "priceBefore": "",
       "addedAt": "2026-11-24T22:04:30.871267+00:00"
+    },
+    {
+      "id": "wa-9dd4ce193a73",
+      "title": "RAM 700",
+      "price": "$20,500",
+      "year": "2027",
+      "kms": "3.000 Kms",
+      "img": "/fotos/wa-9dd4ce193a73.jpg",
+      "images": [
+        "/fotos/wa-9dd4ce193a73.jpg",
+        "/fotos/wa-9dd4ce193a73_2.jpg",
+        "/fotos/wa-9dd4ce193a73_3.jpg",
+        "/fotos/wa-9dd4ce193a73_4.jpg",
+        "/fotos/wa-9dd4ce193a73_5.jpg",
+        "/fotos/wa-9dd4ce193a73_6.jpg",
+        "/fotos/wa-9dd4ce193a73_7.jpg"
+      ],
+      "description": "RAM 700 1.3 AC TM DC año 2027, 3 mil kms, ÚNICO DUEÑO, garantía de casa, aros rin 16, lona cubre balde, totalmente nueva. Precio $20500",
+      "dealer": "CarPlace PAUL",
+      "dealerId": "carplace-matriz",
+      "tipo": "auto",
+      "source": "wa",
+      "url": "",
+      "fotosChat": 10,
+      "priceBefore": "",
+      "addedAt": "2026-11-24T22:15:47.511055+00:00"
     }
   ],
-  "total": 41,
-  "updated": "2026-11-24T19:49:11.263457+00:00"
+  "total": 42,
+  "updated": "2026-11-24T22:15:48.139256+00:00"
 }
