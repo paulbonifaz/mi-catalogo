@@ -1126,34 +1126,8 @@
       "fotosChat": 12,
       "priceBefore": "",
       "addedAt": "2026-11-16T20:15:49.926809+00:00"
-    },
-    {
-      "id": "wa-a882e3afe979",
-      "title": "JAC S2 CONFORT",
-      "price": "$11,900",
-      "year": "2022",
-      "kms": "53.000 Kms",
-      "img": "/fotos/wa-a882e3afe979.jpg",
-      "images": [
-        "/fotos/wa-a882e3afe979.jpg",
-        "/fotos/wa-a882e3afe979_2.jpg",
-        "/fotos/wa-a882e3afe979_3.jpg",
-        "/fotos/wa-a882e3afe979_4.jpg",
-        "/fotos/wa-a882e3afe979_5.jpg",
-        "/fotos/wa-a882e3afe979_6.jpg",
-        "/fotos/wa-a882e3afe979_7.jpg"
-      ],
-      "description": "Jac S2 Confort 1.5 AC TM año 2022, 53 mil kms, full equipo, llantas nuevas, toda prueba. $11900",
-      "dealer": "CarPlace PAUL",
-      "dealerId": "carplace-matriz",
-      "tipo": "auto",
-      "source": "wa",
-      "url": "",
-      "fotosChat": 11,
-      "priceBefore": "",
-      "addedAt": "2026-11-19T16:27:53.296451+00:00"
     }
   ],
-  "total": 48,
+  "total": 47,
   "updated": "2026-11-19T16:27:53.336209+00:00"
 }
