@@ -211,27 +211,6 @@
       "url": "https://www.facebook.com/marketplace/item/867533286387297/"
     },
     {
-      "id": "1473344624846465",
-      "title": "KIA SOLUTO LX 1.4",
-      "price": "$14,700",
-      "year": "2025",
-      "kms": "15.000 Kms",
-      "img": "/fotos/1473344624846465.jpg",
-      "images": [
-        "/fotos/1473344624846465.jpg",
-        "/fotos/1473344624846465_2.jpg",
-        "/fotos/1473344624846465_3.jpg",
-        "/fotos/1473344624846465_4.jpg",
-        "/fotos/1473344624846465_5.jpg",
-        "/fotos/1473344624846465_6.jpg",
-        "/fotos/1473344624846465_7.jpg"
-      ],
-      "description": "🚘Kia Soluto LX 1.4 \n🌬AC \n🕹TM \n⏳️año 2025\n📟15 mil kms\n🛞aros nuevos\n🕴ÚNICO DUEÑO\n📃GARANTÍA DE CASA\n🔑2 llaves originales.\n💣Precio $14700",
-      "dealer": "CarPlace PAUL",
-      "dealerId": "carplace-matriz",
-      "url": "https://www.facebook.com/marketplace/item/1473344624846465/"
-    },
-    {
       "id": "1140064808484521",
       "title": "DONGFENG MAGE T",
       "price": "$20,900",
@@ -1005,6 +984,6 @@
       "addedAt": "2026-11-24T19:42:48.257392+00:00"
     }
   ],
-  "total": 42,
+  "total": 41,
   "updated": "2026-11-24T19:49:11.263457+00:00"
 }
