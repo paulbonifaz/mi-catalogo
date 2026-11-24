@@ -1027,8 +1027,60 @@
       "fotosChat": 16,
       "priceBefore": "",
       "addedAt": "2026-11-16T20:15:36.191429+00:00"
+    },
+    {
+      "id": "wa-c61da6583837",
+      "title": "CHEVROLET SAIL LS",
+      "price": "$12,600",
+      "year": "2019",
+      "kms": "150.000 Kms",
+      "img": "/fotos/wa-c61da6583837.jpg",
+      "images": [
+        "/fotos/wa-c61da6583837.jpg",
+        "/fotos/wa-c61da6583837_2.jpg",
+        "/fotos/wa-c61da6583837_3.jpg",
+        "/fotos/wa-c61da6583837_4.jpg",
+        "/fotos/wa-c61da6583837_5.jpg",
+        "/fotos/wa-c61da6583837_6.jpg",
+        "/fotos/wa-c61da6583837_7.jpg"
+      ],
+      "description": "Flamante Chevrolet Sail LS , año 2019 , único dueño , motor 1.500 A/C , 150.000 kilómetros ,RTV Quito , precio $12.600 recibimos tú vehículo",
+      "dealer": "CarPlace PAUL",
+      "dealerId": "carplace-matriz",
+      "tipo": "auto",
+      "source": "wa",
+      "url": "",
+      "fotosChat": 11,
+      "priceBefore": "",
+      "addedAt": "2026-11-24T19:42:22.787466+00:00"
+    },
+    {
+      "id": "wa-cc7045627f1b",
+      "title": "MAZDA NEW CORE CX5 ACE",
+      "price": "$22,400",
+      "year": "2019",
+      "kms": "115.000 Kms",
+      "img": "/fotos/wa-cc7045627f1b.jpg",
+      "images": [
+        "/fotos/wa-cc7045627f1b.jpg",
+        "/fotos/wa-cc7045627f1b_2.jpg",
+        "/fotos/wa-cc7045627f1b_3.jpg",
+        "/fotos/wa-cc7045627f1b_4.jpg",
+        "/fotos/wa-cc7045627f1b_5.jpg",
+        "/fotos/wa-cc7045627f1b_6.jpg",
+        "/fotos/wa-cc7045627f1b_7.jpg"
+      ],
+      "description": "Flamante Mazda New Core CX5 Ace , año 2019 , T/A , motor 2.000 , asientos de cuero , modo Sport , 115.000 kilómetros , aros rin 20 , mantenimientos en Maresa , precio $22.400 recibimos tú vehículo",
+      "dealer": "CarPlace PAUL",
+      "dealerId": "carplace-matriz",
+      "tipo": "auto",
+      "source": "wa",
+      "url": "",
+      "fotosChat": 11,
+      "priceBefore": "",
+      "addedAt": "2026-11-24T19:42:48.257392+00:00"
     }
   ],
-  "total": 43,
-  "updated": "2026-11-19T16:27:53.336209+00:00"
+  "total": 45,
+  "updated": "2026-11-24T19:42:48.377767+00:00"
 }
