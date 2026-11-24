@@ -414,6 +414,16 @@
       "description": "🚗Chevrolet Spark Life \n⏳️año 2018 \n🕴un solo traspaso \n🏁motor 1.000 ,\n🛞75.000 kilómetros \n🛞llantas nuevas \n📃matrícula y RTV en Quito 2026 \n🔥Precio $9.400",
       "removedAt": "2026-11-24T19:27:34.050Z",
       "reason": "eliminado"
+    },
+    {
+      "id": "wa-a882e3afe979",
+      "title": "JAC S2 CONFORT",
+      "year": "2022",
+      "kms": "53.000 Kms",
+      "price": "$11,900",
+      "description": "Jac S2 Confort 1.5 AC TM año 2022, 53 mil kms, full equipo, llantas nuevas, toda prueba. $11900",
+      "removedAt": "2026-11-24T19:27:48.406Z",
+      "reason": "eliminado"
     }
   ]
 }
