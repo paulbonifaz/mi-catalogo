@@ -458,6 +458,16 @@
       "description": "Renault Sandero 1.6 AC AT año 2019, 135 mil kms, full equipo, aros rin 15, radio pionner, automático. \nPrecio $10500",
       "removedAt": "2026-11-24T19:28:28.137Z",
       "reason": "eliminado"
+    },
+    {
+      "id": "wa-82dff2846d36",
+      "title": "TOYOTA AGYA",
+      "year": "2027",
+      "kms": "4.000 Kms",
+      "price": "$16,800",
+      "description": "Toyota Agya 1.2 AC TM año 2027, 4 mil kms, ÚNICO DUEÑO, GARANTÍA DE CASA, aros rin 15 ORIGINALES Toyota, llantas michellin, alarma original, cubre carter, láminas de seguridad, 2 llaves originales, placas P-6, totalemente nuevo. \n\n\n\nPrecio $16800",
+      "removedAt": "2026-11-24T19:28:35.877Z",
+      "reason": "eliminado"
     }
   ]
 }
