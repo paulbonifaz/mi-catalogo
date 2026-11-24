@@ -1100,34 +1100,8 @@
       "fotosChat": 16,
       "priceBefore": "",
       "addedAt": "2026-11-16T20:15:36.191429+00:00"
-    },
-    {
-      "id": "wa-3ca48eaef55c",
-      "title": "MAZDA CX-5 CORE",
-      "price": "$32,500",
-      "year": "2026",
-      "kms": "6.000 Kms",
-      "img": "/fotos/wa-3ca48eaef55c.jpg",
-      "images": [
-        "/fotos/wa-3ca48eaef55c.jpg",
-        "/fotos/wa-3ca48eaef55c_2.jpg",
-        "/fotos/wa-3ca48eaef55c_3.jpg",
-        "/fotos/wa-3ca48eaef55c_4.jpg",
-        "/fotos/wa-3ca48eaef55c_5.jpg",
-        "/fotos/wa-3ca48eaef55c_6.jpg",
-        "/fotos/wa-3ca48eaef55c_7.jpg"
-      ],
-      "description": "Mazda CX-5 CORE 2.0 AT año 2026, 6 mil kms, ÚNICO DUEÑO, 2 llaves originales, full equipo, flamate. Precio $32500",
-      "dealer": "CarPlace PAUL",
-      "dealerId": "carplace-matriz",
-      "tipo": "auto",
-      "source": "wa",
-      "url": "",
-      "fotosChat": 12,
-      "priceBefore": "",
-      "addedAt": "2026-11-16T20:15:49.926809+00:00"
     }
   ],
-  "total": 47,
+  "total": 46,
   "updated": "2026-11-19T16:27:53.336209+00:00"
 }
