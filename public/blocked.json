@@ -513,6 +513,16 @@
       "description": "🚘Kia Soluto LX 1.4 \n🌬AC \n🕹TM \n⏳️año 2025\n📟15 mil kms\n🛞aros nuevos\n🕴ÚNICO DUEÑO\n📃GARANTÍA DE CASA\n🔑2 llaves originales.\n💣Precio $14700",
       "removedAt": "2026-11-24T22:04:28.070Z",
       "reason": "eliminado"
+    },
+    {
+      "id": "wa-744bb566d2a9",
+      "title": "NISSAN MURANO",
+      "year": "2012",
+      "kms": "93.000 Kms",
+      "price": "$12,500",
+      "description": "Nissan Murano AC 3.5 5P 4X2 TA año 2012, 93 mil kms, llantas nuevas Good Year, 2 llaves originales, placas P-3. Precio $12500",
+      "removedAt": "2026-11-24T22:04:34.542Z",
+      "reason": "eliminado"
     }
   ]
 }
