@@ -322,7 +322,7 @@
     {
       "id": "2178990779670950",
       "title": "CHANGAN ALSVIN COMFORT",
-      "price": "$13,900",
+      "price": "$13,800",
       "year": "2025",
       "kms": "30.000 Kms",
       "img": "/fotos/2178990779670950.jpg",
@@ -338,7 +338,8 @@
       "description": "🚘Changan Alsvin Comfort \n⏳️año 2025 \n🕴único dueño \n🫗motor 1.400 \n🌬A/C \n🛞30.000 kilómetros\n🔥Precio $13.900\n🚙Recibimos tú vehículo",
       "dealer": "CarPlace PAUL",
       "dealerId": "carplace-matriz",
-      "url": "https://www.facebook.com/marketplace/item/2178990779670950/"
+      "url": "https://www.facebook.com/marketplace/item/2178990779670950/",
+      "priceBefore": "$13,900"
     },
     {
       "id": "wa-805c04306283",
@@ -1008,8 +1009,34 @@
       "fotosChat": 10,
       "priceBefore": "",
       "addedAt": "2026-11-24T22:15:47.511055+00:00"
+    },
+    {
+      "id": "wa-e81b9c02e921",
+      "title": "FORD ESCAPE",
+      "price": "$12,900",
+      "year": "2014",
+      "kms": "120.000 Kms",
+      "img": "/fotos/wa-e81b9c02e921.jpg",
+      "images": [
+        "/fotos/wa-e81b9c02e921.jpg",
+        "/fotos/wa-e81b9c02e921_2.jpg",
+        "/fotos/wa-e81b9c02e921_3.jpg",
+        "/fotos/wa-e81b9c02e921_4.jpg",
+        "/fotos/wa-e81b9c02e921_5.jpg",
+        "/fotos/wa-e81b9c02e921_6.jpg",
+        "/fotos/wa-e81b9c02e921_7.jpg"
+      ],
+      "description": "Flamante Ford Escape Full (EEUU) , año 2014 , motor 2.5 , T/A , 120.000 kilómetros , A/C , llantas nuevas , precio $12.900",
+      "dealer": "CarPlace PAUL",
+      "dealerId": "carplace-matriz",
+      "tipo": "auto",
+      "source": "wa",
+      "url": "",
+      "fotosChat": 11,
+      "priceBefore": "",
+      "addedAt": "2026-11-26T16:01:21.637815+00:00"
     }
   ],
-  "total": 42,
-  "updated": "2026-11-24T22:15:48.139256+00:00"
+  "total": 43,
+  "updated": "2026-11-26T16:01:21.688635+00:00"
 }
